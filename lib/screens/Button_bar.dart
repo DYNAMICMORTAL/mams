@@ -189,6 +189,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:gap/gap.dart';
 import 'package:video_player/video_player.dart';
 import 'home_screen.dart';
+import 'profile_view.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key});
@@ -238,7 +239,7 @@ class _BottomBarState extends State<BottomBar> {
     HomeScreen(),
     TrainSearchContent(),
     const Text("Tickets"),
-    const Text("Profile"),
+    ProfileView(),
   ];
 
   void _onItemTapped(int index) {
