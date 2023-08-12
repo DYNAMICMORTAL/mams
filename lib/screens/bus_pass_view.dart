@@ -83,6 +83,8 @@ class BuyPass extends StatelessWidget {
                           child: ElevatedButton(
                             onPressed: () {
                               // Handle Pay for ticket button press
+                                Navigator.pushNamed(context, '/payforticket');// Navigate to SettingsPage
+
                             },
                             style: ElevatedButton.styleFrom(
                               primary: Colors.white, // Background color

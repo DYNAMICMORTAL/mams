@@ -209,6 +209,12 @@ class ProfileView extends StatelessWidget {
                 ],
               ),
             ),//->the main Down whole Container
+            const Gap(15),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.grey.shade300,
+              padding: const EdgeInsets.only(top: 5),
+            ),
           ],
         ),
       ),
