@@ -8,6 +8,7 @@ import 'ads_view.dart';
 import 'bus_pass_view.dart';
 
 
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -17,6 +18,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool isSearching = false;
+  double searchBarHeight = 60.0; // Initial height of the search bar
   List<Train> searchResults = [];
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -126,39 +128,51 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     const SizedBox(height: 20),
                     const Gap(0),
-                    Container(
-                      width: 348.7,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: const Color(0xFFF4F6FD),
-                      ),
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                      child: Row(
-                        children: [
-                          const Icon(FluentSystemIcons.ic_fluent_search_regular),
-                          const Gap(20),
-                          Expanded(
-                            child: TextField(
-                              onChanged: (query) {
-                                if (query.isNotEmpty) {
-                                  setState(() {
-                                    isSearching = true;
-                                  });
-                                  searchTrains(query);
-                                } else {
-                                  setState(() {
-                                    isSearching = false;
-                                    searchResults.clear();
-                                  });
-                                }
-                              },
-                              decoration: InputDecoration.collapsed(
-                                hintText: "Enter Destination or Bus Number",
-                                hintStyle: Styles.headlineStyle5,
-                              ),
-                            ),
+
+                    AnimatedContainer(
+                      duration: const Duration(milliseconds: 300),
+                      height: searchBarHeight,
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isSearching = true;
+                            searchBarHeight = 150.0; // Expanded height for search bar
+                          });
+                        },
+                        child: Container(
+                          width: 348.7,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: const Color(0xFFF4F6FD),
                           ),
-                        ],
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                          child: Row(
+                            children: [
+                              const Icon(FluentSystemIcons.ic_fluent_search_regular),
+                              const Gap(20),
+                              Expanded(
+                                child: TextField(
+                                  autofocus: isSearching,
+                                  onChanged: (query) {
+                                    if (query.isNotEmpty) {
+                                      setState(() {
+                                        searchTrains(query);
+                                      });
+                                    } else {
+                                      setState(() {
+                                        searchResults.clear();
+                                      });
+                                    }
+                                  },
+                                  decoration: InputDecoration.collapsed(
+                                    hintText: "Enter Destination or Bus Number",
+                                    hintStyle: Styles.headlineStyle5,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                     // Display search results here
@@ -184,13 +198,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          Column(
-            children: [
-              BuyPass(),
-            ],
-          )
+          if (!isSearching) // Show other elements only if not searching
+            Column(
+              children: [
+                BuyPass(),
+              ],
+            )
         ],
       ),
     );
   }
 }
+
