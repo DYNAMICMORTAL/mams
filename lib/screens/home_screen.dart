@@ -22,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isSearching = false;
   double searchBarHeight = 60.0; // Initial height of the search bar
   List<Train> searchResults = [];
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   void searchTrains(String query) {
     setState(() {
@@ -36,7 +37,91 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Styles.bgColor,
+      appBar: AppBar(
+        backgroundColor: Styles.bgColor,
+        title: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Spacer(),
+            Text("MAMS", style: Styles.headlineStyle1),
+            const Spacer(),
+            const Icon(FluentSystemIcons.ic_fluent_arrow_right_circle_filled),
+          ],
+        ),
+        leading: InkWell(
+          onTap: () {
+            if (_scaffoldKey.currentState != null) {
+              _scaffoldKey.currentState!.openDrawer();
+            }
+          },
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Icon(FluentSystemIcons.ic_fluent_list_filled),
+          ),
+        ),
+      ),
+      drawer: Drawer(
+  child: ListView(
+    padding: EdgeInsets.zero,
+    children: [
+      DrawerHeader(
+        decoration: BoxDecoration(
+          color: Styles.primaryColor,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              radius: 40,
+              backgroundImage: AssetImage('assets/avatar.png'), // Replace with your avatar image
+            ),
+            SizedBox(height: 10),
+            Text(
+              'John Doe', // Replace with the user's name
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+              ),
+            ),
+            SizedBox(height: 10),
+            
+          ],
+        ),
+      ),
+      ListTile(
+        leading: Icon(FluentSystemIcons.ic_fluent_home_regular),
+        title: Text('Home'),
+        onTap: () {
+          // Add navigation logic to redirect to the home section
+        },
+      ),
+      ListTile(
+        leading: Icon(FluentSystemIcons.ic_fluent_ticket_regular),
+        title: Text('Bus Pass'),
+        onTap: () {
+          // Add navigation logic to redirect to the bus pass section
+        },
+      ),
+      ListTile(
+        leading: Icon(FluentSystemIcons.ic_fluent_more_regular),
+        title: Text('Pricing'),
+        onTap: () {
+          // Add navigation logic to redirect to the pricing section
+        },
+      ),
+      ListTile(
+        leading: Icon(FluentSystemIcons.ic_fluent_info_regular),
+        title: Text('About Us'),
+        onTap: () {
+          // Add navigation logic to redirect to the about us section
+        },
+      ),
+    ],
+  ),
+),
       body: ListView(
         children: [
           Container(
@@ -48,15 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(FluentSystemIcons.ic_fluent_list_filled),
-                        const Spacer(),
-                        Text("MAMS", style: Styles.headlineStyle1),
-                        const Spacer(),
-                        const Icon(FluentSystemIcons.ic_fluent_arrow_right_circle_filled),
-                      ],
                     ),
-                    const SizedBox(height: 20),
                     const Gap(0),
 
                     AnimatedContainer(
