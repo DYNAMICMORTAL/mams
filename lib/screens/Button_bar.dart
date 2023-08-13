@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:video_player/video_player.dart';
 import 'home_screen.dart';
 import 'profile_view.dart';
+// import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key});
