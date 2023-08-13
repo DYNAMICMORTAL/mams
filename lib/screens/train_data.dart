@@ -7,7 +7,7 @@ class Train {
 }
 
 List<Train> trainList = [
-  Train('123', 'Station A', 'Station B'),
+  Train('123', 'Mulund Depot', 'CSMT Gate'),
   Train('456', 'Station X', 'Station Y'),
   Train('789', 'Station P', 'Station Q'),
 ];
