@@ -25,7 +25,7 @@ class ProfileView extends StatelessWidget {
                   Container(
                     child: Row(
                       // crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           child: Column(
@@ -54,19 +54,13 @@ class ProfileView extends StatelessWidget {
                           ),
                         ),//->Naming and rank Container
                         Container(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(30.0),
-                                decoration: BoxDecoration(
-                                  color: Colors.grey.shade300,
-                                  borderRadius: BorderRadius.circular(60),
-                                ),
-                                child: Icon(FluentSystemIcons.ic_fluent_person_accounts_filled),
-                              ),
-                            ],
+                          padding: const EdgeInsets.only(top: 0,bottom: 0),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Container(
+                              width: 96,
+                              child: Image(image: AssetImage('lib/assets/undraw_Profile_pic_re_iwgo.png')),
+                            ),
                           ),
                         ),//->Profile Photo Container
                       ],

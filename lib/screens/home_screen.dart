@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SizedBox(height: 10),
             Text(
-              'John Doe', // Replace with the user's name
+              'Aditi M', // Replace with the user's name
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 18,
