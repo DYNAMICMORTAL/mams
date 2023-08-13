@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:video_player/video_player.dart';
 import 'home_screen.dart';
 import 'profile_view.dart';
+import '../chat/chat_overview.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class BottomBar extends StatefulWidget {
@@ -53,7 +54,7 @@ class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    TrainSearchContent(),
+    ChatOverview(),
     const Text("Tickets"),
     ProfileView(),
   ];
