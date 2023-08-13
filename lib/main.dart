@@ -1,3 +1,4 @@
+import 'package:booktickets/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/Button_bar.dart';
 import 'screens/profile_view.dart';
@@ -5,7 +6,6 @@ import 'inkwell_pages/settings_view.dart';
 import 'inkwell_pages/subscriptions_view.dart';
 import 'inkwell_pages/rewards_view.dart';
 import 'inkwell_pages/payforticket_view.dart';
-// import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +20,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       routes: {
         // '/': (context) => const ProfileView(),
+        '/home': (context) => const HomeScreen(),
+        '/profile': (context) => const ProfileView(),
         '/settings': (context) => const SettingsPage(),
         '/subscriptions': (context) => const SubscriptionsPage(),
         '/rewards': (context) => const RewardsPage(),

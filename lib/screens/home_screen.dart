@@ -74,28 +74,38 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleAvatar(
-              radius: 40,
-              backgroundImage: AssetImage('assets/avatar.png'), // Replace with your avatar image
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Aditi M', // Replace with the user's name
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/profile'); // Navigate to Profile screen
+              },
+              child: CircleAvatar(
+                radius: 40,
+                backgroundImage: AssetImage('lib/assets/undraw_Profile_pic_re_iwgo.png'),
               ),
             ),
             SizedBox(height: 10),
-            
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/profile'); // Navigate to Profile screen
+              },
+              child: Text(
+                'Aditi M',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
           ],
         ),
       ),
+
       ListTile(
         leading: Icon(FluentSystemIcons.ic_fluent_home_regular),
         title: Text('Home'),
         onTap: () {
-          // Add navigation logic to redirect to the home section
+          Navigator.pushNamed(context, '/home');
         },
       ),
       ListTile(
