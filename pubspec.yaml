@@ -61,6 +61,7 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
+    - lib/assets/
     - lib/assets/nike_animation.mp4
     - lib/assets/MAMS.mp4
   fonts:

@@ -6,6 +6,7 @@ import '../utils/app_styles.dart';
 import 'package:gap/gap.dart';
 import 'train_data.dart';// Import the train data
 import 'ads_view.dart';
+import 'ads2_view.dart';
 import 'bus_pass_view.dart';
 
 
@@ -121,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     children: [
                       Ads(),
-                      Ads(),
+                      Ads2(),
                     ],
                   ),
                 )

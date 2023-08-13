@@ -21,10 +21,10 @@ class Ads extends StatelessWidget {
             Container(
               height: 170,
               decoration: const BoxDecoration(
-                color: Colors.deepOrange,
+                color: Color(0xFF6C63FF),
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(20),bottomLeft: Radius.circular(20), topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
               ),
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.only(right: 16, top: 16, bottom: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -33,22 +33,23 @@ class Ads extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(left: 10, right: 10),
-                        child: Transform.rotate(angle: math.pi/4, child: SizedBox(
-                          width: 110,
-                          height: 110,
+                        // padding: const EdgeInsets.only( right: 10),
+                        child: SizedBox(
+                          width: 135,
+                          height: 135,
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              // color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
                             ),
+                            child: const Image(image: AssetImage('lib/assets/loveit_heart.png'),),
                             // child: Column(
                             //   children: [
                             //     // Text("h")
                             //   ],
                             // ),
                           ),
-                        ),),
+                        ),
                       )
                     ],
                   ),
