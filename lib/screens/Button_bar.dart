@@ -182,7 +182,7 @@
 
 
 
-
+import 'package:booktickets/screens/playground.dart';
 import 'package:booktickets/screens/train_data.dart';
 import 'package:flutter/material.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -238,7 +238,7 @@ class _BottomBarState extends State<BottomBar> {
   static final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     TrainSearchContent(),
-    const Text("Tickets"),
+    Playground(),
     ProfileView(),
   ];
 

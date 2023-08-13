@@ -1,0 +1,126 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+class Playground extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Bus Management App with Weather Conditions',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  final List<Marker> markers = [];
+  final MapController mapController = MapController();
+
+  final conditionMap = {
+    200: "Thunderstorm with Light Rain",
+    // ... Define other conditions ...
+  };
+
+  final weatherIcons = {
+    "Clear": "☀️",
+    // ... Define other icons ...
+  };
+
+  @override
+  void initState() {
+    super.initState();
+    addMarkers();
+  }
+
+  Future<void> addMarkers() async {
+    final api_key = 'API key'; // Replace with your actual API key
+    final busStations = <Map<String, dynamic>>[
+      {"latitude": 19.0760, "longitude": 72.8777, "name": "Colaba"},
+      // Add more bus stations here
+    ];
+
+    for (final station in busStations) {
+      final weatherData =
+          await getWeatherData(station['latitude'], station['longitude'], api_key);
+      final weatherConditionId = weatherData['weather'][0]['id'];
+      final weatherCondition = getWeatherCondition(weatherConditionId);
+      final weatherIcon = getWeatherIcon(weatherCondition.split(' ')[0]);
+
+      final marker = Marker(
+        width: 40.0,
+        height: 40.0,
+        point: LatLng(
+          station['latitude'] as double, // Cast to double here
+          station['longitude'] as double, // Cast to double here
+        ),
+        builder: (ctx) => Container(
+          child: Column(
+            children: [
+              Text(station['name']),
+              Text(weatherCondition),
+              Text(weatherIcon),
+            ],
+          ),
+        ),
+      );
+
+      setState(() {
+        markers.add(marker);
+      });
+    }
+  }
+
+  Future<Map<String, dynamic>> getWeatherData(
+      double lat, double lon, String apiKey) async {
+    final url =
+        'http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$apiKey&units=metric';
+    final response = await http.get(Uri.parse(url));
+    final data = json.decode(response.body);
+    return data;
+  }
+
+  String getWeatherCondition(int conditionId) {
+    return conditionMap[conditionId] ?? "Unknown Condition";
+  }
+
+  String getWeatherIcon(String condition) {
+    return weatherIcons[condition] ?? "❓";
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Bus Management App with Weather Conditions'),
+      ),
+      body: FlutterMap(
+        mapController: mapController,
+        options: MapOptions(
+          center: LatLng(19.0760, 72.8777),
+          zoom: 12.0,
+        ),
+       layer: [
+          TileLayer(
+            urlTemplate: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            subdomains: ['a', 'b', 'c'],
+          ),
+          MarkerLayer(markers: markers),
+        ],
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(Playground());
+}
