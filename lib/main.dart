@@ -1,3 +1,6 @@
+import 'package:booktickets/chat/chat_overview.dart';
+import 'package:booktickets/inkwell_pages/123Down_view.dart';
+import 'package:booktickets/inkwell_pages/123Up_view.dart';
 import 'package:booktickets/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/Button_bar.dart';
@@ -21,6 +24,9 @@ class MyApp extends StatelessWidget {
       routes: {
         // '/': (context) => const ProfileView(),
         '/home': (context) => const HomeScreen(),
+        '/123Up': (context) => const Up123(),
+        '/123Down': (context) => const Down123(),
+        '/chatoverview': (context) => const ChatOverview(),
         '/profile': (context) => const ProfileView(),
         '/settings': (context) => const SettingsPage(),
         '/subscriptions': (context) => const SubscriptionsPage(),

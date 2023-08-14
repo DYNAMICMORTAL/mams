@@ -97,12 +97,17 @@ class _ChatOverviewState extends State<ChatOverview> {
                           Icon(FluentSystemIcons.ic_fluent_chevron_down_circle_filled),
                           const Gap(10),
                           Center(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("123", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
-                                Text("Mulund Depot -> CSMT Gate", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54)),
-                              ],
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/123Down');
+                              },
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("123", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
+                                  Text("Mulund Depot -> CSMT Gate", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54)),
+                                ],
+                              ),
                             ),
                           ), // -> Route Container
                         ],
@@ -112,12 +117,17 @@ class _ChatOverviewState extends State<ChatOverview> {
                         children: [
                           Icon(FluentSystemIcons.ic_fluent_chevron_up_filled),
                           const Gap(10),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("123", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
-                              Text("CSMT Gate -> Mulund Depot", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54),),
-                            ],
+                          InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(context, '/123Up');
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("123", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
+                                Text("CSMT Gate -> Mulund Depot", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54),),
+                              ],
+                            ),
                           ),
                         ],
                       ), // -> Iteration 2 row
