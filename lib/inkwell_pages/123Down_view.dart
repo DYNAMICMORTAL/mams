@@ -102,8 +102,8 @@ class Down123 extends StatelessWidget {
                       },
                       child: Column(
                         children: [
-                          Icon(FluentSystemIcons.ic_fluent_arrow_left_filled),
-                          Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                          Icon(FluentSystemIcons.ic_fluent_arrow_left_filled, size: 20,),
+                          Icon(FluentSystemIcons.ic_fluent_arrow_right_filled,size: 20,),
                         ],
                       ),
                     ),
