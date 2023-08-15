@@ -6,6 +6,7 @@ import 'package:video_player/video_player.dart';
 import 'home_screen.dart';
 import 'profile_view.dart';
 import '../chat/chat_overview.dart';
+import 'package:booktickets/maps/map_overview.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class BottomBar extends StatefulWidget {
@@ -55,7 +56,7 @@ class _BottomBarState extends State<BottomBar> {
   static final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     ChatOverview(),
-    const Text("Tickets"),
+    MapsOverview(),
     ProfileView(),
   ];
 
