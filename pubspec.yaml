@@ -37,10 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   fluentui_icons: ^1.0.0
   gap: ^3.0.1
-  google_fonts: ^5.1.0
   video_player: ^2.7.0
   cached_network_image: ^3.2.3
   google_maps_flutter: ^2.4.0
+  flutter_polyline_points: ^1.0.0
 #  google_maps_flutter: ^2.4.0
 #  flutter_search_bar: ^2.0.0
 
