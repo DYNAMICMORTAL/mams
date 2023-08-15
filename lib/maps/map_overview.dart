@@ -61,8 +61,10 @@
 
 
 
+import 'package:booktickets/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import '../utils/app_styles.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -102,8 +104,28 @@ class _MapsOverviewState extends State<MapsOverview> {
   late GoogleMapController _mapController;
   Map<String, Marker> _markers = {};
 
+
+
+  List<LatLng> polylineCoordinates = [];
+
+  void getPolyPoints() async {
+    PolylinePoints polylinePoints = PolylinePoints();
+
+    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(google_api_key,PointLatLng(currentLocation.latitude, currentLocation.longitude),
+      PointLatLng(destination.latitude, destination.longitude),);
+
+    if(result.points.isNotEmpty) {
+      result.points.forEach((PointLatLng point)=>polylineCoordinates.add(LatLng(point.latitude, point.longitude),
+      ),);
+      setState(() {});
+    }
+  }
+
+
+
   @override
   void initState() {
+    getPolyPoints();
     super.initState();
     _markers['currentLocation'] = createMarker('Current Location', currentLocation);
     _markers['mulundBMCGarden'] = createMarker('Current Location', mulundBMCGarden);
@@ -139,6 +161,14 @@ class _MapsOverviewState extends State<MapsOverview> {
           target: currentLocation,
           zoom: 14,
         ),
+        polylines: {
+          Polyline(
+            polylineId: PolylineId("route"),
+            points: polylineCoordinates,
+            color: Colors.purple,
+            width: 6,
+          ),
+        },
         onMapCreated: (controller) {
           _mapController = controller;
         },
