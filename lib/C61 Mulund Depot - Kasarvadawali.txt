@@ -1,0 +1,26 @@
+C61 Mulund Depot -> Kasarvadawali
+
+Mulund Depot - 19.175763, 72.946449
+Mulund BMC Garden - 19.175843, 72.948737
+Maharshi Arvind Chowk - 19.175624, 72.952598
+Mulund Railway Station West - 19.173471, 72.956388
+Dhanvantari Hospital - 19.176150, 72.953423
+Mulund Sonapur - 19.178235, 72.953791
+Municipal School - 19.181129, 72.953865
+Mulund West Check Naka Bus Station - 19.182949, 72.953571
+Maharana Pratap Chowk Mulund - 19.184296, 72.953939
+Wagle Estate Post Office - 19.185961, 72.958195
+Marathon Chowk or Teen Haath Naka - 19.189187, 72.963316
+Louis Wadi - 19.196098, 72.962375
+Nitin Company Junction - 19.198950, 72.962990
+Cadbury Junction Thane - 19.204042, 72.968038
+Majiwadi - 19.214517, 72.977544
+Kapur Bawadi - 19.221128, 72.977720
+Tatwadnyan Vidyapith - 19.223580, 72.977402
+Manpada - 19.235108, 72.975991
+Brahmand Azad Nagar - 19.241428, 72.975667
+Patli Pada - 19.245829, 72.975690
+Waghbil - 19.253043, 72.972173
+Muchhala College - 19.263881, 72.967873
+Anand Nagar - 19.264575, 72.967602
+Kasarvadavali Naka - 19.269489, 72.965364

@@ -226,6 +226,36 @@ class MapsOverview extends StatefulWidget {
 class _MapsOverviewState extends State<MapsOverview> {
   late GoogleMapController _mapController;
   Map<String, Marker> _markers = {};
+
+  List<String> _markerNames = [
+    'Mulund Depot',
+    'Mulund Bus Depot',
+    'Maharshi Arvind Chowk',
+    'Mulund Railway Station West',
+    'Dhanvantari Hospital',
+    'Mulund Sonapur',
+    'Municipal School',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+    'Mulund Bus Depot',
+
+  ];
+
+
   List<LatLng> _markerLocations = [
     LatLng(19.175763, 72.946449),
     LatLng(19.175843, 72.948737),
@@ -251,7 +281,7 @@ class _MapsOverviewState extends State<MapsOverview> {
     LatLng(19.253043, 72.972173),
     LatLng(19.263881, 72.967873),
     LatLng(19.264575, 72.967602),
-  // ------------------
+    // ------------------
     LatLng(19.269489, 72.965364),
   ];
   List<LatLng> _polylineCoordinates = [];
@@ -266,7 +296,8 @@ class _MapsOverviewState extends State<MapsOverview> {
   void _addMarkers() {
     for (int i = 0; i < _markerLocations.length; i++) {
       String markerId = 'Marker$i';
-      _markers[markerId] = _createMarker(markerId, _markerLocations[i]);
+      String markerName = _markerNames[i];
+      _markers[markerId] = _createMarker(markerId, _markerLocations[i],  markerName);
     }
   }
 
@@ -287,6 +318,10 @@ class _MapsOverviewState extends State<MapsOverview> {
       }
     }
     setState(() {});
+    BitmapDescriptor markerbitmap = await BitmapDescriptor.fromAssetImage(
+      ImageConfiguration(),
+      "../assets/stopMarker.png",
+    );
   }
 
   @override
@@ -313,7 +348,8 @@ class _MapsOverviewState extends State<MapsOverview> {
     );
   }
 
-  Marker _createMarker(String id, LatLng location) {
+
+  Marker _createMarker(String id, LatLng location, String markerName) {
     return Marker(
       markerId: MarkerId(id),
       position: location,
@@ -323,4 +359,5 @@ class _MapsOverviewState extends State<MapsOverview> {
       ),
     );
   }
+
 }
