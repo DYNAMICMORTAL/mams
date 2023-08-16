@@ -10,7 +10,14 @@ class Ads extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return GestureDetector(
+      onTap: () {
+        // Navigate to the "Welcome Pass" page
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => WelcomePassPage(),
+        ));
+      },
+      child: SizedBox(
       width: MediaQuery.of(context).size.width*0.85,
       height: 210,
       child: Container(
@@ -85,7 +92,50 @@ class Ads extends StatelessWidget {
           ],
         ),
       ),
+    ),
+    
+  
+    );}
+}
+
+
+
+class WelcomePassPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Welcome Pass"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 30),
+            Text(
+              "Welcome Pass",
+              style: Styles.headlineStyle2.copyWith(color: Styles.primaryColor),
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Get Welcome Pass at just ₹9 and enjoy 5 bus trips up to ₹25 each.",
+              style: Styles.textStyle,
+            ),
+            SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: () {
+                // Handle the payment logic here
+              },
+              style: ElevatedButton.styleFrom(primary: Styles.primaryColor),
+              child: Text(
+                "Make Payment",
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
-
