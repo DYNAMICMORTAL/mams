@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../payments/payforticket_view.dart';
 import '../utils/app_styles.dart';
 
 class BuyPass extends StatelessWidget {
@@ -82,10 +83,14 @@ class BuyPass extends StatelessWidget {
                         Container(
                           child: ElevatedButton(
                             onPressed: () {
-                              // Handle Pay for ticket button press
-                                Navigator.pushNamed(context, '/payforticket');// Navigate to SettingsPage
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PayForTicketPage(),
+                    ),
+                  );
+                },
 
-                            },
                             style: ElevatedButton.styleFrom(
                               primary: Colors.white, // Background color
                               shape: RoundedRectangleBorder(
