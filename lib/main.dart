@@ -9,6 +9,7 @@ import 'inkwell_pages/settings_view.dart';
 import 'inkwell_pages/subscriptions_view.dart';
 import 'inkwell_pages/rewards_view.dart';
 import 'inkwell_pages/payforticket_view.dart';
+import 'maps/scheduled_bus_overview.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/123Up': (context) => const Up123(),
         '/123Down': (context) => const Down123(),
         '/chatoverview': (context) => const ChatOverview(),
+        '/scheduledbus': (context) => const ScheduledBuses(),
         '/profile': (context) => const ProfileView(),
         '/settings': (context) => const SettingsPage(),
         '/subscriptions': (context) => const SubscriptionsPage(),

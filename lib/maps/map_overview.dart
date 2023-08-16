@@ -430,10 +430,13 @@
 
 
 
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+import 'package:gap/gap.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:custom_info_window/custom_info_window.dart';
+import '../utils/app_styles.dart';
 
 const String google_api_key = 'AIzaSyD7Mxkn50FGLO9ZBeK8bnKQG2p948-4A6U';
 
@@ -555,7 +558,7 @@ class _MapsOverviewState extends State<MapsOverview> {
               Polyline(
                 polylineId: const PolylineId("route"),
                 points: _polylineCoordinates,
-                color: Colors.purple,
+                color: Color(0xFFFF0BDD5),
                 width: 6,
               ),
             },
@@ -571,7 +574,7 @@ class _MapsOverviewState extends State<MapsOverview> {
             },
             markers: _markers.values.toSet(),
           ),
-          CustomInfoWindow(controller: _customInfoWindowController, height: 100, width: 175),
+          CustomInfoWindow(controller: _customInfoWindowController, height: 120, width: 250),
         ],
       ),
     );
@@ -584,7 +587,7 @@ class _MapsOverviewState extends State<MapsOverview> {
       onTap: () {
         _customInfoWindowController.addInfoWindow!(
           Container(
-            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             height: 100,
             width: 200,
             decoration: BoxDecoration(
@@ -592,9 +595,44 @@ class _MapsOverviewState extends State<MapsOverview> {
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
             child: Center(
-              child: Text(
-                markerName,
-                style: TextStyle(fontSize: 16),
+              child: SizedBox(
+                width: 250, // Adjust this width to your preference
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      markerName,
+                      style: Styles.headlineStyle2.copyWith(fontSize: 15),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    const Gap(8),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 1.5,vertical: 2.5),
+                      decoration: BoxDecoration(
+                        color: Color(0xFFFE4E4E6),
+                      ),
+                      child: Column(
+                        children: [
+                          Text("New Bus", style: Styles.headlineStyle4.copyWith(color: Colors.black, fontSize: 12),),
+                        ],
+                      ),
+                    ),
+                    const Gap(8),
+                    Row(
+                      children: [
+                        Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+                        const Gap(8),
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/scheduledbus');
+                          },
+                            child: Text("Scheduled Buses", style: Styles.headlineStyle4.copyWith(color: Color(0xFFFB8B8B8), fontSize: 14),),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -603,4 +641,5 @@ class _MapsOverviewState extends State<MapsOverview> {
       },
     );
   }
+
 }
