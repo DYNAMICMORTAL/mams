@@ -209,12 +209,233 @@
 
 
 
+//
+// import 'dart:core';
+// import 'package:flutter/material.dart';
+// import 'package:flutter/services.dart';
+// import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+// import 'package:gap/gap.dart';
+// import 'package:google_maps_flutter/google_maps_flutter.dart';
+// import 'package:custom_info_window/custom_info_window.dart';
+// // import 'marker_overview.dart';
+//
+// const String google_api_key = 'AIzaSyD7Mxkn50FGLO9ZBeK8bnKQG2p948-4A6U'; // Replace with your Google Maps API key
+//
+// class MapsOverview extends StatefulWidget {
+//   const MapsOverview({Key? key}) : super(key: key);
+//
+//   @override
+//   State<MapsOverview> createState() => _MapsOverviewState();
+// }
+//
+// class _MapsOverviewState extends State<MapsOverview> {
+//   late GoogleMapController _mapController;
+//   Map<String, Marker> _markers = {};
+//
+//
+//   CustomInfoWindowController _customInfoWindowController = CustomInfoWindowController();
+//   Uint8List? markerBytes;
+//
+//   List<String> _markerNames = [
+//     'MULUND BUS DEPOT',
+//     'Mulund BMC GARDEN',
+//     'MAHARSHI ARVIND CHOWK',
+//     'MULUND RAILWAY STATION WEST',
+//     'DHANVANTARI HOSPITAL',
+//     'MULUND SONAPUR',
+//     'MUNICIPAL SCHOOL',
+//     'MULUND CHECKNAKA BUS STATION',
+//     'MAHARANA PRATAP CHOWK MULUND',
+//     'WAGLE ESTATE POST OFFICE',
+//     'MARATHON CHOWK TEEN HAATH NAKA',
+//     'LOUIS WADI',
+//     'NITIN COMPANY JUNCTION',
+//     'CADBURY JUNCTION',
+//     'MAJIWADA',
+//     'KAPUR BAWADI',
+//     'TATWADNYAN VIDYAPITH',
+//     'MANPADA',
+//     'BRAHMAND AZAD NAGAR',
+//     'PATLI PADA',
+//     'WAGHBIL',
+//     'MUCHHALA COLLEGE',
+//     'ANAND NAGAR OR SAINATH NAGAR',
+//     'KASARVADAWALI NAKA',
+//   ];
+//
+//
+//   List<LatLng> _markerLocations = [
+//     LatLng(19.175763, 72.946449),
+//     LatLng(19.175843, 72.948737),
+//     LatLng(19.175624, 72.952598),
+// // --------------------
+//     LatLng(19.173471, 72.956388),
+//     LatLng(19.176150, 72.953423),
+//     LatLng(19.178235, 72.953791),
+//     LatLng(19.181129, 72.953865),
+//     LatLng(19.182949, 72.953571),
+//     LatLng(19.184296, 72.953939),
+//     LatLng(19.185961, 72.958195),
+//     LatLng(19.189187, 72.963316),
+//     LatLng(19.196098, 72.962375),
+//     LatLng(19.198950, 72.962990),
+//     LatLng(19.204042, 72.968038),
+//     LatLng(19.214517, 72.977544),
+//     LatLng(19.221128, 72.977720),
+//     LatLng(19.223580, 72.977402),
+//     LatLng(19.235108, 72.975991),
+//     LatLng(19.241428, 72.975667),
+//     LatLng(19.245829, 72.975690),
+//     LatLng(19.253043, 72.972173),
+//     LatLng(19.263881, 72.967873),
+//     LatLng(19.264575, 72.967602),
+//     // ------------------
+//     LatLng(19.269489, 72.965364),
+//   ];
+//   List<LatLng> _polylineCoordinates = [];
+//
+//   @override
+//   void initState() {
+//     super.initState();
+//     _addMarkers();
+//     _getPolylinePoints();
+//     // _loadMarkerByBytes();
+//   }
+//
+//   void _addMarkers() {
+//     for (int i = 0; i < _markerLocations.length; i++) {
+//       String markerId = 'Marker$i';
+//       String markerName = _markerNames[i];
+//       _markers[markerId] = _createMarker(markerId, _markerLocations[i],  markerName);
+//
+//     }
+//   }
+//
+//   // Future<void> _loadMarkerByBytes() async {
+//   //   var url = 'https://cdn.discordapp.com/attachments/753091267675815948/1141222863924379758/stopMarker.png';
+//   //   markerBytes = (await NetworkAssetBundle(Uri.parse(url)).load(url)).buffer.asUint8List();
+//   // }
+//
+//   void _getPolylinePoints() async {
+//     PolylinePoints polylinePoints = PolylinePoints();
+//
+//     for (int i = 0; i < _markerLocations.length - 1; i++) {
+//       PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+//         google_api_key,
+//         PointLatLng(_markerLocations[i].latitude, _markerLocations[i].longitude),
+//         PointLatLng(_markerLocations[i + 1].latitude, _markerLocations[i + 1].longitude),
+//       );
+//
+//       if (result.points.isNotEmpty) {
+//         result.points.forEach((PointLatLng point) {
+//           _polylineCoordinates.add(LatLng(point.latitude, point.longitude));
+//         });
+//       }
+//     }
+//     setState(() {});
+//     BitmapDescriptor markerbitmap = await BitmapDescriptor.fromAssetImage(
+//       ImageConfiguration(),
+//       "../assets/stopMarker.png",
+//     );
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Stack(
+//         children: [
+//           GoogleMap(
+//           initialCameraPosition: const CameraPosition(
+//             target: LatLng(19.175763, 72.946449), // Set an initial location
+//             zoom: 14,
+//           ),
+//           polylines: {
+//             Polyline(
+//               polylineId: const PolylineId("route"),
+//               points: _polylineCoordinates,
+//               color: Colors.purple,
+//               width: 6,
+//             ),
+//           },
+//             onTap: (position) {
+//               _customInfoWindowController.hideInfoWindow!();
+//             },
+//           onMapCreated: (GoogleMapController controller) {
+//             _mapController = controller;
+//             _customInfoWindowController.googleMapController = controller;
+//           },
+//           markers: _markers.values.toSet(),
+//         ),
+//           CustomInfoWindow(controller: _customInfoWindowController,height: 100, width: 175,)
+//         ],
+//       ),
+//
+//     );
+//   }
+//
+//
+//   Marker _createMarker(String id, LatLng location, String markerName) {
+//     return Marker(
+//       markerId: MarkerId(id),
+//       position: location,
+//       onTap: () {
+//         _customInfoWindowController.addInfoWindow!(Container(
+//           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+//           height: 200,
+//           width: 400,
+//           decoration: BoxDecoration(
+//             color: Colors.white,
+//             borderRadius: BorderRadius.all(Radius.circular(10)),
+//           ),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.start,
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               Container(
+//                 child: Column(
+//                   children: [
+//                     Text("Add Bus station name here"),
+//                     Text("Hey"),
+//                   ],
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ), location);
+//       },
+//
+//     );
+//   }
+//
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:custom_info_window/custom_info_window.dart';
 
-const String google_api_key = 'AIzaSyD7Mxkn50FGLO9ZBeK8bnKQG2p948-4A6U'; // Replace with your Google Maps API key
+const String google_api_key = 'AIzaSyD7Mxkn50FGLO9ZBeK8bnKQG2p948-4A6U';
 
 class MapsOverview extends StatefulWidget {
   const MapsOverview({Key? key}) : super(key: key);
@@ -227,36 +448,36 @@ class _MapsOverviewState extends State<MapsOverview> {
   late GoogleMapController _mapController;
   Map<String, Marker> _markers = {};
 
-  List<String> _markerNames = [
-    'Mulund Depot',
-    'Mulund Bus Depot',
-    'Maharshi Arvind Chowk',
-    'Mulund Railway Station West',
-    'Dhanvantari Hospital',
-    'Mulund Sonapur',
-    'Municipal School',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
-    'Mulund Bus Depot',
+  CustomInfoWindowController _customInfoWindowController = CustomInfoWindowController();
 
+  final List<String> _markerNames = [
+    'MULUND BUS DEPOT',
+    'Mulund BMC GARDEN',
+    'MAHARSHI ARVIND CHOWK',
+    'MULUND RAILWAY STATION WEST',
+    'DHANVANTARI HOSPITAL',
+    'MULUND SONAPUR',
+    'MUNICIPAL SCHOOL',
+    'MULUND CHECKNAKA BUS STATION',
+    'MAHARANA PRATAP CHOWK MULUND',
+    'WAGLE ESTATE POST OFFICE',
+    'MARATHON CHOWK TEEN HAATH NAKA',
+    'LOUIS WADI',
+    'NITIN COMPANY JUNCTION',
+    'CADBURY JUNCTION',
+    'MAJIWADA',
+    'KAPUR BAWADI',
+    'TATWADNYAN VIDYAPITH',
+    'MANPADA',
+    'BRAHMAND AZAD NAGAR',
+    'PATLI PADA',
+    'WAGHBIL',
+    'MUCHHALA COLLEGE',
+    'ANAND NAGAR OR SAINATH NAGAR',
+    'KASARVADAWALI NAKA',
   ];
 
-
-  List<LatLng> _markerLocations = [
+  final List<LatLng> _markerLocations = [
     LatLng(19.175763, 72.946449),
     LatLng(19.175843, 72.948737),
     LatLng(19.175624, 72.952598),
@@ -297,7 +518,7 @@ class _MapsOverviewState extends State<MapsOverview> {
     for (int i = 0; i < _markerLocations.length; i++) {
       String markerId = 'Marker$i';
       String markerName = _markerNames[i];
-      _markers[markerId] = _createMarker(markerId, _markerLocations[i],  markerName);
+      _markers[markerId] = _createMarker(markerId, _markerLocations[i], markerName);
     }
   }
 
@@ -318,46 +539,68 @@ class _MapsOverviewState extends State<MapsOverview> {
       }
     }
     setState(() {});
-    BitmapDescriptor markerbitmap = await BitmapDescriptor.fromAssetImage(
-      ImageConfiguration(),
-      "../assets/stopMarker.png",
-    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GoogleMap(
-        initialCameraPosition: const CameraPosition(
-          target: LatLng(19.175763, 72.946449), // Set an initial location
-          zoom: 14,
-        ),
-        polylines: {
-          Polyline(
-            polylineId: const PolylineId("route"),
-            points: _polylineCoordinates,
-            color: Colors.purple,
-            width: 6,
+      body: Stack(
+        children: [
+          GoogleMap(
+            initialCameraPosition: const CameraPosition(
+              target: LatLng(19.175763, 72.946449), // Set an initial location
+              zoom: 15,
+            ),
+            polylines: {
+              Polyline(
+                polylineId: const PolylineId("route"),
+                points: _polylineCoordinates,
+                color: Colors.purple,
+                width: 6,
+              ),
+            },
+            onTap: (position) {
+              _customInfoWindowController.hideInfoWindow!();
+            },
+            onMapCreated: (GoogleMapController controller) {
+              _mapController = controller;
+              _customInfoWindowController.googleMapController = controller;
+            },
+            onCameraMove: (position) {
+              _customInfoWindowController.onCameraMove!();
+            },
+            markers: _markers.values.toSet(),
           ),
-        },
-        onMapCreated: (controller) {
-          _mapController = controller;
-        },
-        markers: _markers.values.toSet(),
+          CustomInfoWindow(controller: _customInfoWindowController, height: 100, width: 175),
+        ],
       ),
     );
   }
-
 
   Marker _createMarker(String id, LatLng location, String markerName) {
     return Marker(
       markerId: MarkerId(id),
       position: location,
-      infoWindow: InfoWindow(
-        title: id,
-        snippet: 'Location: ${location.latitude}, ${location.longitude}',
-      ),
+      onTap: () {
+        _customInfoWindowController.addInfoWindow!(
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+            height: 100,
+            width: 200,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+            ),
+            child: Center(
+              child: Text(
+                markerName,
+                style: TextStyle(fontSize: 16),
+              ),
+            ),
+          ),
+          location,
+        );
+      },
     );
   }
-
 }
