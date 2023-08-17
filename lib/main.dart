@@ -8,7 +8,7 @@ import 'screens/profile_view.dart';
 import 'inkwell_pages/settings_view.dart';
 import 'inkwell_pages/subscriptions_view.dart';
 import 'inkwell_pages/rewards_view.dart';
-import 'inkwell_pages/payforticket_view.dart';
+import 'payments/payforticket_view.dart';
 import 'maps/scheduled_bus_overview.dart';
 
 void main() {
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         '/settings': (context) => const SettingsPage(),
         '/subscriptions': (context) => const SubscriptionsPage(),
         '/rewards': (context) => const RewardsPage(),
-        '/payforticket': (context) => const PayForTicket(),
+        '/payforticket': (context) => PayForTicketPage(),
       },
       theme: ThemeData(
         fontFamily: 'Poppins',
