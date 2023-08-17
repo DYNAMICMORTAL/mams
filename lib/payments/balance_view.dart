@@ -290,8 +290,8 @@ class UserDetailsPage extends StatelessWidget {
             ),
             const Gap(30),
             Container(
-              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 5),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              decoration: const BoxDecoration(
                 color: Color(0xFFFEAEAEA),
                 borderRadius: BorderRadius.all(Radius.circular(5))
               ),
@@ -304,6 +304,20 @@ class UserDetailsPage extends StatelessWidget {
                       Text("₹ 565", style: Styles.headlineStyle3,)
                     ],
                   ),
+                ],
+
+              ),
+            ),
+            const Gap(15),
+            Container(
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Text("Features: ", style: Styles.headlineStyle4.copyWith(fontSize: 17.5),),
+                    ],
+                  ),
+
                 ],
               ),
             ),
