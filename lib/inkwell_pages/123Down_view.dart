@@ -111,6 +111,8 @@ class Down123 extends StatefulWidget {
 
 class _Down123State extends State<Down123> {
   double _containerHeight = 0.5;
+  bool _showDepotContainer = false;
+  bool _showRailwayStationContainer = false;
 
   @override
   Widget build(BuildContext context) {
@@ -141,42 +143,101 @@ class _Down123State extends State<Down123> {
                       Row(
                         children: [
                           Expanded(
-                              child: Text("123 - Mulund Depot -> Kasarvadawli", style: Styles.headlineStyle2.copyWith(fontSize: 18), overflow: TextOverflow.ellipsis,)),
-                        const Gap(10),
-                        ElevatedButton(
+                            child: Text(
+                              "123 - Mulund Depot -> Kasarvadawli",
+                              style: Styles.headlineStyle2.copyWith(fontSize: 18),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          const Gap(10),
+                          ElevatedButton(
                             onPressed: () {
                               Navigator.pushNamed(context, '/chat'); // Replace with your route
                             },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            )
-
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.black,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                            child: Text(
+                              "Chat",
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
-                          child: Text("Chat", style: TextStyle(color: Colors.white),),),
                         ],
                       ),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Column(crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Mulund Depot"),
-                              Container(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Arriving in"),
-                                    Row(
+                          Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _showDepotContainer = !_showDepotContainer;
+                                    });
+                                  },
+                                  child: Text(
+                                    "Mulund Railway Station West", style: Styles.headlineStyle3,
+                                  ),
+                                ),
+                                Visibility(
+                                  visible: _showDepotContainer,
+                                  child: Container(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
-                                        Text("2 Minutes"),
+                                        Text("Arriving in"),
+                                        Row(
+                                          children: [
+                                            Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+                                            const Spacer(),
+                                            Text("2 Minutes"),
+                                          ],
+                                        ),
                                       ],
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
+                          ),
+                          Container(
+                            child: Column(
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _showRailwayStationContainer = !_showRailwayStationContainer;
+                                    });
+                                  },
+                                  child: Text(
+                                    "Mulund Depot", style: Styles.headlineStyle3,
+                                  ),
+                                ),
+                                Visibility(
+                                  visible: _showRailwayStationContainer,
+                                  child: Container(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text("Arriving in"),
+                                        Row(
+                                          children: [
+                                            Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+                                            const Spacer(),
+                                            Text("2 Minutes"),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -191,3 +252,5 @@ class _Down123State extends State<Down123> {
     );
   }
 }
+
+
