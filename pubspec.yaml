@@ -43,6 +43,7 @@ dependencies:
   flutter_polyline_points: ^1.0.0
   custom_info_window: ^1.0.1
   shared_preferences: ^2.2.0
+  flip_card: ^0.7.0
 #  google_maps_flutter: ^2.4.0
 #  flutter_search_bar: ^2.0.0
 
@@ -66,6 +67,8 @@ flutter:
   assets:
     - lib/assets/
     - lib/assets/stopMarker.png
+    - lib/assets/frontCard.png
+    - lib/assets/rearCard.png
     - lib/assets/nike_animation.mp4
     - lib/assets/MAMS.mp4
   fonts:
