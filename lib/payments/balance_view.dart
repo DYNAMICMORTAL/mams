@@ -144,6 +144,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';// Import for inputFormatters
+import 'package:gap/gap.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../utils/app_styles.dart';
 import 'package:flip_card/flip_card.dart';
@@ -279,10 +280,30 @@ class UserDetailsPage extends StatelessWidget {
                 ],
               ),
             ),
+            const Gap(15),
+            Row(
+              children: [
+                InkWell(
+                  child: Text("Can I've a physical card?", style: Styles.headlineStyle5.copyWith(fontSize: 10, color: Colors.purple),),
+                ),
+              ],
+            ),
+            const Gap(30),
             Container(
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 5),
+              decoration: BoxDecoration(
+                color: Color(0xFFFEAEAEA),
+                borderRadius: BorderRadius.all(Radius.circular(5))
+              ),
               child: Column(
                 children: [
-                  Row(),
+                  Row(
+                    children: [
+                      Text("Balance: ", style: Styles.headlineStyle3,),
+                      const Spacer(),
+                      Text("₹ 565", style: Styles.headlineStyle3,)
+                    ],
+                  ),
                 ],
               ),
             ),
