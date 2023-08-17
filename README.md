@@ -305,9 +305,8 @@ The MAMS App is designed to provide a seamless and convenient booking experience
 
 For any inquiries, feedback, or assistance, please reach out to our customer support team:
 
-- Email: support@mamsapp.com
-- Phone: +1 (123) 456-7890
-- Chat: Available within the app
+- Email: mihiramin2004@gmail.com/ ombhojane05@gmail.com
+- Chat: You can use the Discussions page as well.
 
 ---
 
