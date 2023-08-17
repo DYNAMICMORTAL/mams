@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../payments/payforticket_view.dart';
+import '../payments/balance_view.dart';
 import '../utils/app_styles.dart';
 
 class BuyPass extends StatelessWidget {
@@ -151,7 +152,12 @@ class BuyPass extends StatelessWidget {
                         Container(
                           child: ElevatedButton(
                             onPressed: () {
-                              // Handle Bus pass button press
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Balance(),
+                                ),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
 
