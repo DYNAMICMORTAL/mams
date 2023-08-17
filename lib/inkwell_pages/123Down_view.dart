@@ -96,8 +96,11 @@
 
 
 
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import '../maps/map_overview.dart';
+import '../utils/app_styles.dart';
 
 class Down123 extends StatefulWidget {
   const Down123({Key? key}) : super(key: key);
@@ -123,18 +126,60 @@ class _Down123State extends State<Down123> {
                 onVerticalDragUpdate: (details) {
                   setState(() {
                     _containerHeight -= details.delta.dy / MediaQuery.of(context).size.height;
-                    _containerHeight = _containerHeight.clamp(0.25, 0.5);
+                    _containerHeight = _containerHeight.clamp(0.25, 0.9);
                   });
                 },
                 child: Container(
                   height: MediaQuery.of(context).size.height * _containerHeight,
-                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
                   decoration: BoxDecoration(
-                    color: Colors.red,
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(topRight: Radius.circular(25), topLeft: Radius.circular(25)),
                   ),
                   child: Column(
                     children: [
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Text("123 - Mulund Depot -> Kasarvadawli", style: Styles.headlineStyle2.copyWith(fontSize: 18), overflow: TextOverflow.ellipsis,)),
+                        const Gap(10),
+                        ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/chat'); // Replace with your route
+                            },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            )
 
+                          ),
+                          child: Text("Chat", style: TextStyle(color: Colors.white),),),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Column(crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Mulund Depot"),
+                              Container(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("Arriving in"),
+                                    Row(
+                                      children: [
+                                        Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+                                        Text("2 Minutes"),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
