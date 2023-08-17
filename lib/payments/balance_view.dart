@@ -146,6 +146,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';// Import for inputFormatters
 import 'package:shared_preferences/shared_preferences.dart';
 import '../utils/app_styles.dart';
+import 'package:flip_card/flip_card.dart';
 
 class Balance extends StatelessWidget {
   const Balance({Key? key}) : super(key: key);
@@ -237,11 +238,56 @@ class UserDetailsPage extends StatelessWidget {
     // Replace this with the user details display
     return Scaffold(
       appBar: AppBar(
-        title: Text("User Details"),
+        title: Text("MAMS Pay"),
       ),
-      body: Center(
-        child: Text("User's Balance: \$1000"), // Example user detail
-        // Add more user details here if needed
+      body: Container(
+        padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
+        child: Column(
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              height: 200,
+              // width: MediaQuery.of(context).size.width*0.85,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  FlipCard(
+                    fill: Fill.fillBack,
+                    direction: FlipDirection.HORIZONTAL,
+                    side: CardSide.FRONT,
+                    front: Container(
+                      height: 200,
+                      decoration: BoxDecoration(
+                        // color: Colors.purple,
+                        image: DecorationImage(
+                          image: AssetImage("lib/assets/frontCard.png"),
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(13)),
+                      ),
+                    ),
+                    back: Container(
+                      height: 200,
+                      decoration: BoxDecoration(
+                        // color: Colors.purple,
+                        image: DecorationImage(
+                          image: AssetImage("lib/assets/rearCard.png"),
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(13)),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              child: Column(
+                children: [
+                  Row(),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
