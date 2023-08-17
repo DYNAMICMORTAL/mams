@@ -141,6 +141,7 @@
 
 
 
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';// Import for inputFormatters
@@ -310,12 +311,40 @@ class UserDetailsPage extends StatelessWidget {
             ),
             const Gap(15),
             Container(
+              padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 10),
+              decoration: BoxDecoration(
+                color: Color(0xFFFF5F5F5),
+              ),
               child: Column(
                 children: [
                   Row(
                     children: [
+                      const Gap(5),
                       Text("Features: ", style: Styles.headlineStyle4.copyWith(fontSize: 17.5),),
+                      const Gap(5),
                     ],
+                  ),
+                  Divider(
+                      color: Colors.black,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            const Spacer(),
+                            Icon(FluentSystemIcons.ic_fluent_wifi_1_filled, size: 48, color: Color(0xFFF690048),),
+                            const Spacer(),
+                            Icon(FluentSystemIcons.ic_fluent_qr_code_filled, size: 48, color: Color(0xFFF604d7f),),
+                            const Spacer(),
+                            Icon(Icons.shopping_cart_rounded, size: 48,),
+                            const Spacer(),
+                          ],
+                        ),
+                        Row(),
+                      ],
+                    ),
                   ),
 
                 ],
