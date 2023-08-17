@@ -342,13 +342,38 @@ class UserDetailsPage extends StatelessWidget {
                             const Spacer(),
                           ],
                         ),
-                        Row(),
+                        Container(
+                          // width: 100,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Spacer(),
+                              Text("Wireless", style: Styles.headlineStyle5.copyWith(fontSize: 10),),
+                              const Spacer(),
+                              Text("Add/ Pay", style: Styles.headlineStyle5.copyWith(fontSize: 10), overflow: TextOverflow.ellipsis,),
+                              const Spacer(),
+                              Text("Rewards", style: Styles.headlineStyle5.copyWith(fontSize: 10),),
+                              const Spacer(),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
 
                 ],
               ),
+            ),
+            const Gap(15),
+            Row(
+              children: [
+                InkWell(
+                  onTap: () {
+
+                  },
+                  child: Text("Report a theft or lost card.", style: Styles.headlineStyle5.copyWith(fontSize: 10, color: Colors.purple),),
+                ),
+              ],
             ),
           ],
         ),
