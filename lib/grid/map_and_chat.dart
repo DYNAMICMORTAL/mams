@@ -4,14 +4,14 @@ import 'package:gap/gap.dart';
 import '../utils/app_styles.dart';
 import '../screens/train_data.dart';
 
-class ChatOverview extends StatefulWidget {
-  const ChatOverview({super.key});
+class GridOverView extends StatefulWidget {
+  const GridOverView({super.key});
 
   @override
   _ChatOverviewState createState() => _ChatOverviewState();
 }
 
-class _ChatOverviewState extends State<ChatOverview> {
+class _ChatOverviewState extends State<GridOverView> {
   TextEditingController _searchController = TextEditingController();
   List<Train> searchResults = [];
 
@@ -47,7 +47,7 @@ class _ChatOverviewState extends State<ChatOverview> {
                     child: Icon(FluentSystemIcons.ic_fluent_arrow_left_filled),
                   ),
                   const Gap(10),
-                  Text("Talk with Passengers", style: Styles.headlineStyle2),
+                  Text("Search for Bus", style: Styles.headlineStyle2),
                 ],
               ),
             ), // -> Main Search Row

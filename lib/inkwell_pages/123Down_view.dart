@@ -54,67 +54,94 @@
 
 
 
+//
+//
+// import 'package:flutter/material.dart';
+// import '../maps/map_overview.dart';
+//
+// class Down123 extends StatelessWidget {
+//   const Down123({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Column(
+//         children: [
+//           Expanded(
+//             child: MapsOverview(),
+//           ),
+//           Container(
+//             height: MediaQuery.of(context).size.height * 0.5,
+//             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+//             decoration: BoxDecoration(
+//               color: Colors.red,
+//             ),
+//             child: Column(
+//               children: [
+//                 Text("hey"),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+//
 
 
-import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:gap/gap.dart';
-import '../utils/app_styles.dart';
+
+
+
+
+
+
 import 'package:flutter/material.dart';
+import '../maps/map_overview.dart';
 
-class Down123 extends StatelessWidget {
-  const Down123({super.key});
+class Down123 extends StatefulWidget {
+  const Down123({Key? key}) : super(key: key);
+
+  @override
+  _Down123State createState() => _Down123State();
+}
+
+class _Down123State extends State<Down123> {
+  double _containerHeight = 0.5;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              padding: const EdgeInsets.only(top: 45),
-              width: MediaQuery.of(context).size.width * 0.85,
-              child: Row(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/chatoverview');
-                    },
-                    child: Icon(FluentSystemIcons.ic_fluent_arrow_left_filled),
-                  ),
-                  // const Spacer(),
-                  const Gap(15),
-                  Flexible(
-                    flex: 3, // Adjust the flex value to control the width
-                    child: Text(
-                      "123 Mulund Depot -> CSMT Gate",
-                      style: Styles.headlineStyle3.copyWith(fontWeight: FontWeight.w900,),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                  const Gap(15),
-                  // const Spacer(),
-                  Container(
-                    // height: 25,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/123Up');
-                      },
-                      child: Column(
-                        children: [
-                          Icon(FluentSystemIcons.ic_fluent_arrow_left_filled, size: 20,),
-                          Icon(FluentSystemIcons.ic_fluent_arrow_right_filled,size: 20,),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
+      body: Stack(
+        children: [
+          Column(
+            children: [
+              Expanded(
+                child: MapsOverview(),
               ),
-            ), //-> NavBar
-            Row(), //-> Message Container
-            Row(), //-> Textfield
-          ],
-        ),
+              GestureDetector(
+                onVerticalDragUpdate: (details) {
+                  setState(() {
+                    _containerHeight -= details.delta.dy / MediaQuery.of(context).size.height;
+                    _containerHeight = _containerHeight.clamp(0.25, 0.5);
+                  });
+                },
+                child: Container(
+                  height: MediaQuery.of(context).size.height * _containerHeight,
+                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                  ),
+                  child: Column(
+                    children: [
+
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

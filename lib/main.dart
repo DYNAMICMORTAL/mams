@@ -1,4 +1,4 @@
-import 'package:booktickets/chat/chat_overview.dart';
+import 'package:booktickets/grid/map_and_chat.dart';
 import 'package:booktickets/inkwell_pages/123Down_view.dart';
 import 'package:booktickets/inkwell_pages/123Up_view.dart';
 import 'package:booktickets/screens/home_screen.dart';
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const HomeScreen(),
         '/123Up': (context) => const Up123(),
         '/123Down': (context) => const Down123(),
-        '/chatoverview': (context) => const ChatOverview(),
+        '/chatoverview': (context) => const GridOverView(),
         '/scheduledbus': (context) => const ScheduledBuses(),
         '/profile': (context) => const ProfileView(),
         '/settings': (context) => const SettingsPage(),
