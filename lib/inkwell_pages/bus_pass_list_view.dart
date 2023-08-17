@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../utils/app_styles.dart';
+import 'welcome_offer_page.dart'; // Import the WelcomeOfferPage
 
 class BusPassList extends StatelessWidget {
   @override
@@ -7,32 +9,78 @@ class BusPassList extends StatelessWidget {
       appBar: AppBar(
         title: Text("Bus Pass"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.directions_bus,
-              size: 100,
-              color: Colors.blue,
-            ),
-            SizedBox(height: 20),
-            Text(
-              "Welcome to the Bus Pass Page!",
-              style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context); // Navigate back to the previous page
-              },
-              child: Text("Go Back"),
-            ),
-          ],
-        ),
+      body: ListView(
+        padding: EdgeInsets.all(16.0),
+        children: [
+          BusPassCard(
+            title: "Welcome Pass",
+            description: "Just starting at Rs 9",
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => WelcomeOfferPage(),
+                ),
+              );
+            },
+          ),
+          BusPassCard(
+            title: "Student Pass",
+            description: "Discounted prices for students",
+          ),
+          BusPassCard(
+            title: "Unlimited Rides Pass",
+            description: "Enjoy unlimited trips across the city",
+          ),
+          BusPassCard(
+            title: "Special Concession Pass",
+            description:
+                "Passes with concessions for specially abled, reporters, etc.",
+          ),
+        ],
       ),
     );
   }
 }
 
-// The rest of your existing code for the button and layout remains unchanged.
+class BusPassCard extends StatelessWidget {
+  final String title;
+  final String description;
+  final VoidCallback? onTap; // Add this
+
+  const BusPassCard({
+    required this.title,
+    required this.description,
+    this.onTap, // Add this
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      // Use GestureDetector to make the entire card clickable
+      onTap: onTap, // Use the provided onTap function
+      child: Card(
+        elevation: 4,
+        margin: EdgeInsets.only(bottom: 16.0),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style:
+                    Styles.headlineStyle2.copyWith(color: Styles.primaryColor),
+              ),
+              SizedBox(height: 8.0),
+              Text(
+                description,
+                style: Styles.textStyle,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
