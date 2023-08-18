@@ -172,20 +172,22 @@ class _Down123State extends State<Down123> {
                         children: [
                           Container(
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _showDepotContainer = !_showDepotContainer;
+                                      _showRailwayStationContainer = !_showRailwayStationContainer;
                                     });
                                   },
-                                  child: Text(
-                                    "Mulund Railway Station West", style: Styles.headlineStyle3,
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      "Mulund Depot", style: Styles.headlineStyle3,
+                                    ),
                                   ),
                                 ),
                                 Visibility(
-                                  visible: _showDepotContainer,
+                                  visible: _showRailwayStationContainer,
                                   child: Container(
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -207,19 +209,20 @@ class _Down123State extends State<Down123> {
                           ),
                           Container(
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _showRailwayStationContainer = !_showRailwayStationContainer;
+                                      _showDepotContainer = !_showDepotContainer;
                                     });
                                   },
                                   child: Text(
-                                    "Mulund Depot", style: Styles.headlineStyle3,
+                                    "Mulund Railway Station West", style: Styles.headlineStyle3,
                                   ),
                                 ),
                                 Visibility(
-                                  visible: _showRailwayStationContainer,
+                                  visible: _showDepotContainer,
                                   child: Container(
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
