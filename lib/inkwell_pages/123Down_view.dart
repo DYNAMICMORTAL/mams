@@ -913,23 +913,276 @@ class _Down123State extends State<Down123> {
       ContainerInfo(
         "Mulund Depot",
         false,
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Custom Content for Mulund Depot"),
-            // Add more custom widgets here
-          ],
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+          decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Gap(15),
+              InkWell(
+                onTap: () {
+                  // enter page here
+                },
+                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+              ),
+              // Add more custom widgets here
+            ],
+          ),
+        ),
+      ),
+      ContainerInfo(
+        "Mulund BMC Garden",
+        false,
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+          decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Gap(15),
+              InkWell(
+                onTap: () {
+                  // enter page here
+                },
+                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+              ),
+              // Add more custom widgets here
+            ],
+          ),
+        ),
+      ),
+      ContainerInfo(
+        "Maharshi Arvind Chowk",
+        false,
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+          decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Gap(15),
+              InkWell(
+                onTap: () {
+                  // enter page here
+                },
+                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+              ),
+              // Add more custom widgets here
+            ],
+          ),
         ),
       ),
       ContainerInfo(
         "Mulund Railway Station West",
         false,
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Custom Content for Mulund Railway Station West"),
-            // Add more custom widgets here
-          ],
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+          decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Gap(15),
+              InkWell(
+                onTap: () {
+                  // enter page here
+                },
+                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+              ),
+              // Add more custom widgets here
+            ],
+          ),
+        ),
+      ),
+      ContainerInfo(
+        "Dhanvantari Hospital",
+        false,
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+          decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Gap(15),
+              InkWell(
+                onTap: () {
+                  // enter page here
+                },
+                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+              ),
+              // Add more custom widgets here
+            ],
+          ),
+        ),
+      ),
+      ContainerInfo(
+        "Mulund Sonapur",
+        false,
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+          decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Gap(15),
+              InkWell(
+                onTap: () {
+                  // enter page here
+                },
+                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+              ),
+              // Add more custom widgets here
+            ],
+          ),
+        ),
+      ),
+      ContainerInfo(
+        "Municipal School",
+        false,
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+          decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Gap(15),
+              InkWell(
+                onTap: () {
+                  // enter page here
+                },
+                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+              ),
+              // Add more custom widgets here
+            ],
+          ),
+        ),
+      ),
+      ContainerInfo(
+        "Mulund West Check Naka Bus Station",
+        false,
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+          decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Gap(15),
+              InkWell(
+                onTap: () {
+                  // enter page here
+                },
+                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+              ),
+              // Add more custom widgets here
+            ],
+          ),
+        ),
+      ),
+      ContainerInfo(
+        "Maharana Pratap Chowk Mulund",
+        false,
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+          decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Gap(15),
+              InkWell(
+                onTap: () {
+                  // enter page here
+                },
+                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+              ),
+              // Add more custom widgets here
+            ],
+          ),
+        ),
+      ),
+      ContainerInfo(
+        "Wagle Estate Post Office Bus Stop",
+        false,
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+          decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Gap(15),
+              InkWell(
+                onTap: () {
+                  // enter page here
+                },
+                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+              ),
+              // Add more custom widgets here
+            ],
+          ),
+        ),
+      ),
+      ContainerInfo(
+        "Marathon Chowk Teen Haath Naka",
+        false,
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 5),
+          decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Gap(15),
+              InkWell(
+                onTap: () {
+                  // enter page here
+                },
+                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+              ),
+              // Add more custom widgets here
+            ],
+          ),
         ),
       ),
       // Add more containers as needed
