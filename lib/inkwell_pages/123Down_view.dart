@@ -697,11 +697,15 @@ class _Down123State extends State<Down123> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: _containers.map((container) {
-                              return buildContainer(
-                                container.title,
-                                container.isVisible,
-                                _toggleContainerVisibility,
-                                container.customContent,
+
+                              return Padding(
+                                  padding: const EdgeInsets.symmetric(vertical: 10),
+                                child: buildContainer(
+                                  container.title,
+                                  container.isVisible,
+                                  _toggleContainerVisibility,
+                                  container.customContent,
+                                ),
                               );
                             }).toList(),
                           ),
