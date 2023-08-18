@@ -44,6 +44,8 @@ dependencies:
   custom_info_window: ^1.0.1
   shared_preferences: ^2.2.0
   flip_card: ^0.7.0
+  amplify_flutter: ^1.0.0
+  amplify_auth_cognito: ^1.0.0
 #  google_maps_flutter: ^2.4.0
 #  flutter_search_bar: ^2.0.0
 
