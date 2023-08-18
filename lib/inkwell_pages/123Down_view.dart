@@ -881,25 +881,25 @@
 
 
 
-
 import 'package:flutter/material.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:gap/gap.dart';
 import '../maps/map_overview.dart';
 import '../utils/app_styles.dart';
 
+class ContainerInfo {
+  String title;
+  bool isVisible;
+  Widget customContent;
+
+  ContainerInfo(this.title, this.isVisible, this.customContent);
+}
+
 class Down123 extends StatefulWidget {
   const Down123({Key? key}) : super(key: key);
 
   @override
   _Down123State createState() => _Down123State();
-}
-
-class ContainerInfo {
-  String title;
-  bool isVisible;
-
-  ContainerInfo(this.title, this.isVisible);
 }
 
 class _Down123State extends State<Down123> {
@@ -910,8 +910,28 @@ class _Down123State extends State<Down123> {
   void initState() {
     super.initState();
     _containers = [
-      ContainerInfo("Mulund Depot", false),
-      ContainerInfo("Mulund Railway Station West", false),
+      ContainerInfo(
+        "Mulund Depot",
+        false,
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Custom Content for Mulund Depot"),
+            // Add more custom widgets here
+          ],
+        ),
+      ),
+      ContainerInfo(
+        "Mulund Railway Station West",
+        false,
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Custom Content for Mulund Railway Station West"),
+            // Add more custom widgets here
+          ],
+        ),
+      ),
       // Add more containers as needed
     ];
   }
@@ -984,20 +1004,7 @@ class _Down123State extends State<Down123> {
                             container.title,
                             container.isVisible,
                             _toggleContainerVisibility,
-                            // Custom content for each container
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Custom Content for ${container.title}"),
-                                Row(
-                                  children: [
-                                    Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
-                                    const Spacer(),
-                                    Text("5 Minutes"),
-                                  ],
-                                ),
-                              ],
-                            ),
+                            container.customContent,
                           );
                         }).toList(),
                       ),
@@ -1036,13 +1043,7 @@ class _Down123State extends State<Down123> {
           Visibility(
             visible: isVisible,
             child: Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Custom content provided
-                  customContent,
-                ],
-              ),
+              child: customContent, // Use the provided custom content
             ),
           ),
         ],
