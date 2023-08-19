@@ -39,13 +39,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon (FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -64,13 +64,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -89,13 +89,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -114,13 +114,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -139,13 +139,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -164,13 +164,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -189,13 +189,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -214,13 +214,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -245,7 +245,7 @@ class _Down123State extends State<Down123> {
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -264,13 +264,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -289,13 +289,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -314,13 +314,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -339,13 +339,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -364,13 +364,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -389,13 +389,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -414,13 +414,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -439,13 +439,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -464,13 +464,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -489,13 +489,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -514,7 +514,7 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
@@ -539,7 +539,7 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
@@ -564,13 +564,13 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
                   // enter page here
                 },
-                child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
+                child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
               // Add more custom widgets here
             ],
@@ -589,7 +589,7 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
@@ -614,7 +614,7 @@ class _Down123State extends State<Down123> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
+              const Icon(FluentSystemIcons.ic_fluent_wifi_1_filled),
               const Gap(15),
               InkWell(
                 onTap: () {
@@ -645,7 +645,7 @@ class _Down123State extends State<Down123> {
         children: [
           Column(
             children: [
-              Expanded(
+              const Expanded(
                 child: MapsOverview(),
               ),
               GestureDetector(
@@ -658,7 +658,7 @@ class _Down123State extends State<Down123> {
                 child: Container(
                   height: MediaQuery.of(context).size.height * _containerHeight,
                   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(topRight: Radius.circular(25), topLeft: Radius.circular(25)),
                   ),
@@ -684,7 +684,7 @@ class _Down123State extends State<Down123> {
                                 borderRadius: BorderRadius.circular(8),
                               ),
                             ),
-                            child: Text(
+                            child: const Text(
                               "Chat",
                               style: TextStyle(color: Colors.white),
                             ),
