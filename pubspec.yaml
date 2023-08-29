@@ -71,6 +71,7 @@ flutter:
     - lib/assets/rearCard.png
     - lib/assets/nike_animation.mp4
     - lib/assets/MAMS.mp4
+    - lib/assets/girl1.jpg
   fonts:
     - family: Inter
       fonts:
