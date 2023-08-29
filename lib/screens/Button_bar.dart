@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:gap/gap.dart';
 import 'package:video_player/video_player.dart';
+import '../leaderboard/screens/leaderboard_overview.dart';
 import 'home_screen.dart';
 import 'profile_view.dart';
 import '../grid/map_and_chat.dart';
@@ -56,7 +57,7 @@ class _BottomBarState extends State<BottomBar> {
   static final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     GridOverView(),
-    MapsOverview(),
+    LeaderOverView(),
     ProfileView(),
   ];
 
@@ -108,7 +109,7 @@ class _BottomBarState extends State<BottomBar> {
                 icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
                 label: "Search"),
             BottomNavigationBarItem(
-                icon: Icon(FluentSystemIcons.ic_fluent_airplane_regular),
+                icon: Icon(FluentSystemIcons.ic_fluent_leaf_two_regular),
                 label: "My Tickets"),
             BottomNavigationBarItem(
                 icon: Icon(FluentSystemIcons.ic_fluent_person_accounts_regular),
