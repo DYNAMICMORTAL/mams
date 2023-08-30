@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:mams/utils/app_styles.dart';
 
 class LeaderOverView extends StatefulWidget {
@@ -10,6 +11,18 @@ class LeaderOverView extends StatefulWidget {
 
 class _LeaderOverViewState extends State<LeaderOverView> {
   bool isImageOverText = false;
+  List<String> textOrder = ['Today', 'Weekly', 'Lifetime'];
+
+
+  void _onTextClicked(String clickedText) {
+    setState(() {
+      int clickedIndex = textOrder.indexOf(clickedText);
+      if (clickedIndex != 0) {
+        textOrder.removeAt(clickedIndex);
+        textOrder.insert(0, clickedText);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +34,34 @@ class _LeaderOverViewState extends State<LeaderOverView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("LEADERBOARD", style: Styles.headlineStyle1),
+              Container(
+                padding: const EdgeInsets.only(top: 25, left: 25),
+                // child: Row(
+                //   children: [
+                //     Text("Today", style: TextStyle(fontSize: 21, fontWeight: FontWeight.w900),),
+                //     const Gap(10),
+                //     Text("Weekly"),
+                //     const Gap(10),
+                //     Text("Lifetime"),
+                //   ],
+                // ),
+                child: Row(
+                  children: textOrder.map((text) {
+                    return InkWell(
+                      onTap: () {
+                        _onTextClicked(text);
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Text(
+                          text,
+                          style: TextStyle(fontSize: 21, fontWeight: FontWeight.w900),
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
               SizedBox(height: 20),
               Stack(
                 alignment: Alignment.centerLeft, // Align text to the left
@@ -65,7 +106,7 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                                 ),
                               ),
                               child: Container(
-                                padding: const EdgeInsets.only(left: 20, bottom: 10),
+                                padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,8 +116,8 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                                       style: Styles.headlineStyle2.copyWith(fontSize: 25, fontWeight: FontWeight.w900, color: Colors.white),
                                     ),
                                     Text(
-                                      "Mansi Ja..",
-                                      style: Styles.headlineStyle5.copyWith(color: Colors.orange, fontWeight: FontWeight.w900, fontSize: 28,),
+                                      "Mansi Jasoriya",
+                                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.w900, fontSize: 28, overflow: TextOverflow.ellipsis, fontFamily: 'Inter'),
                                     ),
                                   ],
                                 ),
@@ -105,7 +146,7 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                                     ),
                                     Text(
                                       "Naman Ma..",
-                                      style: Styles.headlineStyle5.copyWith(color: Colors.orange, fontWeight: FontWeight.w900, fontSize: 28,),
+                                      style: TextStyle(color: Colors.orange, fontWeight: FontWeight.w900, fontSize: 28, overflow: TextOverflow.ellipsis),
                                     ),
                                   ],
                                 ),
@@ -193,6 +234,13 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                             fontSize: 60,
                             color: Colors.black,
                             fontWeight: FontWeight.w900,
+                            shadows: [
+                              Shadow(
+                                color: Colors.grey.shade500,      // Choose the color of the shadow
+                                blurRadius: 2.0,          // Adjust the blur radius for the shadow effect
+                                offset: Offset(2.0, 2.0), // Set the horizontal and vertical offset for the shadow
+                              ),
+                            ],
                           ),
                         ),
                         Text(
@@ -201,6 +249,13 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                             fontSize: 60,
                             color: Colors.black,
                             fontWeight: FontWeight.w900,
+                            shadows: [
+                              Shadow(
+                                color: Colors.purpleAccent,      // Choose the color of the shadow
+                                blurRadius: 2.0,          // Adjust the blur radius for the shadow effect
+                                offset: Offset(2.0, 2.0), // Set the horizontal and vertical offset for the shadow
+                              ),
+                            ],
                           ),
                         ),
                       ],
