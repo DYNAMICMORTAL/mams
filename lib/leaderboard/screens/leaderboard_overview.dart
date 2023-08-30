@@ -23,6 +23,14 @@ class _LeaderOverViewState extends State<LeaderOverView> {
       }
     });
   }
+  TextStyle getTextStyle(bool isClicked) {
+    if (isClicked) {
+      return TextStyle(fontSize: 21, fontWeight: FontWeight.w900,);
+    } else {
+      return TextStyle(fontSize: 15,);
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,17 +44,9 @@ class _LeaderOverViewState extends State<LeaderOverView> {
               Text("LEADERBOARD", style: Styles.headlineStyle1),
               Container(
                 padding: const EdgeInsets.only(top: 25, left: 25),
-                // child: Row(
-                //   children: [
-                //     Text("Today", style: TextStyle(fontSize: 21, fontWeight: FontWeight.w900),),
-                //     const Gap(10),
-                //     Text("Weekly"),
-                //     const Gap(10),
-                //     Text("Lifetime"),
-                //   ],
-                // ),
                 child: Row(
                   children: textOrder.map((text) {
+                    bool isClicked = textOrder.indexOf(text) == 0;
                     return InkWell(
                       onTap: () {
                         _onTextClicked(text);
@@ -55,12 +55,13 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Text(
                           text,
-                          style: TextStyle(fontSize: 21, fontWeight: FontWeight.w900),
+                          style: getTextStyle(isClicked),
                         ),
                       ),
                     );
                   }).toList(),
                 ),
+
               ),
               SizedBox(height: 20),
               Stack(
@@ -216,7 +217,7 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                             margin: EdgeInsets.all(8),
                             width: 175, // Adjust the width as needed
                             color: Colors.blueGrey,
-                            // Your image and user info widgets here
+                            // more image and user info widgets here
                           );
                         },
                       ),
@@ -270,3 +271,9 @@ class _LeaderOverViewState extends State<LeaderOverView> {
     );
   }
 }
+
+
+
+
+
+
