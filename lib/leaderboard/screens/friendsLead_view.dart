@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:mams/leaderboard/screens/leaderboard_overview.dart';
 import 'package:mams/utils/app_styles.dart';
 
 import '../../utils/leadButton.dart';
-import 'friendsLead_view.dart';
 
-class LeaderOverView extends StatefulWidget {
-  const LeaderOverView({Key? key}) : super(key: key);
+class FriendsLead extends StatefulWidget {
+  const FriendsLead({Key? key}) : super(key: key);
 
   @override
-  _LeaderOverViewState createState() => _LeaderOverViewState();
+  _FriendsLeadState createState() => _FriendsLeadState();
 }
 
-class _LeaderOverViewState extends State<LeaderOverView> {
+class _FriendsLeadState extends State<FriendsLead> {
   bool isImageOverText = false;
   List<String> textOrder = ['Today', 'Weekly', 'Lifetime'];
 
@@ -61,11 +61,7 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                           ),
                           SizedBox(width: 10), // Gap of 10 pixels
                           Expanded(
-                            child: LeadButton(text: 'Friends', fontSize: 15, textColor: Colors.black, buttonColor: Colors.transparent, borderColor: Colors.black,
-                              onTap: () {
-                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>FriendsLead()));
-                              },
-                            ),
+                            child: LeadButton(text: 'Friends', fontSize: 15, textColor: Colors.black, buttonColor: Colors.transparent, borderColor: Colors.black,),
                           ),
                         ],
                       ),
@@ -273,7 +269,7 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                                 ),
                               ),
                               Text(
-                                "5",
+                                "3",
                                 style: TextStyle(
                                   fontSize: 60,
                                   color: Colors.black,
