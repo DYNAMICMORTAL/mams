@@ -1,7 +1,7 @@
-import 'package:booktickets/grid/map_and_chat.dart';
-import 'package:booktickets/inkwell_pages/123Down_view.dart';
-import 'package:booktickets/inkwell_pages/123Up_view.dart';
-import 'package:booktickets/screens/home_screen.dart';
+import 'package:mams/grid/map_and_chat.dart';
+import 'package:mams/inkwell_pages/123Down_view.dart';
+import 'package:mams/inkwell_pages/123Up_view.dart';
+import 'package:mams/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/Button_bar.dart';
 import 'screens/profile_view.dart';

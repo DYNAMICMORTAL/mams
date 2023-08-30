@@ -1,4 +1,4 @@
-import 'package:booktickets/screens/train_data.dart';
+import 'package:mams/screens/train_data.dart';
 import 'package:flutter/material.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:gap/gap.dart';
@@ -7,7 +7,7 @@ import '../leaderboard/screens/leaderboard_overview.dart';
 import 'home_screen.dart';
 import 'profile_view.dart';
 import '../grid/map_and_chat.dart';
-import 'package:booktickets/maps/map_overview.dart';
+import 'package:mams/maps/map_overview.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class BottomBar extends StatefulWidget {

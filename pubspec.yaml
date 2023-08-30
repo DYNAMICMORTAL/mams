@@ -1,4 +1,4 @@
-name: booktickets
+name: mams
 description: A new way to book Tickets
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
