@@ -175,7 +175,7 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                                           ),
                                           Text(
                                             "Riya Mathur",
-                                            style: TextStyle(color: Colors.orange, fontWeight: FontWeight.w900, fontSize: 28, overflow: TextOverflow.ellipsis),
+                                            style: TextStyle(color: Color(0xFFF63009F), fontWeight: FontWeight.w900, fontSize: 28, overflow: TextOverflow.ellipsis),
                                           ),
                                         ],
                                       ),
@@ -188,7 +188,7 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(25),
                                       image: DecorationImage(
-                                        image: AssetImage('lib/assets/girl1.jpg'), // Replace with your image path
+                                        image: AssetImage('lib/assets/boy2.jpg'), // Replace with your image path
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -203,8 +203,8 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                                             style: Styles.headlineStyle2.copyWith(fontSize: 25, fontWeight: FontWeight.w900, color: Colors.white),
                                           ),
                                           Text(
-                                            "Mansi Ja..",
-                                            style: Styles.headlineStyle5.copyWith(color: Colors.orange, fontWeight: FontWeight.w900, fontSize: 28,),
+                                            "Aryan Rathod",
+                                            style: TextStyle(color: Colors.purpleAccent, fontWeight: FontWeight.w900, fontSize: 28, overflow: TextOverflow.ellipsis),
                                           ),
                                         ],
                                       ),
@@ -217,7 +217,7 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(25),
                                       image: DecorationImage(
-                                        image: AssetImage('lib/assets/girl1.jpg'), // Replace with your image path
+                                        image: AssetImage('lib/assets/girl2.jpg'), // Replace with your image path
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -232,21 +232,15 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                                             style: Styles.headlineStyle2.copyWith(fontSize: 25, fontWeight: FontWeight.w900, color: Colors.white),
                                           ),
                                           Text(
-                                            "Mansi Ja..",
-                                            style: Styles.headlineStyle5.copyWith(color: Colors.orange, fontWeight: FontWeight.w900, fontSize: 28,),
+                                            "Mansi Jasooriya",
+                                            style: TextStyle(color: Colors.orange, fontWeight: FontWeight.w900, fontSize: 28, overflow: TextOverflow.ellipsis),
                                           ),
                                         ],
                                       ),
                                     ),
                                   );
+
                                 }
-                                // Add code for other containers here
-                                return Container(
-                                  margin: EdgeInsets.all(8),
-                                  width: 175, // Adjust the width as needed
-                                  color: Colors.blueGrey,
-                                  // more image and user info widgets here
-                                );
                               },
                             ),
                           ),
