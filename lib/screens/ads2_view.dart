@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../inkwell_pages/mams_premium/mams_adview.dart';
 import '../utils/app_styles.dart';
 import 'package:gap/gap.dart';
 import 'dart:math' as math;
@@ -29,41 +30,51 @@ class Ads2 extends StatelessWidget {
                 ),
               ),
               padding: const EdgeInsets.all(16),
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 0, // Position the text to the left
-                    child: Container(
-                      width: 150, // Adjust the width of the text container
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Plan ahead. MAMS Reserve", style: Styles.headlineStyle2),
-                          const SizedBox(height: 5), // Add a small gap between text and image
-                          Container(
-                            child: Row(
-                              children: [
-                                Text("Learn more"),
-                                Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
-                              ],
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MamsAdView(),
+                    ),
+                  );
+                },
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: 0, // Position the text to the left
+                      child: Container(
+                        width: 150, // Adjust the width of the text container
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Plan ahead. MAMS Reserve", style: Styles.headlineStyle2),
+                            const SizedBox(height: 5), // Add a small gap between text and image
+                            Container(
+                              child: Row(
+                                children: [
+                                  Text("Learn more"),
+                                  Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                    left: 110, // Adjust the left position of the image
-                    child: Container(
-                      width: 150, // Adjust the width of the image container
-                      child: Column(
-                        children: [
-                          Image(image: AssetImage('lib/assets/groovy.png')),
-                        ],
+                    Positioned(
+                      left: 110, // Adjust the left position of the image
+                      child: Container(
+                        width: 150, // Adjust the width of the image container
+                        child: Column(
+                          children: [
+                            Image(image: AssetImage('lib/assets/groovy.png')),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
