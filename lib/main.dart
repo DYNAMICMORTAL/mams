@@ -3,6 +3,7 @@ import 'package:mams/inkwell_pages/123Down_view.dart';
 import 'package:mams/inkwell_pages/123Up_view.dart';
 import 'package:mams/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'inkwell_pages/AboutUsPage.dart';
 import 'screens/Button_bar.dart';
 import 'screens/profile_view.dart';
 import 'inkwell_pages/settings_view.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/subscriptions': (context) => const SubscriptionsPage(),
         '/rewards': (context) => const RewardsPage(),
         '/payforticket': (context) => PayForTicketPage(),
+        '/aboutUs': (context) => AboutUsPage(),
       },
       theme: ThemeData(
         fontFamily: 'Poppins',

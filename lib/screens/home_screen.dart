@@ -1,10 +1,9 @@
-// import 'package:booktickets/screens/ticket_view.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../utils/app_styles.dart';
 import 'package:gap/gap.dart';
-import 'train_data.dart';// Import the train data
+import 'train_data.dart';
 import 'ads_view.dart';
 import 'ads2_view.dart';
 import 'bus_pass_view.dart';
@@ -69,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
     children: [
       DrawerHeader(
         decoration: BoxDecoration(
-          color: Styles.primaryColor,
+          color: Color(0xFFF000000),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -126,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
         leading: Icon(FluentSystemIcons.ic_fluent_info_regular),
         title: Text('About Us'),
         onTap: () {
-          // Add navigation logic to redirect to the about us section
+          Navigator.pushNamed(context, '/aboutUs');
         },
       ),
     ],
@@ -227,5 +226,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-

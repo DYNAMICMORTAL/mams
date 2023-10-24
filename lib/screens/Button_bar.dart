@@ -4,6 +4,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:gap/gap.dart';
 import 'package:video_player/video_player.dart';
 import '../leaderboard/screens/leaderboard_overview.dart';
+import 'MusicOverViewPage.dart';
 import 'home_screen.dart';
 import 'profile_view.dart';
 import '../grid/map_and_chat.dart';
@@ -57,13 +58,14 @@ class _BottomBarState extends State<BottomBar> {
   static final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     GridOverView(),
+    MusicOverView(),
     LeaderOverView(),
     ProfileView(),
   ];
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      _selectedIndex = index.clamp(0, 4);
     });
   }
 
@@ -108,6 +110,9 @@ class _BottomBarState extends State<BottomBar> {
             BottomNavigationBarItem(
                 icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
                 label: "Search"),
+            BottomNavigationBarItem(
+                icon: Icon(FluentSystemIcons.ic_fluent_music_regular),
+                label: "Music"),
             BottomNavigationBarItem(
                 icon: Icon(FluentSystemIcons.ic_fluent_leaf_two_regular),
                 label: "My Tickets"),
