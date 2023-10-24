@@ -106,6 +106,7 @@ class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
           Positioned(
             top: MediaQuery.of(context).size.height * 0.80,
               child: Container(
+                width: MediaQuery.of(context).size.width * 0.99,
             child: Column(
               children: [
 

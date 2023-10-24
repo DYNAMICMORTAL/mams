@@ -97,9 +97,9 @@ void changeToSecond(int second){
         children: [
           Padding(padding: const EdgeInsets.only(left: 20, right: 20),
           child: Row(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(_position.toString().split(".")[0],style: Styles.headlineStyle5.copyWith(color: Colors.white),),
+              const Spacer(),
               Text(_duration.toString().split(".")[0],style: Styles.headlineStyle5.copyWith(color: Colors.white),),
             ],
           ),),
