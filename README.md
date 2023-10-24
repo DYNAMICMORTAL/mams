@@ -1,6 +1,6 @@
 # MAMS - Mobile App for Meaningful Commutes
 
-![MAMS Logo](url_to_your_logo)
+![MAMS Logo](https://github.com/DYNAMICMORTAL/mams/blob/main/lib/assets/MAMS.png)
 
 ## Introduction
 
