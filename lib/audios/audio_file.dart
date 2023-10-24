@@ -40,9 +40,18 @@ class _AudioFileState extends State<AudioFile> {
     return IconButton(
       padding: const EdgeInsets.only(bottom: 10),
         onPressed: () {
+        if(isPlaying==false){
           this.widget.advancedPlayer.play(UrlSource(url));
+          setState(() {
+            isPlaying=true;
+          });} else if (isPlaying==true){
+          this.widget.advancedPlayer.pause();
+          setState(() {
+            isPlaying=false;
+          });
+        }
         },
-        icon: Icon(_icons[0]));
+        icon: isPlaying==false?Icon(_icons[0]):Icon(_icons[1]),);
   }
 
   Widget loadAsset() {
@@ -75,16 +84,3 @@ class _AudioFileState extends State<AudioFile> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
