@@ -1,6 +1,7 @@
 import 'package:mams/grid/map_and_chat.dart';
 import 'package:mams/inkwell_pages/123Down_view.dart';
 import 'package:mams/inkwell_pages/123Up_view.dart';
+import 'package:mams/screens/ChatScreenPage.dart';
 import 'package:mams/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'inkwell_pages/AboutUsPage.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/rewards': (context) => const RewardsPage(),
         '/payforticket': (context) => PayForTicketPage(),
         '/aboutUs': (context) => AboutUsPage(),
+        '/chat': (context) => ChatScreen(),
       },
       theme: ThemeData(
         fontFamily: 'Poppins',

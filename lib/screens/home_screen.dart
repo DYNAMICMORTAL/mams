@@ -101,28 +101,28 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
       ListTile(
-        leading: Icon(FluentSystemIcons.ic_fluent_home_regular),
+        leading: Icon(FluentSystemIcons.ic_fluent_home_filled),
         title: Text('Home'),
         onTap: () {
           Navigator.pushNamed(context, '/home');
         },
       ),
       ListTile(
-        leading: Icon(FluentSystemIcons.ic_fluent_ticket_regular),
+        leading: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
         title: Text('Bus Pass'),
         onTap: () {
           // Add navigation logic to redirect to the bus pass section
         },
       ),
       ListTile(
-        leading: Icon(FluentSystemIcons.ic_fluent_more_regular),
-        title: Text('Pricing'),
+        leading: Icon(FluentSystemIcons.ic_fluent_text_change_accept_filled),
+        title: Text('Learn Local Language'),
         onTap: () {
-          // Add navigation logic to redirect to the pricing section
+          Navigator.pushNamed(context, '/learn');
         },
       ),
       ListTile(
-        leading: Icon(FluentSystemIcons.ic_fluent_info_regular),
+        leading: Icon(FluentSystemIcons.ic_fluent_info_filled),
         title: Text('About Us'),
         onTap: () {
           Navigator.pushNamed(context, '/aboutUs');

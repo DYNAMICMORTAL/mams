@@ -71,10 +71,15 @@ class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  child: Transform.rotate(
-                    angle: 90 * (3.1415926535 / 180),
-                    child: Icon(FluentSystemIcons.ic_fluent_ios_chevron_right_regular, size: 30, color: Colors.white),
+                InkWell(
+                  onTap: (){
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    child: Transform.rotate(
+                      angle: 90 * (3.1415926535 / 180),
+                      child: Icon(FluentSystemIcons.ic_fluent_ios_chevron_right_regular, size: 30, color: Colors.white),
+                    ),
                   ),
                 ),
                 const SizedBox(width: 65),
