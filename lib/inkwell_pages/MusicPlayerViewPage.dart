@@ -15,6 +15,7 @@ class MusicPlayerViewPage extends StatefulWidget {
 class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
   late AudioPlayer advancedPlayer;
   late VideoPlayerController _videoPlayerController;
+  bool isHeartLiked=false;
   // Duration _position = Duration.zero;
   // Duration _duration = Duration.zero;
 
@@ -91,15 +92,45 @@ class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
           Positioned(
             top: MediaQuery.of(context).size.height * 0.65,
             child: Container(
+              width: MediaQuery.of(context).size.width * 0.99,
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  Text(
-                    "To you",
-                    style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.w900),
-                  ),
+              child: Container(
+                child: Row(
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "To you",
+                          style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.w900),
+                        ),
+                        Text(
+                          "indiancitizen",
+                          style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.w900),
+                        ),
 
-                ],
+                      ],
+                    ),
+                    const Spacer(),
+                    Column(
+                      children: [
+                        InkWell(
+                          onTap: (){
+                            setState(() {
+                              isHeartLiked=true;
+                            });
+                          },
+                            onDoubleTap: (){
+                            setState(() {
+                              isHeartLiked=false;
+                            });
+                            },
+                            child: isHeartLiked==false?Icon(FluentSystemIcons.ic_fluent_heart_regular, color: Colors.yellow, size: 30,):Icon(FluentSystemIcons.ic_fluent_heart_filled, color: Colors.yellow, size: 30,)),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
