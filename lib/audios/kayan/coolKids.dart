@@ -4,22 +4,23 @@ import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-import '../utils/app_styles.dart';
+import '../../utils/app_styles.dart';
 
-class AudioFile extends StatefulWidget {
+
+class coolKids extends StatefulWidget {
   final AudioPlayer advancedPlayer;
-  const AudioFile({super.key, required this.advancedPlayer});
+  const coolKids({super.key, required this.advancedPlayer});
 
   @override
-  State<AudioFile> createState() => _AudioFileState();
+  State<coolKids> createState() => _AudioFileState();
 }
 
-class _AudioFileState extends State<AudioFile> {
+class _AudioFileState extends State<coolKids> {
   Duration _duration = new Duration();
   Duration _position = new Duration();
-  final String path = "https://od.lk/s/M18yOTU4NDIxMzZf/withyou.mp3";
-  String source = "https://od.lk/s/M18yOTU4NDIxMzZf/withyou.mp3";
-  final String url = "https://od.lk/s/M18yOTU4NDIxMzZf/withyou.mp3";
+  final String path = "https://od.lk/s/M18yOTU4NDIxNDBf/coolkidskayan.mp3";
+  String source = "https://od.lk/s/M18yOTU4NDIxNDBf/coolkidskayan.mp3";
+  final String url = "https://od.lk/s/M18yOTU4NDIxNDBf/coolkidskayan.mp3";
   bool isPlaying=false;
   bool isPaused=false;
   bool isLoop=false;
