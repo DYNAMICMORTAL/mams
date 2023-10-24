@@ -1,7 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:video_player/video_player.dart';
 
 class MusicPlayerViewPage extends StatefulWidget {
@@ -51,8 +50,7 @@ class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
         child: Stack(
           children: [
             if (_videoPlayerController.value.isInitialized)
-              AspectRatio(
-                aspectRatio: _videoPlayerController.value.aspectRatio,
+              Positioned.fill(
                 child: VideoPlayer(_videoPlayerController),
               ),
             if (_videoPlayerController.value.isInitialized &&
@@ -60,34 +58,34 @@ class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
               Container(), // Video is playing, display nothing
             if (_videoPlayerController.value.position >= _videoPlayerController.value.duration)
               Container(
-                // margin: const EdgeInsets.only(left: 15, top: 12),
-                // child: Column(
-                //   children: [
-                //     Row(
-                //       crossAxisAlignment: CrossAxisAlignment.center,
-                //       children: [
-                //         Container(
-                //           child: Transform.rotate(
-                //             angle: 90 * (3.1415926535 / 180),
-                //             child: Icon(FluentSystemIcons.ic_fluent_ios_chevron_right_regular, size: 30),
-                //           ),
-                //         ),
-                //         const Gap(65),
-                //         Container(
-                //           child: Column(
-                //             children: [
-                //               Text("Playing from Album", style: TextStyle(color: Colors.white)),
-                //               Text("From Heart to Heart", style: TextStyle(color: Colors.white)),
-                //             ],
-                //           ),
-                //         )
-                //       ],
-                //     ), // Music Album Info and Back Button
-                //     Container(), // Main Music Container
-                //     Container(), // Audio Player Container
-                //     Container(), // Lyrics Container
-                //   ],
-                // ),
+                margin: const EdgeInsets.only(left: 15, top: 12),
+                child: Column(
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          child: Transform.rotate(
+                            angle: 90 * (3.1415926535 / 180),
+                            child: Icon(FluentSystemIcons.ic_fluent_ios_chevron_right_regular, size: 30),
+                          ),
+                        ),
+                        const SizedBox(width: 65),
+                        Container(
+                          child: Column(
+                            children: [
+                              Text("Playing from Album", style: TextStyle(color: Colors.white)),
+                              Text("From Heart to Heart", style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        )
+                      ],
+                    ), // Music Album Info and Back Button
+                    Container(), // Main Music Container
+                    Container(), // Audio Player Container
+                    Container(), // Lyrics Container
+                  ],
+                ),
               ), // MAIN CONTAINER
           ],
         ),
