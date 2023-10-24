@@ -1,5 +1,10 @@
+import 'dart:io';
+import 'dart:math';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+
+import '../utils/app_styles.dart';
 
 class AudioFile extends StatefulWidget {
   final AudioPlayer advancedPlayer;
@@ -51,7 +56,7 @@ class _AudioFileState extends State<AudioFile> {
           });
         }
         },
-        icon: isPlaying==false?Icon(_icons[0]):Icon(_icons[1]),);
+        icon: isPlaying==false?Icon(_icons[0], size: 68, color: Colors.white,):Icon(_icons[1], size: 68, color: Colors.white,),);
   }
 
   Widget loadAsset() {
@@ -64,6 +69,25 @@ class _AudioFileState extends State<AudioFile> {
         ])
     );
 }
+Widget slider(){
+    return Slider(
+      activeColor: Colors.yellow,
+      inactiveColor: Colors.white54,
+      value: _position.inSeconds.toDouble(),
+      min: 0.0,
+      max: _duration.inSeconds.toDouble(),
+      onChanged: (double value) {
+        setState(() {
+          changeToSecond(value.toInt());
+          value=value;
+        });
+      },
+    );
+}
+void changeToSecond(int second){
+    Duration newDuration = Duration(seconds: second);
+    this.widget.advancedPlayer.seek(newDuration);
+}
 
 
   @override
@@ -73,12 +97,15 @@ class _AudioFileState extends State<AudioFile> {
         children: [
           Padding(padding: const EdgeInsets.only(left: 20, right: 20),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-
+              Text(_position.toString().split(".")[0],style: Styles.headlineStyle5.copyWith(color: Colors.white),),
+              Text(_duration.toString().split(".")[0],style: Styles.headlineStyle5.copyWith(color: Colors.white),),
             ],
           ),),
+          slider(),
           loadAsset(),
+
         ],
       ),
     );
