@@ -198,19 +198,159 @@ class MusicOverView extends StatelessWidget {
                       ),
                     ),
                   ),
+                  const Gap(10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text("Release Radar 📡", style: Styles.headlineStyle3.copyWith(fontSize: 25),),
                     ],
                   ),
-
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Container(
+                      height: 180,
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.all(8),
+                            width: 250, // Adjust the width as needed
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              image: DecorationImage(
+                                image: AssetImage('lib/assets/anuv.jpg'), // Replace with your image path
+                                fit: BoxFit.cover,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 5,
+                                  blurRadius: 7,
+                                  offset: Offset(0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Container(
+                              padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "RahulJain",
+                                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w900, fontSize: 28, overflow: TextOverflow.ellipsis, fontFamily: 'Inter'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.all(8),
+                            width: 250, // Adjust the width as needed
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              image: DecorationImage(
+                                image: AssetImage('lib/assets/srushit.jpg'), // Replace with your image path
+                                fit: BoxFit.cover,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 5,
+                                  blurRadius: 7,
+                                  offset: Offset(0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Container(
+                              padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Srushti",
+                                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w900, fontSize: 28, overflow: TextOverflow.ellipsis, fontFamily: 'Inter'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.all(8),
+                            width: 250, // Adjust the width as needed
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              image: DecorationImage(
+                                image: AssetImage('lib/assets/mitraz.jpg'), // Replace with your image path
+                                fit: BoxFit.cover,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 5,
+                                  blurRadius: 7,
+                                  offset: Offset(0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Container(
+                              padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Mitraz",
+                                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w900, fontSize: 28, overflow: TextOverflow.ellipsis, fontFamily: 'Inter'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.all(8),
+                            width: 250, // Adjust the width as needed
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              image: DecorationImage(
+                                image: AssetImage('lib/assets/laufey.jpg'), // Replace with your image path
+                                fit: BoxFit.cover,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 5,
+                                  blurRadius: 7,
+                                  offset: Offset(0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Container(
+                              padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Laufey",
+                                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w900, fontSize: 28, overflow: TextOverflow.ellipsis, fontFamily: 'Inter'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const Gap(10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text("For Artists", style: Styles.headlineStyle3.copyWith(fontSize: 25),),
                     ],
                   ),
+                  Container(),
 
 
 
