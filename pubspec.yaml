@@ -46,6 +46,7 @@ dependencies:
   flip_card: ^0.7.0
   audioplayers: ^5.2.0
   chewie: ^1.7.1
+  just_audio: ^0.9.35
 #  google_maps_flutter: ^2.4.0
 #  flutter_search_bar: ^2.0.0
 

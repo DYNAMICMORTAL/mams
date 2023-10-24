@@ -144,9 +144,18 @@ class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
                 AudioFile(advancedPlayer:advancedPlayer),
               ],
             ),
-          ),)
-          // Other components and containers can be added here
+          ),),
           // They will be stacked over the video
+          // Positioned(
+          //   top: MediaQuery.of(context).size.height * 0.96,
+          //   child: Container(
+          //     child: Column(
+          //       children: [
+          //         Text("Lyrics", style: Styles.headlineStyle5.copyWith(color: Colors.white),),
+          //       ],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
