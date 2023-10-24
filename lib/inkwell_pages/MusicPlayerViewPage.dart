@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:mams/audios/audio_file.dart';
 import 'package:video_player/video_player.dart';
 
 class MusicPlayerViewPage extends StatefulWidget {
@@ -20,7 +21,6 @@ class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
     advancedPlayer = AudioPlayer();
     _videoPlayerController = VideoPlayerController.asset('lib/assets/MusicGif1.mp4')
       ..initialize().then((_) {
-        // Ensure the first frame is shown after the video is initialized
         setState(() {});
 
         // Start video playback
@@ -85,6 +85,21 @@ class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
               ],
             ),
           ),
+          Positioned(
+            top: MediaQuery.of(context).size.height * 0.65,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children: [
+                  // Text(
+                  //   "To you",
+                  //   style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.w900),
+                  // ),
+                  AudioFile(advancedPlayer:advancedPlayer),
+                ],
+              ),
+            ),
+          ),
           // Other components and containers can be added here
           // They will be stacked over the video
         ],
@@ -100,3 +115,100 @@ void main() {
     ),
   );
 }
+//
+//
+//
+//
+//
+//
+//
+//
+// import 'package:flutter/material.dart';
+// import 'package:audioplayers/audioplayers.dart';
+//
+// class AudioFile extends StatefulWidget {
+//   const AudioFile({Key? key}) : super(key: key);
+//
+//   @override
+//   State<AudioFile> createState() => _AudioFileState();
+// }
+//
+// class _AudioFileState extends State<AudioFile> {
+//   late AudioPlayer _advancedPlayer;
+//   Duration _duration = Duration();
+//   Duration _position = Duration();
+//   String path =
+//       "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"; // Replace with your audio file URL
+//   bool isPlaying = false;
+//   bool isPaused = false;
+//   bool isLoop = false;
+//   List<IconData> _icons = [
+//     Icons.play_circle_fill,
+//     Icons.pause_circle_filled,
+//   ];
+//
+//   @override
+//   void initState() {
+//     super.initState();
+//     _advancedPlayer = AudioPlayer();
+//     _advancedPlayer.onDurationChanged.listen((d) {
+//       setState(() {
+//         _duration = d;
+//       });
+//     });
+//     _advancedPlayer.onAudioPositionChanged.listen((p) {
+//       setState(() {
+//         _position = p;
+//       });
+//     });
+//   }
+//
+//   void _playPause() {
+//     if (isPlaying) {
+//       _advancedPlayer.pause();
+//     } else {
+//       _advancedPlayer.play(path, isLocal: false); // Specify isLocal: false for network URLs
+//     }
+//     setState(() {
+//       isPlaying = !isPlaying;
+//     });
+//   }
+//
+//   Widget btnStart() {
+//     return IconButton(
+//       padding: const EdgeInsets.only(bottom: 10),
+//       onPressed: () {
+//         _playPause();
+//       },
+//       icon: Icon(_icons[isPlaying ? 1 : 0]),
+//     );
+//   }
+//
+//   Widget loadAsset() {
+//     return Container(
+//       child: Row(
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//         children: [btnStart()],
+//       ),
+//     );
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       child: Column(
+//         children: [
+//           Padding(
+//             padding: const EdgeInsets.only(left: 20, right: 20),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [],
+//             ),
+//           ),
+//           loadAsset(),
+//         ],
+//       ),
+//     );
+//   }
+// }

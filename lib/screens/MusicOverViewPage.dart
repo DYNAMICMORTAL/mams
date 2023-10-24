@@ -93,8 +93,8 @@ class MusicOverView extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text("NORO", style: Styles.headlineStyle3.copyWith(fontSize: 21),),
-                                    Text("?Shimon", style: Styles.headlineStyle4.copyWith(fontSize: 10, color: Colors.grey.shade700),),
+                                    Text("To you", style: Styles.headlineStyle3.copyWith(fontSize: 21),),
+                                    Text("indiancitizen", style: Styles.headlineStyle4.copyWith(fontSize: 10, color: Colors.grey.shade700),),
                                   ],
                                 ),
                                 const Spacer(),
