@@ -44,6 +44,8 @@ dependencies:
   custom_info_window: ^1.0.1
   shared_preferences: ^2.2.0
   flip_card: ^0.7.0
+  audioplayers: ^5.2.0
+  chewie: ^1.7.1
 #  google_maps_flutter: ^2.4.0
 #  flutter_search_bar: ^2.0.0
 
@@ -72,6 +74,7 @@ flutter:
     - lib/assets/nike_animation.mp4
     - lib/assets/MAMS.mp4
     - lib/assets/girl1.jpg
+    - lib/assets/MusicGif1.mp4
   fonts:
     - family: Inter
       fonts:
