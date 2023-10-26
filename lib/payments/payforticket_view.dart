@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mams/payments/payconfirm.dart';
 
 class PayForTicketPage extends StatelessWidget {
   @override
@@ -20,20 +21,30 @@ class PayForTicketContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Card(
-            elevation: 4,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Pay using MAMS pay",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 10),
-                  Text("Superfast payments for your bus tickets"),
-                ],
+          GestureDetector(
+            onTap: () {
+              // Navigate to the payment page when the card is tapped.
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => PaymentPage(),
+                ),
+              );
+            },
+            child: Card(
+              elevation: 4,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Pay using MAMS pay",
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 10),
+                    Text("Superfast payments for your bus tickets"),
+                  ],
+                ),
               ),
             ),
           ),
