@@ -2,17 +2,18 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:mams/audios/audio_file.dart';
+import 'package:mams/audios/kayan/coolKids.dart';
 import 'package:mams/utils/app_styles.dart';
 import 'package:video_player/video_player.dart';
 
-class MusicPlayerViewPage extends StatefulWidget {
-  const MusicPlayerViewPage({Key? key}) : super(key: key);
+class coolKidsViewPage extends StatefulWidget {
+  const coolKidsViewPage({Key? key}) : super(key: key);
 
   @override
   _MusicPlayerViewPageState createState() => _MusicPlayerViewPageState();
 }
 
-class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
+class _MusicPlayerViewPageState extends State<coolKidsViewPage> {
   late AudioPlayer advancedPlayer;
   late VideoPlayerController _videoPlayerController;
   bool isHeartLiked=false;
@@ -107,11 +108,11 @@ class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "To you",
+                          "Cool Kids",
                           style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.w900),
                         ),
                         Text(
-                          "indiancitizen",
+                          "KAYAN",
                           style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.w900),
                         ),
 
@@ -121,15 +122,15 @@ class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
                     Column(
                       children: [
                         InkWell(
-                          onTap: (){
-                            setState(() {
-                              isHeartLiked=true;
-                            });
-                          },
+                            onTap: (){
+                              setState(() {
+                                isHeartLiked=true;
+                              });
+                            },
                             onDoubleTap: (){
-                            setState(() {
-                              isHeartLiked=false;
-                            });
+                              setState(() {
+                                isHeartLiked=false;
+                              });
                             },
                             child: isHeartLiked==false?Icon(FluentSystemIcons.ic_fluent_heart_regular, color: Colors.yellow, size: 30,):Icon(FluentSystemIcons.ic_fluent_heart_filled, color: Colors.yellow, size: 30,)),
                       ],
@@ -141,15 +142,15 @@ class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
           ),
           Positioned(
             top: MediaQuery.of(context).size.height * 0.80,
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.99,
-            child: Column(
-              children: [
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.99,
+              child: Column(
+                children: [
 
-                AudioFile(advancedPlayer:advancedPlayer),
-              ],
-            ),
-          ),),
+                  coolKids(advancedPlayer:advancedPlayer),
+                ],
+              ),
+            ),),
           // They will be stacked over the video
           // Positioned(
           //   top: MediaQuery.of(context).size.height * 0.96,
@@ -170,7 +171,7 @@ class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
 void main() {
   runApp(
     MaterialApp(
-      home: MusicPlayerViewPage(),
+      home: coolKidsViewPage(),
     ),
   );
 }
