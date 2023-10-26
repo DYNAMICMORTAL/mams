@@ -414,6 +414,8 @@ import 'package:gap/gap.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import '../inkwell_pages/BusDetailsPageView.dart';
+
 class GridOverView extends StatefulWidget {
   const GridOverView({super.key});
 
@@ -498,38 +500,48 @@ class _ChatOverviewState extends State<GridOverView> {
             ),
             // Display search results
             if (busDetails != null)
-              Container(
-                padding: const EdgeInsets.only(top: 15, bottom: 15, left: 10),
-                margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                decoration: BoxDecoration(
-                  color: Color(0xFFFF1F1F3),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Icon(Icons.arrow_downward),
-                          const SizedBox(width: 10),
-                          Center(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "${busDetails!['number']}",
-                                  style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),
-                                ),
-                                Text(
-                                  "${busDetails!['route']} to ${busDetails!['destination']}",
-                                  style: TextStyle(fontSize: 17, color: Colors.black54),
-                                ),
-                              ],
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BusDetailsPage(busDetails: busDetails!),
+                    ),
+                  );
+                },
+                child: Container(
+                  padding: const EdgeInsets.only(top: 15, bottom: 15, left: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFFF1F1F3),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Icon(Icons.arrow_downward),
+                            const SizedBox(width: 10),
+                            Center(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "${busDetails!['number']}",
+                                    style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),
+                                  ),
+                                  Text(
+                                    "${busDetails!['route']} to ${busDetails!['destination']}",
+                                    style: TextStyle(fontSize: 17, color: Colors.black54),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
