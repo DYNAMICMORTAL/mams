@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../utils/app_styles.dart';
 import '../screens/train_data.dart';
+import 'busList.dart';
 
 class GridOverView extends StatefulWidget {
   const GridOverView({super.key});
@@ -54,7 +55,8 @@ class _ChatOverviewState extends State<GridOverView> {
             const Gap(10),
             Container(
               height: 55, // Reduce the height of the search bar
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20), // Adjust the horizontal margin
+              margin: const EdgeInsets.symmetric(
+                  horizontal: 20, vertical: 20), // Adjust the horizontal margin
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: const Color(0xFFF4F6FD),
@@ -79,12 +81,13 @@ class _ChatOverviewState extends State<GridOverView> {
                 ],
               ),
             ), // -> Main Textfield Input
-             // -> Display search results
+            // -> Display search results
             // Display route information container only if search result contains '123'
             if (searchResults.isNotEmpty && searchResults[0].number == '123')
               Container(
                 padding: const EdgeInsets.only(top: 15, bottom: 15, left: 10),
-                margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),// Adjust padding
+                margin: const EdgeInsets.symmetric(
+                    horizontal: 20, vertical: 20), // Adjust padding
                 decoration: BoxDecoration(
                   color: Color(0xFFFF1F1F3),
                   borderRadius: BorderRadius.circular(20),
@@ -94,7 +97,8 @@ class _ChatOverviewState extends State<GridOverView> {
                     children: [
                       Row(
                         children: [
-                          Icon(FluentSystemIcons.ic_fluent_chevron_down_circle_filled),
+                          Icon(FluentSystemIcons
+                              .ic_fluent_chevron_down_circle_filled),
                           const Gap(10),
                           Center(
                             child: InkWell(
@@ -104,8 +108,17 @@ class _ChatOverviewState extends State<GridOverView> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("123", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
-                                  Text("Mulund Depot -> CSMT Gate", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54)),
+                                  Text(
+                                    "123",
+                                    style: Styles.headlineStyle4.copyWith(
+                                        fontSize: 18,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w900,
+                                        fontFamily: 'Inter'),
+                                  ),
+                                  Text("Mulund Depot -> CSMT Gate",
+                                      style: Styles.headlineStyle4.copyWith(
+                                          fontSize: 17, color: Colors.black54)),
                                 ],
                               ),
                             ),
@@ -124,8 +137,19 @@ class _ChatOverviewState extends State<GridOverView> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("123", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
-                                Text("CSMT Gate -> Mulund Depot", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54),),
+                                Text(
+                                  "123",
+                                  style: Styles.headlineStyle4.copyWith(
+                                      fontSize: 18,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w900,
+                                      fontFamily: 'Inter'),
+                                ),
+                                Text(
+                                  "CSMT Gate -> Mulund Depot",
+                                  style: Styles.headlineStyle4.copyWith(
+                                      fontSize: 17, color: Colors.black54),
+                                ),
                               ],
                             ),
                           ),
@@ -138,7 +162,8 @@ class _ChatOverviewState extends State<GridOverView> {
             if (searchResults.isNotEmpty && searchResults[0].number == '456')
               Container(
                 padding: const EdgeInsets.only(top: 15, bottom: 15, left: 10),
-                margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),// Adjust padding
+                margin: const EdgeInsets.symmetric(
+                    horizontal: 20, vertical: 20), // Adjust padding
                 decoration: BoxDecoration(
                   color: Color(0xFFFF1F1F3),
                   borderRadius: BorderRadius.circular(20),
@@ -148,14 +173,24 @@ class _ChatOverviewState extends State<GridOverView> {
                     children: [
                       Row(
                         children: [
-                          Icon(FluentSystemIcons.ic_fluent_chevron_down_circle_filled),
+                          Icon(FluentSystemIcons
+                              .ic_fluent_chevron_down_circle_filled),
                           const Gap(10),
                           Center(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("456", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
-                                Text("Terminal 2 Gate -> Ghatko..", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54)),
+                                Text(
+                                  "456",
+                                  style: Styles.headlineStyle4.copyWith(
+                                      fontSize: 18,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w900,
+                                      fontFamily: 'Inter'),
+                                ),
+                                Text("Terminal 2 Gate -> Ghatko..",
+                                    style: Styles.headlineStyle4.copyWith(
+                                        fontSize: 17, color: Colors.black54)),
                               ],
                             ),
                           ), // -> Route Container
@@ -169,8 +204,17 @@ class _ChatOverviewState extends State<GridOverView> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("456", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
-                              Text("Ghatkopar Metro -> Termin..", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54),),
+                              Text(
+                                "456",
+                                style: Styles.headlineStyle4.copyWith(
+                                    fontSize: 18,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w900,
+                                    fontFamily: 'Inter'),
+                              ),
+                              Text("Ghatkopar Metro -> Termin..",
+                                  style: Styles.headlineStyle4.copyWith(
+                                      fontSize: 17, color: Colors.black54)),
                             ],
                           ),
                         ],
@@ -182,7 +226,8 @@ class _ChatOverviewState extends State<GridOverView> {
             if (searchResults.isNotEmpty && searchResults[0].number == '789')
               Container(
                 padding: const EdgeInsets.only(top: 15, bottom: 15, left: 10),
-                margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),// Adjust padding
+                margin: const EdgeInsets.symmetric(
+                    horizontal: 20, vertical: 20), // Adjust padding
                 decoration: BoxDecoration(
                   color: Color(0xFFFF1F1F3),
                   borderRadius: BorderRadius.circular(20),
@@ -192,14 +237,24 @@ class _ChatOverviewState extends State<GridOverView> {
                     children: [
                       Row(
                         children: [
-                          Icon(FluentSystemIcons.ic_fluent_chevron_down_circle_filled),
+                          Icon(FluentSystemIcons
+                              .ic_fluent_chevron_down_circle_filled),
                           const Gap(10),
                           Center(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("789", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
-                                Text("Borivali Depot -> Colaba C..", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54)),
+                                Text(
+                                  "789",
+                                  style: Styles.headlineStyle4.copyWith(
+                                      fontSize: 18,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w900,
+                                      fontFamily: 'Inter'),
+                                ),
+                                Text("Borivali Depot -> Colaba C..",
+                                    style: Styles.headlineStyle4.copyWith(
+                                        fontSize: 17, color: Colors.black54)),
                               ],
                             ),
                           ), // -> Route Container
@@ -213,8 +268,19 @@ class _ChatOverviewState extends State<GridOverView> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("789", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
-                              Text("Colaba Causeway -> Borivali", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54),),
+                              Text(
+                                "789",
+                                style: Styles.headlineStyle4.copyWith(
+                                    fontSize: 18,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w900,
+                                    fontFamily: 'Inter'),
+                              ),
+                              Text(
+                                "Colaba Causeway -> Borivali",
+                                style: Styles.headlineStyle4.copyWith(
+                                    fontSize: 17, color: Colors.black54),
+                              ),
                             ],
                           ),
                         ],
@@ -223,9 +289,34 @@ class _ChatOverviewState extends State<GridOverView> {
                   ),
                 ),
               ),
-          ],
-        ), // ->Main Column,
+              Container(
+  child: Column(
+    children: [
+      Text(
+        "Routes and buses",
+        style: TextStyle(
+          fontSize: 20, // Adjust the font size
+          fontWeight: FontWeight.bold, // Adjust the font weight
+          // Add any other styling you need
+        ),
       ),
+      const Gap(10), // Add some spacing between the text and the button
+      ElevatedButton(
+  onPressed: () {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => BusListPage()));
+  },
+  child: Text("See all buses"),
+),
+
+    ],
+  ),
+)
+
+          ],
+        ),
+      ),
+      // ->Main Column,
     );
+    
   }
 }
