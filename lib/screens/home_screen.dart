@@ -219,6 +219,113 @@ class _HomeScreenState extends State<HomeScreen> {
             Column(
               children: [
                 BuyPass(),
+                const Gap(15),
+                Container(
+                  width: MediaQuery.of(context).size.width*0.90,
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 15),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      bottomLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
+                      bottomRight: Radius.circular(20),
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("MMRDA METRO", style: Styles.headlineStyle2),
+                      const Gap(5),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                Container(
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      // Handle Pay for ticket button press
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white, // Background color
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10), // Adjust the value as needed
+                                      ),
+                                    ),
+                                    child: Container(
+                                      padding: const EdgeInsets.only(top: 7,bottom: 7),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            padding: const EdgeInsets.all(3.0),
+                                            decoration: BoxDecoration(
+                                              color: const Color(0xFFFf0bdd5),
+                                              borderRadius: BorderRadius.circular(20),
+                                              border: Border.all(width: 2.5, color: Color(0xFFFf0bdd5),),
+                                            ),
+                                            child: Column(
+                                              children: [
+                                                Icon(FluentSystemIcons.ic_fluent_ticket_regular, color: Colors.white,)
+                                              ],
+                                            ),
+                                          ),
+                                          const Gap(5),
+                                          Text(
+                                            "Book Now",
+                                            style: TextStyle(color: Colors.black),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const Gap(5),
+                                Container(
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      // Handle Pay for ticket button press
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white, // Background color
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10), // Adjust the value as needed
+                                      ),
+                                    ),
+                                    child: Container(
+                                      padding: const EdgeInsets.only(top: 7,bottom: 7),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            padding: const EdgeInsets.all(3.0),
+                                            decoration: BoxDecoration(
+                                              color: const Color(0xFFFf0bdd5),
+                                              borderRadius: BorderRadius.circular(20),
+                                              border: Border.all(width: 2.5, color: Color(0xFFFf0bdd5),),
+                                            ),
+                                            child: Column(
+                                              children: [
+                                                Icon(FluentSystemIcons.ic_fluent_ticket_regular, color: Colors.white,)
+                                              ],
+                                            ),
+                                          ),
+                                          const Gap(5),
+                                          Text(
+                                            "TimeTable",
+                                            style: TextStyle(color: Colors.black),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                    ],
+                  ),
+                ),
               ],
             )
         ],

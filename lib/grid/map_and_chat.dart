@@ -428,7 +428,7 @@ class _ChatOverviewState extends State<GridOverView> {
   Map<String, dynamic>? busDetails;
 
   Future<void> searchBuses(String busNumber) async {
-    final apiUrl = 'http://192.168.0.102:3000/api/buses/$busNumber';
+    final apiUrl = 'http://192.168.43.210:3000/api/buses/$busNumber';
 
     try {
       final response = await http.get(Uri.parse(apiUrl));
