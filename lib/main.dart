@@ -4,6 +4,7 @@ import 'package:mams/inkwell_pages/123Up_view.dart';
 import 'package:mams/screens/ChatScreenPage.dart';
 import 'package:mams/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'balance/balance_provider.dart';
 import 'inkwell_pages/AboutUsPage.dart';
 import 'screens/Button_bar.dart';
 import 'screens/profile_view.dart';
