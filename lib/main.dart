@@ -1,6 +1,7 @@
 import 'package:mams/grid/map_and_chat.dart';
 import 'package:mams/inkwell_pages/123Down_view.dart';
 import 'package:mams/inkwell_pages/123Up_view.dart';
+import 'package:mams/inkwell_pages/65Down_view.dart';
 import 'package:mams/screens/ChatScreenPage.dart';
 import 'package:mams/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ import 'inkwell_pages/subscriptions_view.dart';
 import 'inkwell_pages/rewards_view.dart'; 
 import 'payments/payforticket_view.dart';
 import 'maps/scheduled_bus_overview.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -39,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/payforticket': (context) => PayForTicketPage(),
         '/aboutUs': (context) => AboutUsPage(),
         '/chat': (context) => ChatScreen(),
+        '/65Down': (context) => Down65(),
       },
       theme: ThemeData(
         fontFamily: 'Poppins',

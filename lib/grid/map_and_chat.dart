@@ -322,20 +322,25 @@ class _ChatOverviewState extends State<GridOverView> {
                 child: Center(
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Icon(FluentSystemIcons.ic_fluent_chevron_down_circle_filled),
-                          const Gap(10),
-                          Center(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("65AC", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
-                                Text("Borivali Station -> Thane Stat..", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54,overflow: TextOverflow.ellipsis, )),
-                              ],
-                            ),
-                          ), // -> Route Container
-                        ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/65Down');
+                        },
+                        child: Row(
+                          children: [
+                            Icon(FluentSystemIcons.ic_fluent_chevron_down_circle_filled),
+                            const Gap(10),
+                            Center(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("65AC", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
+                                  Text("Borivali Station -> Thane Stat..", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54,overflow: TextOverflow.ellipsis, )),
+                                ],
+                              ),
+                            ), // -> Route Container
+                          ],
+                        ),
                       ), // -> Iteration 1 row
                       const Gap(25),
                       Row(
@@ -366,20 +371,25 @@ class _ChatOverviewState extends State<GridOverView> {
                 child: Center(
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Icon(FluentSystemIcons.ic_fluent_chevron_down_circle_filled),
-                          const Gap(10),
-                          Center(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("65AC", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
-                                Text("Borivali Station -> Thane Stat..", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54,overflow: TextOverflow.ellipsis, )),
-                              ],
-                            ),
-                          ), // -> Route Container
-                        ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/65Down');
+                        },
+                        child: Row(
+                          children: [
+                            Icon(FluentSystemIcons.ic_fluent_chevron_down_circle_filled),
+                            const Gap(10),
+                            Center(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("65AC", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
+                                  Text("Borivali Station -> Thane Stat..", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54,overflow: TextOverflow.ellipsis, )),
+                                ],
+                              ),
+                            ), // -> Route Container
+                          ],
+                        ),
                       ), // -> Iteration 1 row
                       const Gap(25),
                       Row(
@@ -410,20 +420,25 @@ class _ChatOverviewState extends State<GridOverView> {
                 child: Center(
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Icon(FluentSystemIcons.ic_fluent_chevron_down_circle_filled),
-                          const Gap(10),
-                          Center(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("65AC", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
-                                Text("Borivali Station -> Thane Stat..", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54,overflow: TextOverflow.ellipsis, )),
-                              ],
-                            ),
-                          ), // -> Route Container
-                        ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/65Down');
+                        },
+                        child: Row(
+                          children: [
+                            Icon(FluentSystemIcons.ic_fluent_chevron_down_circle_filled),
+                            const Gap(10),
+                            Center(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("65AC", style: Styles.headlineStyle4.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900, fontFamily: 'Inter'),),
+                                  Text("Borivali Station -> Thane Stat..", style: Styles.headlineStyle4.copyWith(fontSize: 17, color: Colors.black54,overflow: TextOverflow.ellipsis, )),
+                                ],
+                              ),
+                            ), // -> Route Container
+                          ],
+                        ),
                       ), // -> Iteration 1 row
                       const Gap(25),
                       Row(
