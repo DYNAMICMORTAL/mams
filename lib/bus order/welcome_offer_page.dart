@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-
-import '../payments/confirm_order_view.dart';
 import '../utils/app_styles.dart';
+import 'confirm_order_view.dart';
 
-class StudentPassOfferPage extends StatelessWidget {
+class WelcomeOfferPage extends StatelessWidget {
+  final String passName = "Welcome Offer";
+  final String duration = "5 trips | 7 days";
   final String startDate = DateTime.now().toString();
+  final int price = 9;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Student Pass Offer"),
+        title: Text("Welcome Offer"),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
@@ -22,13 +24,13 @@ class StudentPassOfferPage extends StatelessWidget {
               style: Styles.headlineStyle2.copyWith(color: Styles.primaryColor),
             ),
             SizedBox(height: 10),
-            Text("Student Pass Offer ₹200", style: Styles.headlineStyle2),
-            Text("Monthly 100 rides", style: Styles.textStyle),
-            Text("7 Days, Student Category", style: Styles.textStyle),
+            Text("$passName ₹$price", style: Styles.headlineStyle2),
+            Text(duration, style: Styles.textStyle),
+            Text("7 Days, General Category", style: Styles.textStyle),
             Text("Start date: $startDate", style: Styles.textStyle),
             Divider(),
             SizedBox(height: 10),
-            Text("Passenger details: John", style: Styles.textStyle),
+            Text("Passenger details: Aditi", style: Styles.textStyle),
             Divider(),
             SizedBox(height: 10),
             Text("Terms and conditions", style: Styles.textStyle),
@@ -38,7 +40,7 @@ class StudentPassOfferPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Total amount:", style: Styles.headlineStyle3),
-                Text("₹200", style: Styles.headlineStyle3),
+                Text("₹$price", style: Styles.headlineStyle3),
               ],
             ),
             SizedBox(height: 10),
@@ -48,9 +50,10 @@ class StudentPassOfferPage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ConfirmOrderPage(
-                      title: "Student Pass Offer",
-                      details: "Monthly 100 rides\n7 Days, Student Category",
-                      amount: 200,
+                      passName: passName,
+                      duration: duration,
+                      startDate: startDate,
+                      price: price,
                     ),
                   ),
                 );

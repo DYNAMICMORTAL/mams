@@ -52,6 +52,7 @@ dependencies:
   firebase_core: ^2.20.0
   firebase_storage: ^11.4.0
   http: ^0.13.6
+  qr_flutter: ^4.1.0
 #  google_maps_flutter: ^2.4.0
 #  flutter_search_bar: ^2.0.0
 
@@ -81,6 +82,7 @@ flutter:
     - lib/assets/MAMS.mp4
     - lib/assets/girl1.jpg
     - lib/assets/MusicGif1.mp4
+    - lib/assets/qr-code.png
   fonts:
     - family: Inter
       fonts:
