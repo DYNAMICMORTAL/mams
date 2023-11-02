@@ -4,15 +4,21 @@ import '../utils/app_styles.dart';
 import 'confirm_order_view.dart';
 
 class StudentPassOfferPage extends StatefulWidget {
+  final int balance;
+
+  StudentPassOfferPage({this.balance = 565}); // Make balance optional with a default value of 0
+
   @override
   _StudentPassOfferPageState createState() => _StudentPassOfferPageState();
 }
+
 
 class _StudentPassOfferPageState extends State<StudentPassOfferPage> {
   final String passName = "Student Pass Offer";
   final int durationInDays = 30;
   final String startDate = DateTime.now().toString();
   final int price = 200;
+  final int balance = 565; // Initialize the balance parameter
 
   bool termsAccepted = false;
 
@@ -65,26 +71,30 @@ class _StudentPassOfferPageState extends State<StudentPassOfferPage> {
               ],
             ),
             SizedBox(height: 10),
+            Text("Balance: ₹${widget.balance}", style: Styles.textStyle), // Display the balance
+            SizedBox(height: 25),
             ElevatedButton(
-              onPressed: () {
-                if (termsAccepted) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ConfirmOrderPage(
-                        passName: passName,
-                        duration: "Duration: $durationInDays days",
-                        startDate: startDate,
-                        price: price,
-                      ),
-                    ),
-                  );
-                } else {
-                  showTermsAlert(context);
-                }
-              },
-              child: Text("Make Payment"),
-            ),
+  onPressed: () {
+    if (termsAccepted) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ConfirmOrderPage(
+            passName: passName,
+            duration: "Duration: $durationInDays days",
+            startDate: startDate,
+            price: price,
+            balance: balance, // Pass the balance parameter
+          ),
+        ),
+      );
+    } else {
+      showTermsAlert(context);
+    }
+  },
+  child: Text("Make Payment"),
+)
+
           ],
         ),
       ),

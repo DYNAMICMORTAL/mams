@@ -7,12 +7,14 @@ class ConfirmOrderPage extends StatelessWidget {
   final String duration;
   final String startDate;
   final int price;
+  final int balance; // Add the balance parameter
 
   ConfirmOrderPage({
     required this.passName,
     required this.duration,
     required this.startDate,
     required this.price,
+    required this.balance, // Initialize the balance parameter
   });
 
   @override
@@ -44,21 +46,25 @@ class ConfirmOrderPage extends StatelessWidget {
             ),
             SizedBox(height: 10),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ConfirmationPage(
-                      passName: passName,
-                      duration: duration,
-                      startDate: startDate,
-                      price: price,
-                    ),
-                  ),
-                );
-              },
-              child: Text("Confirm Order"),
-            ),
+  onPressed: () {
+    // Calculate the updated balance after deducting the price
+    int updatedBalance = balance - price;
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ConfirmationPage(
+          passName: passName,
+          duration: duration,
+          startDate: startDate,
+          price: price,
+          balance: updatedBalance, // Pass the updated balance
+        ),
+      ),
+    );
+  },
+  child: Text("Confirm Order"),
+)
+
           ],
         ),
       ),
