@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:intl/intl.dart';
 import '../utils/app_styles.dart';
 import 'confirm_order_view.dart';
 
@@ -24,6 +25,8 @@ class _StudentPassOfferPageState extends State<StudentPassOfferPage> {
 
   @override
   Widget build(BuildContext context) {
+     final formattedStartDate = DateFormat('d MMMM y').format(DateTime.parse(startDate));
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Student Pass Offer"),
@@ -33,18 +36,43 @@ class _StudentPassOfferPageState extends State<StudentPassOfferPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Confirm your details",
-              style: Styles.headlineStyle2.copyWith(color: Styles.primaryColor),
+            Container(
+              // Header Styling
+              color: Styles.primaryColor,
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Center(
+                child: Text(
+                  "Confirm Your Details",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ),
             SizedBox(height: 10),
-            Text("$passName ₹$price", style: Styles.headlineStyle2),
-            Text("Duration: $durationInDays days", style: Styles.textStyle),
-            Text("Student Category", style: Styles.textStyle),
-            Text("Start date: $startDate", style: Styles.textStyle),
-            Divider(),
-            SizedBox(height: 10),
-            Text("Passenger details: John", style: Styles.textStyle),
+            Container(
+              // Details Section Styling
+              color: Colors.grey[200], // Background color for details section
+              padding: EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("$passName ₹$price", style: Styles.headlineStyle2),
+                  SizedBox(height: 10),
+                  Text("Duration: $durationInDays days", style: Styles.textStyle),
+                  Text("Student Category", style: Styles.textStyle),
+                  Text("Start date: $formattedStartDate", style: Styles.textStyle),
+                  Divider(),
+                  SizedBox(height: 10),
+                  Text("Passenger Details: John", style: Styles.textStyle),
+                ],
+              ),
+            ),
+
             SizedBox(height: 10),
             Divider(),
             SizedBox(height: 10),
@@ -71,8 +99,15 @@ class _StudentPassOfferPageState extends State<StudentPassOfferPage> {
               ],
             ),
             SizedBox(height: 10),
-            Text("Balance: ₹${widget.balance}", style: Styles.textStyle), // Display the balance
-            SizedBox(height: 25),
+
+Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("MAMS Wallet Balance:", style: Styles.headlineStyle3),
+                Text("₹${widget.balance}", style: Styles.headlineStyle3),
+              ],
+            ),
+                        SizedBox(height: 25),
             ElevatedButton(
   onPressed: () {
     if (termsAccepted) {

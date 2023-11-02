@@ -42,26 +42,9 @@ class _SelectRoutePageState extends State<SelectRoutePage> {
   void initState() {
     super.initState();
     if (stationNames.isNotEmpty) {
-      source = stationNames[0]; // Set the default source
-      destination = stationNames[0]; // Set the default destination
+      source = stationNames[0];
+      destination = stationNames[0];
     }
-  }
-
-  DropdownButton<String> buildDropdown(
-    String value,
-    void Function(String?) onChanged,
-    List<String> items,
-  ) {
-    return DropdownButton<String>(
-      value: value,
-      onChanged: onChanged,
-      items: items.map((String stationName) {
-        return DropdownMenuItem<String>(
-          value: stationName,
-          child: Text(stationName),
-        );
-      }).toList(),
-    );
   }
 
   @override
@@ -79,43 +62,68 @@ class _SelectRoutePageState extends State<SelectRoutePage> {
               "Source",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            buildDropdown(source, (String? newValue) {
-              setState(() {
-                source = newValue ?? '';
-              });
-            }, stationNames),
+            DropdownButtonFormField<String>(
+              value: source,
+              items: stationNames.map((stationName) {
+                return DropdownMenuItem<String>(
+                  value: stationName,
+                  child: Text(stationName),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  source = newValue ?? '';
+                });
+              },
+            ),
             SizedBox(height: 20),
             Text(
               "Destination",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            buildDropdown(destination, (String? newValue) {
-              setState(() {
-                destination = newValue ?? '';
-              });
-            }, stationNames),
+            DropdownButtonFormField<String>(
+              value: destination,
+              items: stationNames.map((stationName) {
+                return DropdownMenuItem<String>(
+                  value: stationName,
+                  child: Text(stationName),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  destination = newValue ?? '';
+                });
+              },
+            ),
             SizedBox(height: 20),
             ElevatedButton(
-  onPressed: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => TripDetailsPage(
-          source: source,
-          destination: destination,
-          stationNames: stationNames,
-        ),
-      ),
-    );
-  },
-  child: Text("Continue to Trip"),
-),
-
-
+              onPressed: () {
+                if (source != destination) {
+                  // Continue to TripDetailsPage
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TripDetailsPage(
+                        source: source,
+                        destination: destination,
+                        stationNames: stationNames,
+                      ),
+                    ),
+                  );
+                } else {
+                  // Show an error message or prevent navigation
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("Source and Destination cannot be the same."),
+                    ),
+                  );
+                }
+              },
+              child: Text("Search Buses"),
+            ),
           ],
         ),
       ),
     );
   }
 }
-

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import '../utils/app_styles.dart';
 
@@ -7,24 +8,22 @@ class ConfirmationPage extends StatelessWidget {
   final String duration;
   final String startDate;
   final int price;
-  final int balance; // Add the balance parameter
+  final int balance;
 
   ConfirmationPage({
     required this.passName,
     required this.duration,
     required this.startDate,
     required this.price,
-    required this.balance, // Initialize the balance parameter
+    required this.balance,
   });
 
-  // Function to calculate the end date based on the start date and duration
   String calculateEndDate() {
     final DateTime start = DateTime.parse(startDate);
     final int durationInDays = int.tryParse(duration) ?? 0;
-    final DateTime end =
-        start.add(Duration(days: durationInDays)); // Add duration in days
+    final DateTime end = start.add(Duration(days: durationInDays));
     final formattedEndDate =
-        '${end.year}-${end.month.toString().padLeft(2, '0')}-${end.day.toString().padLeft(2, '0')}';
+        DateFormat('d MMMM y').format(end); // Format end date
     return formattedEndDate;
   }
 
@@ -34,53 +33,65 @@ class ConfirmationPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Booking details"),
+        title: Text("Booking Details"),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              
               color: Styles.primaryColor,
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Text(
-                "Order Confirmed! 🎉",
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Center(
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.check_circle,
+                      color: Colors.white,
+                      size: 50,
+                    ),
+                    Text(
+                      "Order Confirmed!",
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 ),
-                textAlign: TextAlign.center,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Card(
               child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
                     Text(
                       passName,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Text(duration, style: Styles.textStyle),
-                    Text("Pass start date: $startDate",
+                    Text("Pass Start Date: $startDate",
                         style: Styles.textStyle, textAlign: TextAlign.center),
-                    Text("Pass end date: $endDate", style: Styles.textStyle, textAlign: TextAlign.center,),
+                    Text("Pass End Date: $endDate", style: Styles.textStyle, textAlign: TextAlign.center),
                     Text("Price: ₹$price", style: Styles.textStyle),
-SizedBox(height: 20),
-Text("Updated Balance: ₹$balance", style: Styles.textStyle), // Show the updated balance
-SizedBox(height: 20),
-
-                    // Add your QR code image here
-                    Center(
+                    const SizedBox(height: 20),
+                    Text("Updated Balance: ₹$balance", style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Colors.green, // Use a green color for the balance
+                    )),
+                    const SizedBox(height: 20),
+                     Center(
                       child: QrImageView(data: "Valid Ticket", size: 200
                       )
                     ),

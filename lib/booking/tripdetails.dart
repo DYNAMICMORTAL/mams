@@ -112,18 +112,99 @@ class _TripDetailsPageState extends State<TripDetailsPage> {
               );
             },
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 16),
-            child: Text("Total Selected Seats: $selectedSeatCount"),
+         Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Container(
+      decoration: BoxDecoration(
+        color: Colors.deepPurple[50],
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      padding: EdgeInsets.all(16),
+      margin: EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Icon(
+                Icons.event_seat,
+                color: Colors.green,
+              ),
+              SizedBox(width: 8),
+              Text(
+                "Total Selected Seats:",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 16),
-            child: Text("Price per Seat: Rs. $pricePerSeat"),
+          Text("$selectedSeatCount"),
+        ],
+      ),
+    ),
+    Container(
+      decoration: BoxDecoration(
+        color: Colors.deepPurple[50],
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      padding: EdgeInsets.all(16),
+      margin: EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Icon(
+                Icons.monetization_on,
+                color: Colors.blue,
+              ),
+              SizedBox(width: 8),
+              Text(
+                "Price per Seat:",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 16),
-            child: Text("Total Price: Rs. $totalPrice"),
+          Text("Rs. $pricePerSeat"),
+        ],
+      ),
+    ),
+    Container(
+      decoration: BoxDecoration(
+        color: Colors.deepPurple[50],
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      padding: EdgeInsets.all(16),
+      margin: EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Icon(
+                Icons.attach_money,
+                color: Colors.deepPurpleAccent,
+              ),
+              SizedBox(width: 8),
+              Text(
+                "Total Price:",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
+          Text("Rs. $totalPrice"),
+        ],
+      ),
+    ),
+  ],
+)
+,
 
           ElevatedButton(
   onPressed: () {

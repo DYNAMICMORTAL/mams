@@ -1,70 +1,101 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:gap/gap.dart';
 import '../utils/app_styles.dart';
-import 'confirmation.dart'; // Import the ConfirmationPage
+import 'confirmation.dart';
 
 class ConfirmOrderPage extends StatelessWidget {
   final String passName;
   final String duration;
   final String startDate;
   final int price;
-  final int balance; // Add the balance parameter
+  final int balance;
 
   ConfirmOrderPage({
     required this.passName,
     required this.duration,
     required this.startDate,
     required this.price,
-    required this.balance, // Initialize the balance parameter
+    required this.balance,
   });
 
   @override
   Widget build(BuildContext context) {
+    final DateTime today = DateTime.now();
+    final formattedStartDate = DateFormat('d MMMM y').format(today);
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Confirm My Order"),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Confirm your order",
+              "Order Summary",
               style: Styles.headlineStyle2.copyWith(color: Styles.primaryColor),
             ),
-            SizedBox(height: 10),
-            Text("$passName ₹$price", style: Styles.headlineStyle2),
-            Text(duration, style: Styles.textStyle),
-            Divider(),
-            SizedBox(height: 20),
+            const SizedBox(height: 10),
+            Container(
+              color: Colors.grey[200], // Background color for the Order Summary section
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("$passName", style: Styles.headlineStyle2),
+                      Text("₹$price", style: Styles.headlineStyle2),
+                    ],
+                  ),
+                  Gap(4),
+                  Text("Start date: $formattedStartDate", style: Styles.textStyle),
+                  Gap(4),
+                  Text(duration, style: Styles.textStyle),
+                ],
+              ),
+            ),
+            const SizedBox(height: 25),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Total amount:", style: Styles.headlineStyle3),
+                Row(
+                  children: [
+                    Icon(Icons.shopping_cart, color: Styles.primaryColor), // Shopping cart icon
+                    Text("Total Amount:", style: Styles.headlineStyle3),
+                  ],
+                ),
                 Text("₹$price", style: Styles.headlineStyle3),
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 20),
             ElevatedButton(
-  onPressed: () {
-    // Calculate the updated balance after deducting the price
-    int updatedBalance = balance - price;
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ConfirmationPage(
-          passName: passName,
-          duration: duration,
-          startDate: startDate,
-          price: price,
-          balance: updatedBalance, // Pass the updated balance
-        ),
-      ),
-    );
-  },
-  child: Text("Confirm Order"),
-)
-
+              onPressed: () {
+                int updatedBalance = balance - price;
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ConfirmationPage(
+                      passName: passName,
+                      duration: duration,
+                      startDate: startDate,
+                      price: price,
+                      balance: updatedBalance,
+                    ),
+                  ),
+                );
+              },
+              child: Row( 
+                children: [
+                  Icon(Icons.check_circle_outline, color: Colors.deepPurple), // Confirmation icon
+                  const SizedBox(width: 9),
+                  Text("Confirm Order", style: Styles.textStyle),
+                ],
+              ),
+            ),
           ],
         ),
       ),
