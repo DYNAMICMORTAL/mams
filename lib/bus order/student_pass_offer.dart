@@ -118,8 +118,8 @@ Row(
             passName: passName,
             duration: "Duration: $durationInDays days",
             startDate: startDate,
-            price: price,
-            balance: balance, // Pass the balance parameter
+            price: price.toDouble(),
+            balance: balance.toDouble(), // Pass the balance parameter
           ),
         ),
       );
