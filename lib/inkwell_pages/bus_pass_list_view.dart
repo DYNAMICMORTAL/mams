@@ -16,6 +16,7 @@ class BusPassList extends StatelessWidget {
           BusPassCard(
             title: "Welcome Pass",
             description: "Just starting at Rs 9",
+            icon: Icons.directions_bus, // Add an icon
             onTap: () {
               Navigator.push(
                 context,
@@ -25,9 +26,11 @@ class BusPassList extends StatelessWidget {
               );
             },
           ),
+          SizedBox(height: 8),
           BusPassCard(
             title: "Student Pass",
             description: "Discounted prices for students",
+            icon: Icons.school, // Add an icon
             onTap: () {
               Navigator.push(
                 context,
@@ -37,14 +40,19 @@ class BusPassList extends StatelessWidget {
               );
             },
           ),
+          // Add separators here
+         SizedBox(height: 8),
           BusPassCard(
             title: "Unlimited Rides Pass",
             description: "Enjoy unlimited trips across the city",
+            icon: Icons.card_membership, // Add an icon
           ),
+          // Add separators here
+          SizedBox(height: 8),
           BusPassCard(
             title: "Special Concession Pass",
-            description:
-                "Passes with concessions for specially abled, reporters, etc.",
+            description: "Passes with concessions for specially abled, reporters, etc.",
+            icon: Icons.accessibility, // Add an icon
           ),
         ],
       ),
@@ -55,19 +63,20 @@ class BusPassList extends StatelessWidget {
 class BusPassCard extends StatelessWidget {
   final String title;
   final String description;
-  final VoidCallback? onTap; // Add this
+  final VoidCallback? onTap;
+  final IconData? icon; // Add this
 
   const BusPassCard({
     required this.title,
     required this.description,
-    this.onTap, // Add this
+    this.onTap,
+    this.icon, // Add this
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // Use GestureDetector to make the entire card clickable
-      onTap: onTap, // Use the provided onTap function
+      onTap: onTap,
       child: Card(
         elevation: 4,
         margin: EdgeInsets.only(bottom: 16.0),
@@ -76,10 +85,16 @@ class BusPassCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Add an Icon to the card
+              if (icon != null)
+                Icon(
+                  icon,
+                  color: Styles.primaryColor,
+                  size: 32,
+                ),
               Text(
                 title,
-                style:
-                    Styles.headlineStyle2.copyWith(color: Styles.primaryColor),
+                style: Styles.headlineStyle2.copyWith(color: Styles.primaryColor),
               ),
               SizedBox(height: 8.0),
               Text(

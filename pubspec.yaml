@@ -53,6 +53,7 @@ dependencies:
   firebase_storage: ^11.4.0
   http: ^0.13.6
   qr_flutter: ^4.1.0
+  intl: ^0.18.1
 #  google_maps_flutter: ^2.4.0
 #  flutter_search_bar: ^2.0.0
 

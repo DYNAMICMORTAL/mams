@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_flutter/qr_flutter.dart'; // Import QR code library
+import 'package:qr_flutter/qr_flutter.dart';
 
 class YourTicketPage extends StatelessWidget {
   final String source;
@@ -8,7 +8,13 @@ class YourTicketPage extends StatelessWidget {
   final String date;
   final String time;
 
-  YourTicketPage({required this.source, required this.destination, required this.totalPrice, required this.date, required this.time});
+  YourTicketPage({
+    required this.source,
+    required this.destination,
+    required this.totalPrice,
+    required this.date,
+    required this.time,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +27,22 @@ class YourTicketPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Order Confirmed! 🎉", style: TextStyle(fontSize: 24)),
+            Text(
+              "Order Confirmed! 🎉",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.deepPurple, // Custom color
+              ),
+            ),
+            SizedBox(height: 20),
             Card(
+              elevation: 4, // Add elevation
+              color: Colors.white, // Add background color
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12), // Add border radius
+                side: BorderSide(color: Colors.deepPurpleAccent, width: 2), // Add border
+              ),
               child: Padding(
                 padding: EdgeInsets.all(16),
                 child: Column(
@@ -33,9 +53,21 @@ class YourTicketPage extends StatelessWidget {
                     Text("Total Price: Rs. $totalPrice", style: TextStyle(fontSize: 18)),
                     Text("Date: $date", style: TextStyle(fontSize: 18)),
                     Text("Time: $time", style: TextStyle(fontSize: 18)),
+                    SizedBox(height: 20),
                     Center(
-                      child: QrImageView(data: "Valid Ticket", size: 200
+                      child: Column(
+                        children: [
+                          Text(
+                            "Scan QR Code for Valid Ticket",
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(height: 10),
+                          Center(
+                      child: QrImageView(data: "#12345:Valid Ticket", size: 200
                       )
+                    ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
