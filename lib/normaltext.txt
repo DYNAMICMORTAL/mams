@@ -1,259 +1,193 @@
-// import 'package:audioplayers/audioplayers.dart';
-// import 'package:fluentui_icons/fluentui_icons.dart';
-// import 'package:flutter/material.dart';
-// import 'package:gap/gap.dart';
-//
-// class MusicPlayerViewPage extends StatefulWidget {
-//   const MusicPlayerViewPage({super.key});
-//
-//   @override
-//   State<MusicPlayerViewPage> createState() => _MusicPlayerViewPageState();
-// }
-//
-// class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
-//   late AudioPlayer advancedPlayer;
-//   @override
-//   void initState() {
-//     super.initState();
-//     advancedPlayer=AudioPlayer();
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: SafeArea(
-//         child: Column(
-//           children: [
-//             Container(
-//               margin: const EdgeInsets.only(left: 15, top: 12),
-//
-//               child: Column(
-//                 children: [
-//                   Row(
-//                     crossAxisAlignment: CrossAxisAlignment.center,
-//                     children: [
-//                       Container(child: Transform.rotate(
-//                         angle: 90 * (3.1415926535 / 180),
-//                           child: Icon(FluentSystemIcons.ic_fluent_ios_chevron_right_regular, size: 30,))),
-//                       const Gap(65),
-//                       Container(
-//                         child: Column(
-//                           children: [
-//                             Text("Playing from Playlist"),
-//                             Text("From Heart to Heart"),
-//                           ],
-//                         ),
-//                       )
-//                     ],
-//                   ), //Music Album Info and Back Button
-//                   Container(),//Main Music Container
-//                   Container(),//Audio Player Container
-//                   Container(), //Lyrics Container
-//                 ],
-//               ),
-//             ),//MAIN CONTAINER
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 
+---
 
+**[Opening Scene]**
 
+[Background Music: Upbeat and Inspirational]
 
+*Fade In: A dynamic visual of diverse students passionately engaging in various technical activities across vibrant AICTE approved institutions in India.*
 
-// import 'package:audioplayers/audioplayers.dart';
-// import 'package:chewie/chewie.dart';
-// import 'package:fluentui_icons/fluentui_icons.dart';
-// import 'package:flutter/material.dart';
-// import 'package:gap/gap.dart';
-// import 'package:video_player/video_player.dart';
-//
-// class MusicPlayerViewPage extends StatefulWidget {
-//   const MusicPlayerViewPage({super.key});
-//
-//   @override
-//   State<MusicPlayerViewPage> createState() => _MusicPlayerViewPageState();
-// }
-//
-// class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
-//   late AudioPlayer advancedPlayer;
-//   late VideoPlayerController _videoPlayerController;
-//   late ChewieController _chewieController;
-//
-//   @override
-//   void initState() {
-//     super.initState();
-//     advancedPlayer = AudioPlayer();
-//     _videoPlayerController = VideoPlayerController.asset('assets/MusicGif1.mp4');
-//     _chewieController = ChewieController(
-//       videoPlayerController: _videoPlayerController,
-//       autoPlay: true,
-//       looping: true,
-//     );
-//   }
-//
-//   @override
-//   void dispose() {
-//     _videoPlayerController.dispose();
-//     _chewieController.dispose();
-//     super.dispose();
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: SafeArea(
-//         child: Stack(
-//           children: [
-//             Chewie(
-//               controller: _chewieController,
-//             ),
-//             Container(
-//               margin: const EdgeInsets.only(left: 15, top: 12),
-//               child: Column(
-//                 children: [
-//                   Row(
-//                     crossAxisAlignment: CrossAxisAlignment.center,
-//                     children: [
-//                       Container(
-//                         child: Transform.rotate(
-//                           angle: 90 * (3.1415926535 / 180),
-//                           child: Icon(FluentSystemIcons.ic_fluent_ios_chevron_right_regular, size: 30),
-//                         ),
-//                       ),
-//                       const Gap(65),
-//                       Container(
-//                         child: Column(
-//                           children: [
-//                             Text("Playing from Album", style: TextStyle(color: Colors.white)),
-//                             Text("From Heart to Heart", style: TextStyle(color: Colors.white)),
-//                           ],
-//                         ),
-//                       )
-//                     ],
-//                   ), // Music Album Info and Back Button
-//                   Container(), // Main Music Container
-//                   Container(), // Audio Player Container
-//                   Container(), // Lyrics Container
-//                 ],
-//               ),
-//             ), // MAIN CONTAINER
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+---
+
+**[Introduction]**
+
+[Scene: Engaging visuals of students, campuses, and technical activities]
+
+**Narrator (N):** Welcome to the era of ParakhAdaptIQ, a transformative leap in education designed to empower engineering students in AICTE Approved Technical Institutions across India. Today, we unravel the intricacies of our revolutionary adaptive learning platform that is set to redefine the landscape of skills assessment. But before we dive into the marvel, let's rewind a bit.
+
+---
+
+**[Problem Identification]**
+
+[Scene: Quick flashes of traditional assessment methods, students looking stressed]
+
+**Narrator:** In the pre-ParakhAdaptIQ era, traditional assessments posed challenges—stress-laden environments and rigid structures that seemed detached from the dynamic needs of modern education.
+
+---
+
+**[Introducing the Game-Changer]**
+
+[Scene: A virtual curtain unveiling the solution's logo]
+
+**Narrator:** Enter ParakhAdaptIQ! The game-changer that's not just a solution but a holistic approach, addressing the specific needs of AICTE's large-scale skill enhancement program.
+
+---
+
+**[Pre-Assessment Profiling]**
+
+[Scene: Animated process of pre-assessment profiling]
+
+**Narrator:** Our journey begins with a unique pre-assessment profiling. Students embark on a vibrant array of questions, setting the stage for a personalized and empowering learning journey. Think of it as a bespoke entrance to an educational adventure tailored to your unique strengths.
+
+---
+
+**[Adaptive Learning Algorithms]**
+
+[Scene: Visual representation of dynamic question difficulty adjustment]
+
+**Narrator:** Now, our adaptive learning algorithms take center stage. Imagine questions dynamically adjusting based on real-time performance—a learning experience tailored to the unique needs and growth trajectory of each student. It's not just about assessing; it's about evolving with you.
+
+---
+
+**[Behavioral Analytics]**
+
+[Scene: Graphs showing user behavior analysis]
+
+**Narrator:** ParakhAdaptIQ goes beyond mere assessment; it understands. Behold the magic of behavioral analytics, identifying patterns and refining our adaptive algorithm to match the unique learning styles and behavioral nuances of every student. It's education that adapts to you.
+
+---
+
+**[Time-Weighted Difficulty]**
+
+[Scene: Visualization of time-weighted difficulty]
+
+**Narrator:** Time is of the essence. Our system gracefully assigns weights to questions based on difficulty and user time, providing a nuanced assessment that transcends mere correctness. It's not just about what you know; it's about how well you know it and how efficiently you can apply that knowledge.
+
+---
+
+**[Historical Performance Analysis]**
+
+[Scene: Historical performance trends being analyzed]
+
+**Narrator:** A journey into the past to sculpt the future. Machine learning analyzes historical performance data, unveiling trends, strengths, weaknesses, and areas for academic refinement. Think of it as a compass guiding you towards continuous improvement.
+
+---
+
+**[Confidence Level Assessment]**
+
+[Scene: Visual of confidence level interface]
+
+**Narrator:** How confident are you feeling? ParakhAdaptIQ seamlessly integrates features allowing students to indicate their confidence levels—a crucial element shaping a comprehensive and uplifting learning journey. It's not just about answering questions; it's about building confidence in your knowledge.
+
+---
+
+**[Diversity in Question Selection]**
+
+[Scene: Animated clustering algorithms at work]
+
+**Narrator:** Diversity in learning, a beacon guiding our journey. Witness our clustering algorithms categorizing questions based on topics and difficulty levels, ensuring a rich and well-rounded assessment experience. It's about embracing the diversity of knowledge.
+
+---
+
+**[Feedback Loop Integration]**
+
+[Scene: Animated feedback loop]
+
+**Narrator:** Learning is a harmonious conversation. Enter our feedback loop, an essential dialogue collecting and analyzing user feedback. Your voice shapes the learning experience, refining question difficulty and relevance. It's about co-creating an educational journey that aligns with your expectations and aspirations.
+
+---
+
+**[Cross-Subject Proficiency Mapping]**
+
+[Scene: Visualization of cross-subject proficiency trends]
+
+**Narrator:** Embark on a panoramic view of proficiency trends. Machine learning maps cross-subject proficiency, unveiling the intricate interplay between subjects—knowledge blossoming into a holistic understanding. It's about understanding the interconnectedness of knowledge.
+
+---
+
+**[AI-Based Question Generation]**
+
+[Scene: Dynamic AI generating questions]
+
+**Narrator:** Embrace the future—no room for randomness! AI-based question generation takes center stage, ensuring each question is thoughtfully selected, elevating overall performance and cementing knowledge retention. It's about a curated educational experience.
+
+---
+
+**[Conclusion: Transformation in Action]**
+
+[Scene: Montage of jubilant students, animated charts showcasing improvement]
+
+**Narrator:** Witness the transformative power! ParakhAdaptIQ isn't merely a solution; it's a dynamic journey—ushering in an era where conventional assessments evolve into adaptive, engaging, and personalized learning experiences.
+
+---
+
+**[Closing Scene]**
+
+[Background Music: Uplifting and Energetic]
+
+*Scene transitions to students confidently engaging in technical activities.*
+
+**Narrator:** Bid farewell to traditional assessments. ParakhAdaptIQ has ushered in a new age of learning—personalized, adaptive, and transformative.
+
+---
+
+**[Closing Words]**
+**Narrator:** Join the revolution. Embrace the future. ParakhAdaptIQ—a leap towards smarter, happier, and more empowered learning!
+
+[Background Music: Builds to a Positive Crescendo]
+
+---
 
 
 
 
 
 
-import 'package:audioplayers/audioplayers.dart';
-import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:video_player/video_player.dart';
 
-class MusicPlayerViewPage extends StatefulWidget {
-  const MusicPlayerViewPage({Key? key}) : super(key: key);
 
-  @override
-  _MusicPlayerViewPageState createState() => _MusicPlayerViewPageState();
-}
 
-class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
-  late AudioPlayer advancedPlayer;
-  late VideoPlayerController _videoPlayerController;
 
-  @override
-  void initState() {
-    super.initState();
-    advancedPlayer = AudioPlayer();
-    _videoPlayerController = VideoPlayerController.asset('assets/MusicGif1.mp4')
-      ..initialize().then((_) {
-        // Ensure the first frame is shown after the video is initialized
-        setState(() {});
 
-        // Start video playback
-        _videoPlayerController.play();
 
-        // Set up a listener to detect when the video playback is complete
-        _videoPlayerController.addListener(() {
-          if (_videoPlayerController.value.position >= _videoPlayerController.value.duration) {
-            setState(() {
-              // Video playback is complete
-            });
-          }
-        });
-      });
-  }
 
-  @override
-  void dispose() {
-    _videoPlayerController.dispose();
-    super.dispose();
-  }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Stack(
-          children: [
-            if (_videoPlayerController.value.isInitialized)
-              AspectRatio(
-                aspectRatio: _videoPlayerController.value.aspectRatio,
-                child: VideoPlayer(_videoPlayerController),
-              ),
-            if (_videoPlayerController.value.isInitialized &&
-                _videoPlayerController.value.position < _videoPlayerController.value.duration)
-              Container(), // Video is playing, display nothing
-            if (_videoPlayerController.value.position >= _videoPlayerController.value.duration)
-              Container(
-                margin: const EdgeInsets.only(left: 15, top: 12),
-                child: Column(
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Transform.rotate(
-                            angle: 90 * (3.1415926535 / 180),
-                            child: Icon(FluentSystemIcons.ic_fluent_ios_chevron_right_regular, size: 30),
-                          ),
-                        ),
-                        const Gap(65),
-                        Container(
-                          child: Column(
-                            children: [
-                              Text("Playing from Album", style: TextStyle(color: Colors.white)),
-                              Text("From Heart to Heart", style: TextStyle(color: Colors.white)),
-                            ],
-                          ),
-                        )
-                      ],
-                    ), // Music Album Info and Back Button
-                    Container(), // Main Music Container
-                    Container(), // Audio Player Container
-                    Container(), // Lyrics Container
-                  ],
-                ),
-              ), // MAIN CONTAINER
-          ],
-        ),
-      ),
-    );
-  }
-}
 
-void main() {
-  runApp(
-    MaterialApp(
-      home: MusicPlayerViewPage(),
-    ),
-  );
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Welcome to the era of ParakhAdaptIQ, a transformative leap in education designed to empower engineering students in AICTE Approved Technical Institutions across India. Today, we unravel the intricacies of our revolutionary adaptive learning platform that is set to redefine the landscape of skills assessment. But before we dive into the marvel, let's rewind a bit.
+The game-changer that's not just a solution but a holistic approach, addressing the specific needs of AICTE's large-scale skill enhancement program.
+Our journey begins with a unique pre-assessment profiling. Students embark on a vibrant array of questions, setting the stage for a personalized and empowering learning journey. Think of it as a bespoke entrance to an educational adventure tailored to your unique strengths.
+Now, our adaptive learning algorithms take center stage. Imagine questions dynamically adjusting based on real-time performance—a learning experience tailored to the unique needs and growth trajectory of each student. It's not just about assessing; it's about evolving with you.
+ParakhAdaptIQ goes beyond mere assessment; it understands. Behold the magic of behavioral analytics, identifying patterns and refining our adaptive algorithm to match the unique learning styles and behavioral nuances of every student. It's education that adapts to you.
+Time is of the essence. Our system gracefully assigns weights to questions based on difficulty and user time, providing a nuanced assessment that transcends mere correctness. It's not just about what you know; it's about how well you know it and how efficiently you can apply that knowledge.
+A journey into the past to sculpt the future. Machine learning analyzes historical performance data, unveiling trends, strengths, weaknesses, and areas for academic refinement. Think of it as a compass guiding you towards continuous improvement.
+How confident are you feeling? ParakhAdaptIQ seamlessly integrates features allowing students to indicate their confidence levels—a crucial element shaping a comprehensive and uplifting learning journey. It's not just about answering questions; it's about building confidence in your knowledge.
+Diversity in learning, a beacon guiding our journey. Witness our clustering algorithms categorizing questions based on topics and difficulty levels, ensuring a rich and well-rounded assessment experience. It's about embracing the diversity of knowledge.
+Learning is a harmonious conversation. Enter our feedback loop, an essential dialogue collecting and analyzing user feedback. Your voice shapes the learning experience, refining question difficulty and relevance. It's about co-creating an educational journey that aligns with your expectations and aspirations.
+Embark on a panoramic view of proficiency trends. Machine learning maps cross-subject proficiency, unveiling the intricate interplay between subjects—knowledge blossoming into a holistic understanding. It's about understanding the interconnectedness of knowledge.
+Embrace the future—no room for randomness!
