@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart'; // Import Cupertino for iOS-style dialogs
+import 'package:flutter/cupertino.dart';
 import '../utils/app_styles.dart';
 import 'confirm_order_view.dart';
 
 class WelcomeOfferPage extends StatefulWidget {
+  final int balance;
+
+  WelcomeOfferPage({this.balance = 565}); // Make balance optional with a default value
+
   @override
   _WelcomeOfferPageState createState() => _WelcomeOfferPageState();
 }
 
 class _WelcomeOfferPageState extends State<WelcomeOfferPage> {
-  final String passName = "Welcome Offer";
+  final String offerName = "Welcome Offer";
   final int durationInDays = 7;
   final String startDate = DateTime.now().toString();
-  final int price = 9;
+  final int price = 50;
+  final int balance = 565; 
 
   bool termsAccepted = false;
 
@@ -32,13 +37,12 @@ class _WelcomeOfferPageState extends State<WelcomeOfferPage> {
               style: Styles.headlineStyle2.copyWith(color: Styles.primaryColor),
             ),
             SizedBox(height: 10),
-            Text("$passName ₹$price", style: Styles.headlineStyle2),
+            Text("$offerName ₹$price", style: Styles.headlineStyle2),
             Text("Duration: $durationInDays days", style: Styles.textStyle),
-            Text("General Category", style: Styles.textStyle),
             Text("Start date: $startDate", style: Styles.textStyle),
             Divider(),
             SizedBox(height: 10),
-            Text("Passenger details: Aditi", style: Styles.textStyle),
+            Text("Passenger details: John", style: Styles.textStyle),
             SizedBox(height: 10),
             Divider(),
             SizedBox(height: 10),
@@ -65,6 +69,8 @@ class _WelcomeOfferPageState extends State<WelcomeOfferPage> {
               ],
             ),
             SizedBox(height: 10),
+            Text("Balance: ₹${widget.balance}", style: Styles.textStyle), // Display the balance
+            SizedBox(height: 25),
             ElevatedButton(
               onPressed: () {
                 if (termsAccepted) {
@@ -72,10 +78,11 @@ class _WelcomeOfferPageState extends State<WelcomeOfferPage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => ConfirmOrderPage(
-                        passName: passName,
+                        passName: offerName,
                         duration: "Duration: $durationInDays days",
                         startDate: startDate,
                         price: price,
+                        balance: widget.balance, // Pass the balance parameter
                       ),
                     ),
                   );

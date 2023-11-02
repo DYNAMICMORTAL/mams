@@ -7,12 +7,14 @@ class ConfirmationPage extends StatelessWidget {
   final String duration;
   final String startDate;
   final int price;
+  final int balance; // Add the balance parameter
 
   ConfirmationPage({
     required this.passName,
     required this.duration,
     required this.startDate,
     required this.price,
+    required this.balance, // Initialize the balance parameter
   });
 
   // Function to calculate the end date based on the start date and duration
@@ -73,7 +75,10 @@ class ConfirmationPage extends StatelessWidget {
                         style: Styles.textStyle, textAlign: TextAlign.center),
                     Text("Pass end date: $endDate", style: Styles.textStyle, textAlign: TextAlign.center,),
                     Text("Price: ₹$price", style: Styles.textStyle),
-                    SizedBox(height: 20),
+SizedBox(height: 20),
+Text("Updated Balance: ₹$balance", style: Styles.textStyle), // Show the updated balance
+SizedBox(height: 20),
+
                     // Add your QR code image here
                     Center(
                       child: QrImageView(data: "Valid Ticket", size: 200
