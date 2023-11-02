@@ -676,7 +676,7 @@ class _Down123State extends State<Down123> {
                           const Gap(10),
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, '/chat'); // Replace with your route
+                              // Navigator.pushNamed(context, '/chat'); // Replace with your route
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,

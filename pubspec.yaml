@@ -54,6 +54,7 @@ dependencies:
   http: ^0.13.6
   qr_flutter: ^4.1.0
   intl: ^0.18.1
+  onesignal_flutter: ^5.0.0
 #  google_maps_flutter: ^2.4.0
 #  flutter_search_bar: ^2.0.0
 

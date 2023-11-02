@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "82856668196",
-    "project_id": "chalokisaan",
-    "storage_bucket": "chalokisaan.appspot.com"
+    "project_number": "1022254128818",
+    "project_id": "mams-e5630",
+    "storage_bucket": "mams-e5630.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:82856668196:android:18ff265074e2c2bdf63cb1",
+        "mobilesdk_app_id": "1:1022254128818:android:f5553a31fed211f32cb3ab",
         "android_client_info": {
-          "package_name": "com.squash.chalokisaan"
+          "package_name": "com.mams.mams"
         }
       },
       "oauth_client": [
         {
-          "client_id": "82856668196-vvd4pmg9v43lb5tf4dldgm3gd7np2c7d.apps.googleusercontent.com",
+          "client_id": "1022254128818-bp8jqg2fo674vpbqehmokhjgoc6hdafl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBD48ANzNnpBrY-gifM3lxQuzGGZVujdtU"
+          "current_key": "AIzaSyAWk7FRFOyt-Ph7akDuI6akAXwJHG46BjU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "82856668196-vvd4pmg9v43lb5tf4dldgm3gd7np2c7d.apps.googleusercontent.com",
+              "client_id": "1022254128818-bp8jqg2fo674vpbqehmokhjgoc6hdafl.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

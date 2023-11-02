@@ -2,6 +2,7 @@ import 'package:mams/screens/train_data.dart';
 import 'package:flutter/material.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:gap/gap.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:video_player/video_player.dart';
 import '../leaderboard/screens/leaderboard_overview.dart';
 import 'MusicOverViewPage.dart';
@@ -43,6 +44,8 @@ class _BottomBarState extends State<BottomBar> {
     // add delay till video is complete
     await Future.delayed(_controller.value.duration);
 
+    await onesignal();
+
     setState(() {
       _videoCompleted = true;
     });
@@ -68,6 +71,15 @@ class _BottomBarState extends State<BottomBar> {
       _selectedIndex = index.clamp(0, 4);
     });
   }
+Future onesignal() async {
+  //Remove this method to stop OneSignal Debugging
+  OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
+
+  OneSignal.initialize("8e492089-b44e-4d7a-a574-3f598af90e53");
+
+// The promptForPushNotificationsWithUserResponse function will show the iOS or Android push notification prompt. We recommend removing the following code and instead using an In-App Message to prompt for notification permission
+  OneSignal.Notifications.requestPermission(true);
+}
 
   @override
   Widget build(BuildContext context) {
