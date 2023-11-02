@@ -152,6 +152,7 @@ import 'package:flip_card/flip_card.dart';
 
 class Balance extends StatelessWidget {
   const Balance({Key? key}) : super(key: key);
+  final int price = 565;
 
   @override
   Widget build(BuildContext context) {
@@ -238,6 +239,7 @@ class UserDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Replace this with the user details display
+    final int price = 565;
     return Scaffold(
       appBar: AppBar(
         title: Text("MAMS Pay"),
@@ -302,7 +304,7 @@ class UserDetailsPage extends StatelessWidget {
                     children: [
                       Text("Balance: ", style: Styles.headlineStyle3,),
                       const Spacer(),
-                      Text("₹ 565", style: Styles.headlineStyle3,)
+                      Text("₹ $price", style: Styles.headlineStyle3,)
                     ],
                   ),
                 ],

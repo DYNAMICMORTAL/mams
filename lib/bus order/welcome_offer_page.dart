@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart'; // Import Cupertino for iOS-style dialogs
 import '../utils/app_styles.dart';
 import 'confirm_order_view.dart';
 
-class WelcomeOfferPage extends StatelessWidget {
+class WelcomeOfferPage extends StatefulWidget {
+  @override
+  _WelcomeOfferPageState createState() => _WelcomeOfferPageState();
+}
+
+class _WelcomeOfferPageState extends State<WelcomeOfferPage> {
   final String passName = "Welcome Offer";
-  final String duration = "5 trips | 7 days";
+  final int durationInDays = 7;
   final String startDate = DateTime.now().toString();
   final int price = 9;
+
+  bool termsAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +33,29 @@ class WelcomeOfferPage extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text("$passName ₹$price", style: Styles.headlineStyle2),
-            Text(duration, style: Styles.textStyle),
-            Text("7 Days, General Category", style: Styles.textStyle),
+            Text("Duration: $durationInDays days", style: Styles.textStyle),
+            Text("General Category", style: Styles.textStyle),
             Text("Start date: $startDate", style: Styles.textStyle),
             Divider(),
             SizedBox(height: 10),
             Text("Passenger details: Aditi", style: Styles.textStyle),
+            SizedBox(height: 10),
             Divider(),
             SizedBox(height: 10),
             Text("Terms and conditions", style: Styles.textStyle),
-            Text("By paying, you agree to the (button: terms and conditions)"),
+            Row(
+              children: [
+                Checkbox(
+                  value: termsAccepted,
+                  onChanged: (value) {
+                    setState(() {
+                      termsAccepted = value ?? false;
+                    });
+                  },
+                ),
+                Text("I agree to the terms and conditions"),
+              ],
+            ),
             SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,23 +67,48 @@ class WelcomeOfferPage extends StatelessWidget {
             SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ConfirmOrderPage(
-                      passName: passName,
-                      duration: duration,
-                      startDate: startDate,
-                      price: price,
+                if (termsAccepted) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ConfirmOrderPage(
+                        passName: passName,
+                        duration: "Duration: $durationInDays days",
+                        startDate: startDate,
+                        price: price,
+                      ),
                     ),
-                  ),
-                );
+                  );
+                } else {
+                  showTermsAlert(context);
+                }
               },
               child: Text("Make Payment"),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  void showTermsAlert(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return CupertinoAlertDialog(
+          title: Text("Terms and Conditions"),
+          content: Text("Please accept the terms and conditions to proceed."),
+          actions: [
+            CupertinoDialogAction(
+              isDefaultAction: true,
+              child: Text("OK"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

@@ -3,13 +3,26 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../balance/add_balance.dart';
 import '../inkwell_pages/bus_pass_list_view.dart';
 import '../payments/payforticket_view.dart';
 import '../payments/balance_view.dart';
 import '../utils/app_styles.dart';
 
-class BuyPass extends StatelessWidget {
-  const BuyPass({super.key});
+class BuyPass extends StatefulWidget {
+  @override
+  _BuyPassState createState() => _BuyPassState();
+}
+
+class _BuyPassState extends State<BuyPass> {
+  int balance = 565; // Define the initial balance
+
+  void updateBalance(int newBalance) {
+    setState(() {
+      balance = newBalance;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -203,8 +216,17 @@ class BuyPass extends StatelessWidget {
                         Container(
                           child: ElevatedButton(
                             onPressed: () {
-                              // Handle Pay for ticket button press
-                            },
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AddPointsPage(
+                currentBalance: balance,
+                updateBalance: updateBalance,
+              ),
+            ),
+          );
+        },
+
                             style: ElevatedButton.styleFrom(
                               primary: Colors.white, // Background color
                               shape: RoundedRectangleBorder(
