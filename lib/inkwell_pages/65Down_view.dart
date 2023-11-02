@@ -43,7 +43,7 @@ class _Down65State extends State<Down65> {
               const Gap(15),
               InkWell(
                 onTap: () {
-                  // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -69,6 +69,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -94,6 +95,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -119,6 +121,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -144,6 +147,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -169,6 +173,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -194,6 +199,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -219,6 +225,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -244,6 +251,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -269,6 +277,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -294,6 +303,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -319,6 +329,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -344,6 +355,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -369,6 +381,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -394,6 +407,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -419,6 +433,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -444,6 +459,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -469,6 +485,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -494,6 +511,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -519,6 +537,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -544,6 +563,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -569,6 +589,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: const Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -594,6 +615,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -619,6 +641,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -644,6 +667,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),
@@ -669,6 +693,7 @@ class _Down65State extends State<Down65> {
               InkWell(
                 onTap: () {
                   // enter page here
+                  Navigator.pushNamed(context, '/scheduleBus');
                 },
                 child: Text("Scheduled Bus Timetable", style: TextStyle(color: Colors.orange),),
               ),

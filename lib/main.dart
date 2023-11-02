@@ -42,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/aboutUs': (context) => AboutUsPage(),
         '/chat': (context) => ChatScreen(),
         '/65Down': (context) => Down65(),
+        'scheduleBus': (context) => ScheduledBuses(),
       },
       theme: ThemeData(
         fontFamily: 'Poppins',
