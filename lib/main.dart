@@ -3,6 +3,7 @@ import 'package:mams/inkwell_pages/123Down_view.dart';
 import 'package:mams/inkwell_pages/123Up_view.dart';
 import 'package:mams/inkwell_pages/65Down_view.dart';
 import 'package:mams/screens/ChatScreenPage.dart';
+import 'package:mams/screens/MetroChoosePage_vIew.dart';
 import 'package:mams/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'balance/balance_provider.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         '/chat': (context) => ChatScreen(),
         '/65Down': (context) => Down65(),
         '/scheduleBus': (context) => ScheduledBuses(),
+        '/metroChoose': (context) => MetroChoosePage(),
       },
       theme: ThemeData(
         fontFamily: 'Poppins',

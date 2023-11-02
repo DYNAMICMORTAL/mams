@@ -245,6 +245,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: ElevatedButton(
                                     onPressed: () {
                                       // Handle Pay for ticket button press
+                                      Navigator.pushNamed(context, '/metroChoose');
                                     },
                                     style: ElevatedButton.styleFrom(
                                       primary: Colors.white, // Background color
