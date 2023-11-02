@@ -1,7 +1,7 @@
-import 'package:mams/inkwell_pages/student_pass_offer.dart';
+import 'package:mams/bus%20order/student_pass_offer.dart';
 import 'package:flutter/material.dart';
 import '../utils/app_styles.dart';
-import 'welcome_offer_page.dart'; // Import the WelcomeOfferPage
+import '../bus order/welcome_offer_page.dart'; // Import the WelcomeOfferPage
 
 class BusPassList extends StatelessWidget {
   @override
