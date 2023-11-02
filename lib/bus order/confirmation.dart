@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 import '../utils/app_styles.dart';
 
 class ConfirmationPage extends StatelessWidget {
@@ -39,6 +40,7 @@ class ConfirmationPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              
               color: Styles.primaryColor,
               padding: EdgeInsets.symmetric(vertical: 10),
               child: Text(
@@ -68,15 +70,14 @@ class ConfirmationPage extends StatelessWidget {
                     SizedBox(height: 10),
                     Text(duration, style: Styles.textStyle),
                     Text("Pass start date: $startDate",
-                        style: Styles.textStyle),
-                    Text("Pass end date: $endDate", style: Styles.textStyle),
+                        style: Styles.textStyle, textAlign: TextAlign.center),
+                    Text("Pass end date: $endDate", style: Styles.textStyle, textAlign: TextAlign.center,),
                     Text("Price: ₹$price", style: Styles.textStyle),
                     SizedBox(height: 20),
                     // Add your QR code image here
-                    Image.asset(
-                      'lib/assets/qr_code.png',
-                      width: 200,
-                      height: 200,
+                    Center(
+                      child: QrImageView(data: "Valid Ticket", size: 200
+                      )
                     ),
                   ],
                 ),

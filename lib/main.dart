@@ -9,7 +9,7 @@ import 'screens/Button_bar.dart';
 import 'screens/profile_view.dart';
 import 'inkwell_pages/settings_view.dart';
 import 'inkwell_pages/subscriptions_view.dart';
-import 'inkwell_pages/rewards_view.dart';
+import 'inkwell_pages/rewards_view.dart'; 
 import 'payments/payforticket_view.dart';
 import 'maps/scheduled_bus_overview.dart';
 
