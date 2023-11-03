@@ -78,7 +78,34 @@ class MMRDA7 extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text("Metro QR Ticket"),
-                            Text("Versova to Andheri"),
+                            Text("Ovaripada to Akurli"),
+                          ],
+                        ),
+                        const Spacer(),
+                        Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
+                      ],
+                    ),
+                  ),
+                  const Gap(10),
+                  Container(
+                    padding: const EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 15),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(FluentSystemIcons.ic_fluent_phone_mobile_regular),
+                        const Gap(5),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text("Metro QR Ticket"),
+                            Text("Akurli to Gundavali"),
                           ],
                         ),
                         const Spacer(),

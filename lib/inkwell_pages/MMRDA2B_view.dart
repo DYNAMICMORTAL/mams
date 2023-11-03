@@ -51,7 +51,7 @@ class MMRDA2B extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text("Metro QR Ticket"),
-                            Text("Andheri to Marol Naka"),
+                            Text("SG Barve Marg to Charkop"),
                           ],
                         ),
                         const Spacer(),
@@ -78,7 +78,7 @@ class MMRDA2B extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text("Metro QR Ticket"),
-                            Text("Versova to Andheri"),
+                            Text("Charkop to JVPD"),
                           ],
                         ),
                         const Spacer(),
