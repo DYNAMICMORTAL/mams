@@ -8,6 +8,7 @@ import 'package:mams/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'balance/balance_provider.dart';
 import 'inkwell_pages/AboutUsPage.dart';
+import 'inkwell_pages/MMRDA1_view.dart';
 import 'screens/Button_bar.dart';
 import 'screens/profile_view.dart';
 import 'inkwell_pages/settings_view.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
         '/65Down': (context) => Down65(),
         '/scheduleBus': (context) => ScheduledBuses(),
         '/metroChoose': (context) => MetroChoosePage(),
+        '/mmrda1': (context) => MMRDA1(),
       },
       theme: ThemeData(
         fontFamily: 'Poppins',
