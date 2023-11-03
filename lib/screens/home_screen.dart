@@ -111,14 +111,14 @@ class _HomeScreenState extends State<HomeScreen> {
         leading: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
         title: Text('Bus Pass'),
         onTap: () {
-          // Add navigation logic to redirect to the bus pass section
+          Navigator.pushNamed(context, '/buspasss');
         },
       ),
       ListTile(
         leading: Icon(FluentSystemIcons.ic_fluent_text_change_accept_filled),
-        title: Text('Learn Local Language'),
+        title: Text('MMRDA Metro'),
         onTap: () {
-          Navigator.pushNamed(context, '/learn');
+          Navigator.pushNamed(context, '/mmrda1');
         },
       ),
       ListTile(
