@@ -83,141 +83,156 @@ class MetroChoosePage extends StatelessWidget {
                           ),
                         ),
                         const Gap(18),
-                        Container(
-                          padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade200,
-                            borderRadius: BorderRadius.circular(12.5),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 1,
-                                blurRadius: 7,
-                                offset: Offset(0, 3), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  InkWell(
-                                    onTap: () {},
-                                    child: Container(
-                                      width: 40, // Adjust the size of the circle
-                                      height: 40, // Adjust the size of the circle
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.yellow, // Change the color of the circle
-                                      ),
-                                      child: Center(
-                                        child: Icon(
-                                          Icons.star,
-                                          color: Colors.white, // Change the color of the icon
-                                          size: 20.0, // Adjust the size of the icon
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/mmrda2a');
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius: BorderRadius.circular(12.5),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 1,
+                                  blurRadius: 7,
+                                  offset: Offset(0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    InkWell(
+                                      onTap: () {},
+                                      child: Container(
+                                        width: 40, // Adjust the size of the circle
+                                        height: 40, // Adjust the size of the circle
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Colors.yellow, // Change the color of the circle
+                                        ),
+                                        child: Center(
+                                          child: Icon(
+                                            Icons.star,
+                                            color: Colors.white, // Change the color of the icon
+                                            size: 20.0, // Adjust the size of the icon
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  const Gap(15),
-                                  Text("Mumbai Metro Line 2A", style: Styles.headlineStyle3,),
-                                  const Spacer(),
-                                  Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
-                                ],
-                              ),
-                            ],
+                                    const Gap(15),
+                                    Text("Mumbai Metro Line 2A", style: Styles.headlineStyle3,),
+                                    const Spacer(),
+                                    Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         const Gap(18),
-                        Container(
-                          padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade200,
-                            borderRadius: BorderRadius.circular(12.5),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 1,
-                                blurRadius: 7,
-                                offset: Offset(0, 3), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  InkWell(
-                                    onTap: () {},
-                                    child: Container(
-                                      width: 40, // Adjust the size of the circle
-                                      height: 40, // Adjust the size of the circle
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.yellowAccent, // Change the color of the circle
-                                      ),
-                                      child: Center(
-                                        child: Icon(
-                                          Icons.star,
-                                          color: Colors.white, // Change the color of the icon
-                                          size: 20.0, // Adjust the size of the icon
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/mmrda2b');
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius: BorderRadius.circular(12.5),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 1,
+                                  blurRadius: 7,
+                                  offset: Offset(0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    InkWell(
+                                      onTap: () {},
+                                      child: Container(
+                                        width: 40, // Adjust the size of the circle
+                                        height: 40, // Adjust the size of the circle
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Colors.yellowAccent, // Change the color of the circle
+                                        ),
+                                        child: Center(
+                                          child: Icon(
+                                            Icons.star,
+                                            color: Colors.white, // Change the color of the icon
+                                            size: 20.0, // Adjust the size of the icon
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  const Gap(15),
-                                  Text("Mumbai Metro Line 2B", style: Styles.headlineStyle3,),
-                                  const Spacer(),
-                                  Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
-                                ],
-                              ),
-                            ],
+                                    const Gap(15),
+                                    Text("Mumbai Metro Line 2B", style: Styles.headlineStyle3,),
+                                    const Spacer(),
+                                    Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         const Gap(18),
-                        Container(
-                          padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade200,
-                            borderRadius: BorderRadius.circular(12.5),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 1,
-                                blurRadius: 7,
-                                offset: Offset(0, 3), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  InkWell(
-                                    onTap: () {},
-                                    child: Container(
-                                      width: 40, // Adjust the size of the circle
-                                      height: 40, // Adjust the size of the circle
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.redAccent, // Change the color of the circle
-                                      ),
-                                      child: Center(
-                                        child: Icon(
-                                          Icons.star,
-                                          color: Colors.white, // Change the color of the icon
-                                          size: 20.0, // Adjust the size of the icon
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/mmrda7');
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius: BorderRadius.circular(12.5),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 1,
+                                  blurRadius: 7,
+                                  offset: Offset(0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    InkWell(
+                                      onTap: () {},
+                                      child: Container(
+                                        width: 40, // Adjust the size of the circle
+                                        height: 40, // Adjust the size of the circle
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Colors.redAccent, // Change the color of the circle
+                                        ),
+                                        child: Center(
+                                          child: Icon(
+                                            Icons.star,
+                                            color: Colors.white, // Change the color of the icon
+                                            size: 20.0, // Adjust the size of the icon
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  const Gap(15),
-                                  Text("Mumbai Metro Line 7", style: Styles.headlineStyle3,),
-                                  const Spacer(),
-                                  Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
-                                ],
-                              ),
-                            ],
+                                    const Gap(15),
+                                    Text("Mumbai Metro Line 7", style: Styles.headlineStyle3,),
+                                    const Spacer(),
+                                    Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
