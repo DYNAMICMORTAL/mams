@@ -116,9 +116,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       ListTile(
         leading: Icon(FluentSystemIcons.ic_fluent_text_change_accept_filled),
-        title: Text('MMRDA Netro'),
+        title: Text('MMRDA Metro'),
         onTap: () {
-          Navigator.pushNamed(context, '/learn');
+          Navigator.pushNamed(context, '/mmrda1');
         },
       ),
       ListTile(

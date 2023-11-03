@@ -1,7 +1,8 @@
 import 'package:mams/bus%20order/student_pass_offer.dart';
 import 'package:flutter/material.dart';
 import '../utils/app_styles.dart';
-import '../bus order/welcome_offer_page.dart'; // Import the WelcomeOfferPage
+import '../bus order/welcome_offer_page.dart';
+import 'comingsoon.dart'; // Import the WelcomeOfferPage
 
 class BusPassList extends StatelessWidget {
   @override
@@ -45,7 +46,15 @@ class BusPassList extends StatelessWidget {
           BusPassCard(
             title: "Unlimited Rides Pass",
             description: "Enjoy unlimited trips across the city",
-            icon: Icons.card_membership, // Add an icon
+            icon: Icons.card_membership,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ComingSoonPage(),
+                ),
+              );
+            },
           ),
           // Add separators here
           SizedBox(height: 8),
@@ -53,6 +62,14 @@ class BusPassList extends StatelessWidget {
             title: "Special Concession Pass",
             description: "Passes with concessions for specially abled, reporters, etc.",
             icon: Icons.accessibility, // Add an icon
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ComingSoonPage(),
+                ),
+              );
+            },
           ),
         ],
       ),
