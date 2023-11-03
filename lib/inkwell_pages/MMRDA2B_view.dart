@@ -19,7 +19,9 @@ class MMRDA2B extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Icon(FluentSystemIcons.ic_fluent_arrow_left_regular),
+                  InkWell(onTap: (){
+                    Navigator.pop(context);
+                  },child: Icon(FluentSystemIcons.ic_fluent_arrow_left_regular)),
                   const Gap(15),
                   Text("Mumbai Metro Line 2B", style: Styles.headlineStyle2),
                 ],
