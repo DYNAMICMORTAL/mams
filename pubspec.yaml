@@ -85,6 +85,8 @@ flutter:
     - lib/assets/girl1.jpg
     - lib/assets/MusicGif1.mp4
     - lib/assets/qr-code.png
+    - lib/assets/line1.png
+    - lib/assets/line2a.jpeg
   fonts:
     - family: Inter
       fonts:

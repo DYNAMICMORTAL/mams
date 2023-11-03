@@ -61,15 +61,12 @@ class MetroChoosePage extends StatelessWidget {
                                         height: 40, // Adjust the size of the circle
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color: Colors.blue, // Change the color of the circle
-                                        ),
-                                        child: Center(
-                                          child: Icon(
-                                            Icons.star,
-                                            color: Colors.white, // Change the color of the icon
-                                            size: 20.0, // Adjust the size of the icon
-                                          ),
-                                        ),
+                                          color: Colors.blue,
+                                          image: DecorationImage(
+                                            image: AssetImage('lib/assets/line1.png'), // Replace with your image path
+                                            fit: BoxFit.cover,// Change the color of the circle
+                                        ),),
+
                                       ),
 
                                     const Gap(15),
@@ -112,16 +109,12 @@ class MetroChoosePage extends StatelessWidget {
                                         height: 40, // Adjust the size of the circle
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color: Colors.yellow, // Change the color of the circle
+                                          color: Colors.yellow,
+                                          image: DecorationImage(
+                                            image: AssetImage('lib/assets/line2a.jpeg'), // Replace with your image path
+                                            fit: BoxFit.cover,// Change the color of the circle
                                         ),
-                                        child: Center(
-                                          child: Icon(
-                                            Icons.star,
-                                            color: Colors.white, // Change the color of the icon
-                                            size: 20.0, // Adjust the size of the icon
-                                          ),
-                                        ),
-                                      ),
+                                      ),),
                                     ),
                                     const Gap(15),
                                     Text("Mumbai Metro Line 2A", style: Styles.headlineStyle3,),
@@ -163,16 +156,13 @@ class MetroChoosePage extends StatelessWidget {
                                         height: 40, // Adjust the size of the circle
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color: Colors.yellowAccent, // Change the color of the circle
+                                          color: Colors.yellowAccent,
+                                          image: DecorationImage(
+                                            image: AssetImage('lib/assets/line1.png'), // Replace with your image path
+                                            fit: BoxFit.cover,// Change the color of the circle
                                         ),
-                                        child: Center(
-                                          child: Icon(
-                                            Icons.star,
-                                            color: Colors.white, // Change the color of the icon
-                                            size: 20.0, // Adjust the size of the icon
-                                          ),
-                                        ),
-                                      ),
+
+                                      ),),
                                     ),
                                     const Gap(15),
                                     Text("Mumbai Metro Line 2B", style: Styles.headlineStyle3,),
@@ -214,15 +204,12 @@ class MetroChoosePage extends StatelessWidget {
                                         height: 40, // Adjust the size of the circle
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color: Colors.redAccent, // Change the color of the circle
-                                        ),
-                                        child: Center(
-                                          child: Icon(
-                                            Icons.star,
-                                            color: Colors.white, // Change the color of the icon
-                                            size: 20.0, // Adjust the size of the icon
-                                          ),
-                                        ),
+                                          color: Colors.redAccent,
+                                          image: DecorationImage(
+                                            image: AssetImage('lib/assets/line2a.jpeg'), // Replace with your image path
+                                            fit: BoxFit.cover,// Change the color of the circle
+                                        ),),
+
                                       ),
                                     ),
                                     const Gap(15),
