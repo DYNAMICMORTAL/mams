@@ -24,191 +24,239 @@ class MetroChoosePage extends StatelessWidget {
                           onTap: () {
                             Navigator.pop(context);
                           },
-                            child: Icon(FluentSystemIcons.ic_fluent_arrow_left_filled)),
+                          child: Icon(FluentSystemIcons.ic_fluent_arrow_left_filled),
+                        ),
                         const Gap(15),
                         Text("MMRDA Metros", style: Styles.headlineStyle2,),
                       ],
                     ),
                   ), //navbar
                   Container(
-                    padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 1,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-                    ),
                     child: Column(
                       children: [
-                        Row(
-                          children: [
-                            InkWell(
-                              onTap: () {},
-                              child: Container(
-                                width: 40, // Adjust the size of the circle
-                                height: 40, // Adjust the size of the circle
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.blue, // Change the color of the circle
-                                ),
-                                child: Center(
-                                  child: Icon(
-                                    Icons.star,
-                                    color: Colors.white, // Change the color of the icon
-                                    size: 20.0, // Adjust the size of the icon
-                                  ),
-                                ),
+                        Container(
+                          padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 1,
+                                blurRadius: 7,
+                                offset: Offset(0, 3), // changes position of shadow
                               ),
-                            ),
-                            const Gap(15),
-                            Text("Mumbai Metro Line 1", style: Styles.headlineStyle3,),
-                            const Spacer(),
-                            Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
-                          ],
+                            ],
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  InkWell(
+                                    onTap: () {},
+                                    child: Container(
+                                      width: 40, // Adjust the size of the circle
+                                      height: 40, // Adjust the size of the circle
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.blue, // Change the color of the circle
+                                      ),
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.star,
+                                          color: Colors.white, // Change the color of the icon
+                                          size: 20.0, // Adjust the size of the icon
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const Gap(15),
+                                  Text("Mumbai Metro Line 1", style: Styles.headlineStyle3,),
+                                  const Spacer(),
+                                  Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Gap(18),
+                        Container(
+                          padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: BorderRadius.circular(12.5),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 1,
+                                blurRadius: 7,
+                                offset: Offset(0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  InkWell(
+                                    onTap: () {},
+                                    child: Container(
+                                      width: 40, // Adjust the size of the circle
+                                      height: 40, // Adjust the size of the circle
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.yellow, // Change the color of the circle
+                                      ),
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.star,
+                                          color: Colors.white, // Change the color of the icon
+                                          size: 20.0, // Adjust the size of the icon
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const Gap(15),
+                                  Text("Mumbai Metro Line 2A", style: Styles.headlineStyle3,),
+                                  const Spacer(),
+                                  Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Gap(18),
+                        Container(
+                          padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: BorderRadius.circular(12.5),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 1,
+                                blurRadius: 7,
+                                offset: Offset(0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  InkWell(
+                                    onTap: () {},
+                                    child: Container(
+                                      width: 40, // Adjust the size of the circle
+                                      height: 40, // Adjust the size of the circle
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.yellowAccent, // Change the color of the circle
+                                      ),
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.star,
+                                          color: Colors.white, // Change the color of the icon
+                                          size: 20.0, // Adjust the size of the icon
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const Gap(15),
+                                  Text("Mumbai Metro Line 2B", style: Styles.headlineStyle3,),
+                                  const Spacer(),
+                                  Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Gap(18),
+                        Container(
+                          padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: BorderRadius.circular(12.5),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 1,
+                                blurRadius: 7,
+                                offset: Offset(0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  InkWell(
+                                    onTap: () {},
+                                    child: Container(
+                                      width: 40, // Adjust the size of the circle
+                                      height: 40, // Adjust the size of the circle
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.redAccent, // Change the color of the circle
+                                      ),
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.star,
+                                          color: Colors.white, // Change the color of the icon
+                                          size: 20.0, // Adjust the size of the icon
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const Gap(15),
+                                  Text("Mumbai Metro Line 7", style: Styles.headlineStyle3,),
+                                  const Spacer(),
+                                  Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
-                  const Gap(18),
+                  const Gap(35),
                   Container(
-                    padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
-                      borderRadius: BorderRadius.circular(12.5),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 1,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-                    ),
+                    padding: const EdgeInsets.only(left: 15, right:20),
+                    width: MediaQuery.of(context).size.width*0.90,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Row(
-                          children: [
-                            InkWell(
-                              onTap: () {},
-                              child: Container(
-                                width: 40, // Adjust the size of the circle
-                                height: 40, // Adjust the size of the circle
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.yellow, // Change the color of the circle
-                                ),
-                                child: Center(
-                                  child: Icon(
-                                    Icons.star,
-                                    color: Colors.white, // Change the color of the icon
-                                    size: 20.0, // Adjust the size of the icon
+                        Text("Choose an option to Travel", style: Styles.headlineStyle3),
+                        const Gap(12),
+                        Container(
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(FluentSystemIcons.ic_fluent_phone_mobile_regular),
+                                  const Gap(15),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text("Metro QR Ticket"),
+                                        const Gap(1),
+                                        Text(
+                                          "Digital tickets for on-the-go journey. We believe in Paperless and Eco-Friendly ticketing systems",
+                                          style: Styles.headlineStyle4.copyWith(overflow: TextOverflow.ellipsis),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
+                                  const Spacer(),
+                                  Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
+                                ],
                               ),
-                            ),
-                            const Gap(15),
-                            Text("Mumbai Metro Line 2A", style: Styles.headlineStyle3,),
-                            const Spacer(),
-                            Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Gap(18),
-                  Container(
-                    padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
-                      borderRadius: BorderRadius.circular(12.5),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 1,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            InkWell(
-                              onTap: () {},
-                              child: Container(
-                                width: 40, // Adjust the size of the circle
-                                height: 40, // Adjust the size of the circle
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.yellowAccent, // Change the color of the circle
-                                ),
-                                child: Center(
-                                  child: Icon(
-                                    Icons.star,
-                                    color: Colors.white, // Change the color of the icon
-                                    size: 20.0, // Adjust the size of the icon
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const Gap(15),
-                            Text("Mumbai Metro Line 2B", style: Styles.headlineStyle3,),
-                            const Spacer(),
-                            Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Gap(18),
-                  Container(
-                    padding: const EdgeInsets.only(left: 15, right: 15, top: 12, bottom: 12),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
-                      borderRadius: BorderRadius.circular(12.5),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 1,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            InkWell(
-                              onTap: () {},
-                              child: Container(
-                                width: 40, // Adjust the size of the circle
-                                height: 40, // Adjust the size of the circle
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.redAccent, // Change the color of the circle
-                                ),
-                                child: Center(
-                                  child: Icon(
-                                    Icons.star,
-                                    color: Colors.white, // Change the color of the icon
-                                    size: 20.0, // Adjust the size of the icon
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const Gap(15),
-                            Text("Mumbai Metro Line 7", style: Styles.headlineStyle3,),
-                            const Spacer(),
-                            Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
-                          ],
+                              // Add more rows as needed...
+                            ],
+                          ),
                         ),
                       ],
                     ),
