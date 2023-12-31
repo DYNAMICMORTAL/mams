@@ -12,6 +12,7 @@ import 'inkwell_pages/MMRDA1_view.dart';
 import 'inkwell_pages/MMRDA2A_view.dart';
 import 'inkwell_pages/MMRDA2B_view.dart';
 import 'inkwell_pages/MMRDA7_view.dart';
+import 'inkwell_pages/bus_pass_list_view.dart';
 import 'screens/Button_bar.dart';
 import 'screens/profile_view.dart';
 import 'inkwell_pages/settings_view.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
         '/mmrda2a': (context) => MMRDA2A(),
         '/mmrda2b': (context) => MMRDA2B(),
         '/mmrda7': (context) => MMRDA7(),
+        '/buspasss': (context) => BusPassList(),
       },
       theme: ThemeData(
         fontFamily: 'Poppins',
