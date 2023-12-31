@@ -63,8 +63,7 @@ class YourTicketPage extends StatelessWidget {
                           ),
                           SizedBox(height: 10),
                           Center(
-                      child: QrImageView(data: "#12345:Valid Ticket", size: 200
-                      )
+                      child: QrImageView(data: "${source+destination+totalPrice.toString()+time}", size: 200)
                     ),
                         ],
                       ),

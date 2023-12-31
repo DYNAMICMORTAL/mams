@@ -3,11 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 import '../utils/app_styles.dart';
 import 'confirm_order_view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class StudentPassOfferPage extends StatefulWidget {
-  final int balance;
+  // final int balance;
+  double balance = 0.0;
 
-  StudentPassOfferPage({this.balance = 565}); // Make balance optional with a default value of 0
+  // StudentPassOfferPage({this.balance = 565}); // Make balance optional with a default value of 0
 
   @override
   _StudentPassOfferPageState createState() => _StudentPassOfferPageState();
@@ -19,7 +21,23 @@ class _StudentPassOfferPageState extends State<StudentPassOfferPage> {
   final int durationInDays = 30;
   final String startDate = DateTime.now().toString();
   final int price = 200;
-  final int balance = 565; // Initialize the balance parameter
+  // final int balance = 565; // Initialize the balance parameter
+  double balance = 0.0;
+
+
+  @override
+  void initState() {
+    _loadBalance();
+    super.initState();
+  }
+
+  Future<void> _loadBalance() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    double savedBalance = prefs.getDouble('balance') ?? 0.0;
+    setState(() {
+      balance = savedBalance;
+    });
+  }
 
   bool termsAccepted = false;
 
@@ -104,7 +122,7 @@ Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("MAMS Wallet Balance:", style: Styles.headlineStyle3),
-                Text("₹${widget.balance}", style: Styles.headlineStyle3),
+                Text("₹${balance.toStringAsFixed(2)}", style: Styles.headlineStyle3),
               ],
             ),
                         SizedBox(height: 25),

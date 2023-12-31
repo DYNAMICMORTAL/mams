@@ -428,6 +428,8 @@ import 'package:gap/gap.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../utils/app_styles.dart';
 import 'package:flip_card/flip_card.dart';
+import 'package:provider/provider.dart';
+import '/balance/balance_provider.dart';
 
 class Balance extends StatelessWidget {
   const Balance({Key? key}) : super(key: key);
@@ -452,7 +454,7 @@ class BalanceView extends StatefulWidget {
 
 class _BalanceViewState extends State<BalanceView> {
   String enteredPin = "";
-  double balance = 1000.0;
+  double balance = 10000.0;
 
   @override
   void initState() {
