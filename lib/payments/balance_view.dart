@@ -420,19 +420,16 @@
 
 
 
-import 'package:flip_card/flip_card.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-<<<<<<< HEAD
 import '../utils/app_styles.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:provider/provider.dart';
 import '/balance/balance_provider.dart';
-=======
->>>>>>> 80f1d06286f12344a85a3c080334da59f391c96d
 
 class Balance extends StatelessWidget {
   const Balance({Key? key}) : super(key: key);
@@ -490,12 +487,6 @@ class _BalanceViewState extends State<BalanceView> {
     }
   }
 
-  void _updateBalance(double updatedBalance) {
-    setState(() {
-      balance = updatedBalance;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     bool isButtonEnabled = enteredPin.length == 4;
@@ -506,7 +497,7 @@ class _BalanceViewState extends State<BalanceView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Enter PIN:", style: TextStyle(fontSize: 20)),
+            Text("Enter PIN:", style: Styles.headlineStyle2),
             SizedBox(height: 10),
             TextField(
               textAlign: TextAlign.center,
@@ -528,95 +519,7 @@ class _BalanceViewState extends State<BalanceView> {
               onPressed: isButtonEnabled ? _verifyPin : null,
               child: Text("Verify PIN"),
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => UpdateBalancePage(
-                      currentBalance: balance,
-                      onBalanceUpdated: _updateBalance,
-                    ),
-                  ),
-                );
-              },
-              child: Text("Add Balance"),
-            ),
-            const Gap(15),
-            Text("Current Balance: ₹${balance.toStringAsFixed(2)}", style: TextStyle(fontSize: 20)),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class UpdateBalancePage extends StatefulWidget {
-  final double currentBalance;
-  final Function(double) onBalanceUpdated;
-
-  UpdateBalancePage({required this.currentBalance, required this.onBalanceUpdated});
-
-  @override
-  _UpdateBalancePageState createState() => _UpdateBalancePageState();
-}
-
-class _UpdateBalancePageState extends State<UpdateBalancePage> {
-  double _newBalance = 0.0;
-
-  void _updateBalance() {
-    double updatedBalance = widget.currentBalance + _newBalance;
-
-    // Update the balance in SharedPreferences
-    _saveBalance(updatedBalance);
-
-    // Pass the updated balance back to the previous page using the callback
-    widget.onBalanceUpdated(updatedBalance);
-    Navigator.pop(context);
-  }
-
-  Future<void> _saveBalance(double updatedBalance) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setDouble('balance', updatedBalance);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Add Balance"),
-      ),
-      body: Center(
-        child: Container(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Current Balance: ₹${widget.currentBalance.toStringAsFixed(2)}", style: TextStyle(fontSize: 20)),
-              SizedBox(height: 10),
-              TextField(
-                textAlign: TextAlign.center,
-                onChanged: (newValue) {
-                  setState(() {
-                    _newBalance = double.tryParse(newValue) ?? 0.0;
-                  });
-                },
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  labelText: "Enter Additional Balance",
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: () {
-                  _updateBalance();
-                },
-                child: Text("Add Balance"),
-              ),
-            ],
-          ),
         ),
       ),
     );
@@ -673,7 +576,7 @@ class UserDetailsPage extends StatelessWidget {
             Row(
               children: [
                 InkWell(
-                  child: Text("Can I've a physical card?", style: TextStyle(fontSize: 12, color: Colors.purple)),
+                  child: Text("Can I've a physical card?", style: Styles.headlineStyle5.copyWith(fontSize: 10, color: Colors.purple)),
                 ),
               ],
             ),
@@ -688,9 +591,9 @@ class UserDetailsPage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text("Balance: ", style: TextStyle(fontSize: 20)),
+                      Text("Balance: ", style: Styles.headlineStyle3),
                       const Spacer(),
-                      Text("₹ ${balance.toStringAsFixed(2)}", style: TextStyle(fontSize: 20)),
+                      Text("₹ $balance", style: Styles.headlineStyle3),
                     ],
                   ),
                 ],
@@ -707,7 +610,7 @@ class UserDetailsPage extends StatelessWidget {
                   Row(
                     children: [
                       const Gap(5),
-                      Text("Features: ", style: TextStyle(fontSize: 17.5)),
+                      Text("Features: ", style: Styles.headlineStyle4.copyWith(fontSize: 17.5)),
                       const Gap(5),
                     ],
                   ),
@@ -734,11 +637,11 @@ class UserDetailsPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               const Spacer(),
-                              Text("Wireless", style: TextStyle(fontSize: 14)),
+                              Text("Wireless", style: Styles.headlineStyle5.copyWith(fontSize: 10)),
                               const Spacer(),
-                              Text("Add/ Pay", style: TextStyle(fontSize: 14)),
+                              Text("Add/ Pay", style: Styles.headlineStyle5.copyWith(fontSize: 10), overflow: TextOverflow.ellipsis),
                               const Spacer(),
-                              Text("Rewards", style: TextStyle(fontSize: 14)),
+                              Text("Rewards", style: Styles.headlineStyle5.copyWith(fontSize: 10)),
                               const Spacer(),
                             ],
                           ),
@@ -754,7 +657,7 @@ class UserDetailsPage extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {},
-                  child: Text("Report a theft or lost card.", style: TextStyle(fontSize: 12, color: Colors.purple)),
+                  child: Text("Report a theft or lost card.", style: Styles.headlineStyle5.copyWith(fontSize: 10, color: Colors.purple)),
                 ),
               ],
             ),
