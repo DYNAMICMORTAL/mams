@@ -50,18 +50,18 @@ class ConfirmMyTrip extends StatelessWidget {
           SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => YourTicketPage(
-                    source: source,
-                    destination: destination,
-                    totalPrice: totalPrice,
-                    date: formattedDate,
-                    time: formattedTime,
-                  ),
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => YourTicketPage(
+              //       source: source,
+              //       destination: destination,
+              //       totalPrice: totalPrice,
+              //       date: formattedDate,
+              //       time: formattedTime,
+              //     ),
+              //   ),
+              // );
             },
             child: Text("Pay ₹$totalPrice and Confirm Trip", ),
           ),

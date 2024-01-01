@@ -47,7 +47,11 @@ class _HomeScreenState extends State<HomeScreen> {
             const Spacer(),
             Text("MAMS", style: Styles.headlineStyle1),
             const Spacer(),
-            const Icon(FluentSystemIcons.ic_fluent_arrow_right_circle_filled),
+            InkWell(
+              onTap: (){
+                Navigator.pushNamed(context, '/loginPageOverview');
+              },
+                child: const Icon(FluentSystemIcons.ic_fluent_arrow_right_circle_filled)),
           ],
         ),
         leading: InkWell(
