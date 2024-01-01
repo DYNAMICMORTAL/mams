@@ -4,6 +4,7 @@ import 'package:mams/utils/app_styles.dart';
 import 'package:video_player/video_player.dart';
 
 import '../utils/signInButton.dart';
+import '../utils/square_tiles.dart';
 import '../utils/textField.dart';
 
 class loginPageOverview extends StatefulWidget {
@@ -98,6 +99,9 @@ class YourLoginPage extends StatelessWidget {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
+  // sign user in method
+  void signUserIn (){}
+
   @override
   Widget build(BuildContext context) {
     // Replace this with your actual login page content
@@ -154,7 +158,60 @@ class YourLoginPage extends StatelessWidget {
                 ),
               ),
               const Gap(25),
-              MyButton(),
+              MyButton(
+                onTap: signUserIn,
+              ),
+              const SizedBox(height: 50,),
+              // or continue with
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  children: [
+                    Expanded(child: Divider(
+                      thickness: 0.5,
+                      color: Colors.grey.shade500,
+                    ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Text("Or continue with", style: Styles.headlineStyle4.copyWith(color: Colors.white),),
+                    ),
+                    Expanded(child: Divider(
+                      thickness: 0.5,
+                      color: Colors.grey.shade500,
+                    ),)
+                  ],
+                ),
+              ),
+
+              // google + microsoft
+              const SizedBox(height: 50,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // google
+                  SquareTile(imagePath: 'lib/assets/icons8-google-48.png'),
+
+                  const SizedBox(width: 25,),
+
+                  // micrsoft
+                  SquareTile(imagePath: 'lib/assets/icons8-microsoft-48.png'),
+                ],
+              ),
+
+              const SizedBox(height: 50,),
+
+              // not a Member? Register Now
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Not a member? ", style: Styles.headlineStyle4,),
+                  const SizedBox(width: 4,),
+                  Text("Register Now", style: Styles.headlineStyle4),
+                ],
+              ),
+
             ],
           ),
         ),
