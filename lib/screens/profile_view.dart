@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,14 @@ import 'bus_pass_view.dart';
 
 
 class ProfileView extends StatelessWidget {
-  const ProfileView({super.key});
+
+  ProfileView({super.key});
+
+  final user = FirebaseAuth.instance.currentUser!;
+
+  void signUserOut() {
+    FirebaseAuth.instance.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -184,7 +192,11 @@ class ProfileView extends StatelessWidget {
                   Row(
                     children: [
                       // Icon(FluentSystemIcons.ic_fluent_settings_filled),
-                      Text("Log out Aditi M", style: Styles.textStyle.copyWith(color: Colors.red)),
+                      InkWell(
+                        onTap: () {
+                          signUserOut();
+                        },
+                          child: Text("Log out Aditi M", style: Styles.textStyle.copyWith(color: Colors.red))),
                     ],
                   ),const Gap(10),
                   Row(

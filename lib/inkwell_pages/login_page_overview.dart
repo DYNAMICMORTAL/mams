@@ -1,3 +1,7 @@
+// import 'dart:js_interop';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:mams/utils/app_styles.dart';
@@ -100,7 +104,12 @@ class YourLoginPage extends StatelessWidget {
   final passwordController = TextEditingController();
 
   // sign user in method
-  void signUserIn (){}
+  void signUserIn () async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: usernameController.text,
+        password: passwordController.text,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

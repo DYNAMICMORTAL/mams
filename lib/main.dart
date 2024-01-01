@@ -2,6 +2,7 @@ import 'package:mams/grid/map_and_chat.dart';
 import 'package:mams/inkwell_pages/123Down_view.dart';
 import 'package:mams/inkwell_pages/123Up_view.dart';
 import 'package:mams/inkwell_pages/65Down_view.dart';
+import 'package:mams/inkwell_pages/auth_page.dart';
 import 'package:mams/screens/ChatScreenPage.dart';
 import 'package:mams/screens/MetroChoosePage_vIew.dart';
 import 'package:mams/screens/home_screen.dart';
@@ -22,9 +23,15 @@ import 'inkwell_pages/manage_subs_overview.dart';
 import 'payments/payforticket_view.dart';
 import 'maps/scheduled_bus_overview.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -42,7 +49,7 @@ class MyApp extends StatelessWidget {
         '/123Down': (context) => const Down123(),
         '/chatoverview': (context) => const GridOverView(),
         '/scheduledbus': (context) => const ScheduledBuses(),
-        '/profile': (context) => const ProfileView(),
+        '/profile': (context) => ProfileView(),
         '/settings': (context) => const SettingsPage(),
         '/subscriptions': (context) => const SubscriptionsPage(),
         '/rewards': (context) => const RewardsPage(),
@@ -57,7 +64,8 @@ class MyApp extends StatelessWidget {
         '/mmrda2b': (context) => MMRDA2B(),
         '/mmrda7': (context) => MMRDA7(),
         '/buspasss': (context) => BusPassList(),
-        '/loginPageOverview': (context) => loginPageOverview()
+        '/loginPageOverview': (context) => loginPageOverview(),
+        '/AuthenticationPage': (context) => AuthPage(),
       },
       theme: ThemeData(
         fontFamily: 'Poppins',

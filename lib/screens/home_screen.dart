@@ -49,7 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
             const Spacer(),
             InkWell(
               onTap: (){
-                Navigator.pushNamed(context, '/loginPageOverview');
+                // Navigator.pushNamed(context, '/loginPageOverview');
+                Navigator.pushNamed(context, '/AuthenticationPage');
               },
                 child: const Icon(FluentSystemIcons.ic_fluent_arrow_right_circle_filled)),
           ],
