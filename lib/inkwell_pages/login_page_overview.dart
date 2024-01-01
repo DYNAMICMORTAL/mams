@@ -50,7 +50,15 @@ class _LoginPageOverviewState extends State<loginPageOverview> {
                 child: SizedBox(
                   width: _controller.value.size.width,
                   height: _controller.value.size.height,
-                  child: VideoPlayer(_controller),
+                  child: Stack(
+                    children: [
+                      VideoPlayer(_controller),
+                      Opacity(opacity: 0.65,
+                      child: Container(
+                        color: Colors.black,
+                      ),)
+                    ],
+                  ),
                 ),
               ),
             )
