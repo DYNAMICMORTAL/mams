@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:mams/utils/app_styles.dart';
 import 'package:video_player/video_player.dart';
+
+import '../utils/signInButton.dart';
+import '../utils/textField.dart';
 
 class loginPageOverview extends StatefulWidget {
   const loginPageOverview({Key? key}) : super(key: key);
@@ -89,12 +94,70 @@ class LoginWidget extends StatelessWidget {
 }
 
 class YourLoginPage extends StatelessWidget {
+
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     // Replace this with your actual login page content
     return Container(
-      child: Center(
-        child: Text('Login Page'),
+      child: SafeArea(
+        child: Center(
+          child: Column(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                child: Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(left: 55),
+                      child: Row(
+                        children: [
+                          Text("MAMS", style: Styles.headlineStyle1.copyWith(color: Colors.white),),
+                          const Spacer(),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(left: 55),
+                      child: Row(
+                        children: [
+                          Text("Just Do It", style: Styles.headlineStyle5.copyWith(fontSize: 12,),),
+                          const Spacer(),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              const Gap(30),
+              MyTextField(
+                controller: usernameController,
+                hintText: 'username',
+                obscureText: false,
+              ),
+              const Gap(15),
+              MyTextField(
+                controller: passwordController,
+                hintText: 'password',
+                obscureText: true,
+              ),
+              const Gap(10),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text("Forgot Password?", style: Styles.headlineStyle2.copyWith(fontSize: 12.5, color: Colors.white)),
+                  ],
+                ),
+              ),
+              const Gap(25),
+              MyButton(),
+            ],
+          ),
+        ),
       ),
     );
   }
