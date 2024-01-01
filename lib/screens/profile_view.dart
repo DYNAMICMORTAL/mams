@@ -13,7 +13,7 @@ class ProfileView extends StatelessWidget {
 
   ProfileView({super.key});
 
-  final user = FirebaseAuth.instance.currentUser!;
+  // final user = FirebaseAuth.instance.currentUser!;
 
   void signUserOut() {
     FirebaseAuth.instance.signOut();

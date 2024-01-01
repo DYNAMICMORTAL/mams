@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:mams/inkwell_pages/auth_services.dart';
 import 'package:mams/utils/app_styles.dart';
 import 'package:video_player/video_player.dart';
 
@@ -98,17 +99,60 @@ class LoginWidget extends StatelessWidget {
   }
 }
 
-class YourLoginPage extends StatelessWidget {
+class YourLoginPage extends StatefulWidget {
 
+  @override
+  State<YourLoginPage> createState() => _YourLoginPageState();
+}
+
+class _YourLoginPageState extends State<YourLoginPage> {
   final usernameController = TextEditingController();
+
   final passwordController = TextEditingController();
 
   // sign user in method
   void signUserIn () async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
+    // loading bar
+    showDialog(context: context, builder: (context) {
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    },);
+
+    // try sign in
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: usernameController.text,
         password: passwordController.text,
-    );
+      );
+      Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      // WRONG EMAIL
+      Navigator.pop(context);
+      if(e.code == 'user-not-found') {
+        // SHOW ERROR TO USER
+        wrongEmailMessage();
+      }
+
+      // WRONG PASSWORD
+      else if (e.code == 'wrong-password') {
+        // SHOW ERROR TO USER
+        wrongPasswordMessage();
+      }
+    }
+
+  }
+
+  void wrongEmailMessage() {
+    showDialog(context: context, builder: (context) {
+      return const AlertDialog(title: Text('Incorrect Email'),);
+    },);
+  }
+
+  void wrongPasswordMessage() {
+    showDialog(context: context, builder: (context) {
+      return const AlertDialog(title: Text('Incorrect Password'),);
+    },);
   }
 
   @override
@@ -205,12 +249,16 @@ class YourLoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // google
-                  SquareTile(imagePath: 'lib/assets/icons8-google-48.png'),
+                  SquareTile(
+                    onTap: ()=> AuthService().signInWithGoogle(),
+                      imagePath: 'lib/assets/icons8-google-48.png'),
 
                   const SizedBox(width: 25,),
 
                   // micrsoft
-                  SquareTile(imagePath: 'lib/assets/icons8-microsoft-48.png'),
+                  SquareTile(
+                    onTap: () {},
+                      imagePath: 'lib/assets/icons8-microsoft-48.png'),
                 ],
               ),
 
