@@ -110,12 +110,14 @@ class YourLoginPage extends StatelessWidget {
         child: Center(
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // logo
               Container(
                 child: Column(
                   children: [
                     Container(
-                      padding: const EdgeInsets.only(left: 55),
+                      padding: const EdgeInsets.only(left: 25),
                       child: Row(
                         children: [
                           Text("MAMS", style: Styles.headlineStyle1.copyWith(color: Colors.white),),
@@ -124,7 +126,7 @@ class YourLoginPage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.only(left: 55),
+                      padding: const EdgeInsets.only(left: 25),
                       child: Row(
                         children: [
                           Text("Just Do It", style: Styles.headlineStyle5.copyWith(fontSize: 12,),),
@@ -136,6 +138,7 @@ class YourLoginPage extends StatelessWidget {
                 ),
               ),
               const Gap(30),
+              // Input fields
               MyTextField(
                 controller: usernameController,
                 hintText: 'username',
@@ -148,6 +151,7 @@ class YourLoginPage extends StatelessWidget {
                 obscureText: true,
               ),
               const Gap(10),
+              // forgot password
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Row(
@@ -158,6 +162,7 @@ class YourLoginPage extends StatelessWidget {
                 ),
               ),
               const Gap(25),
+              // sign in Button
               MyButton(
                 onTap: signUserIn,
               ),
@@ -208,7 +213,7 @@ class YourLoginPage extends StatelessWidget {
                 children: [
                   Text("Not a member? ", style: Styles.headlineStyle4,),
                   const SizedBox(width: 4,),
-                  Text("Register Now", style: Styles.headlineStyle4),
+                  Text("Register Now", style: Styles.headlineStyle4.copyWith(color: Colors.lightBlueAccent)),
                 ],
               ),
 
