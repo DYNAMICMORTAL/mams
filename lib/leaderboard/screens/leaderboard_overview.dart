@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:mams/utils/app_styles.dart';
@@ -13,8 +14,11 @@ class LeaderOverView extends StatefulWidget {
 }
 
 class _LeaderOverViewState extends State<LeaderOverView> {
+
+
   bool isImageOverText = false;
   List<String> textOrder = ['Today', 'Weekly', 'Lifetime'];
+
 
 
   void _onTextClicked(String clickedText) {
@@ -298,7 +302,7 @@ class _LeaderOverViewState extends State<LeaderOverView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
+                    Text("hey"),
                   ],
                 ),
               ),
