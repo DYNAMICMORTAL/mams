@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/Button_bar.dart';
+import '../screens/home_screen.dart';
 import 'login_page_overview.dart';
 
 class AuthPage extends StatelessWidget {
@@ -16,7 +17,12 @@ class AuthPage extends StatelessWidget {
         builder: (context, snapshot) {
           // user is logged In
           if(snapshot.hasData){
-            Navigator.pop(context);
+            Future.microtask(() {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => BottomBar()),
+              );
+            });
             return SizedBox.shrink();
           }
           // user is NOT Logged in
