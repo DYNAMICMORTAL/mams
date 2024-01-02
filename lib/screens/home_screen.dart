@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -18,10 +19,25 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late User? _user;
   bool isSearching = false;
   double searchBarHeight = 60.0; // Initial height of the search bar
   List<Train> searchResults = [];
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  // check for current user status
+  @override
+  void initState() {
+    super.initState();
+    _checkCurrentUser();
+  }
+
+  Future<void> _checkCurrentUser() async {
+    final currentUser = FirebaseAuth.instance.currentUser;
+    setState(() {
+      _user = currentUser;
+    });
+  }
 
   void searchTrains(String query) {
     setState(() {
@@ -47,12 +63,18 @@ class _HomeScreenState extends State<HomeScreen> {
             const Spacer(),
             Text("MAMS", style: Styles.headlineStyle1),
             const Spacer(),
-            InkWell(
-              onTap: (){
-                // Navigator.pushNamed(context, '/loginPageOverview');
-                Navigator.pushNamed(context, '/AuthenticationPage');
-              },
-                child: const Icon(FluentSystemIcons.ic_fluent_arrow_right_circle_filled)),
+        InkWell(
+          onTap: () {
+            if (_user != null) {
+              Navigator.pushNamed(context, '/profile');
+            } else {
+              Navigator.pushNamed(context, '/AuthenticationPage');
+            }
+          },
+          child: _user != null
+              ? const Icon(FluentSystemIcons.ic_fluent_person_filled) // Replace with your signed-in user icon
+              : const Icon(FluentSystemIcons.ic_fluent_arrow_right_circle_filled),
+        ),
           ],
         ),
         leading: InkWell(
