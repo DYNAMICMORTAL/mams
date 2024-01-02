@@ -169,7 +169,7 @@ class _MusicPlayerViewPageState extends State<MusicPlayerViewPage> {
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: MusicPlayerViewPage(),
     ),
   );

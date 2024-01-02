@@ -17,9 +17,9 @@ class MapsOverview extends StatefulWidget {
 
 class _MapsOverviewState extends State<MapsOverview> {
   late GoogleMapController _mapController;
-  Map<String, Marker> _markers = {};
+  final Map<String, Marker> _markers = {};
 
-  CustomInfoWindowController _customInfoWindowController = CustomInfoWindowController();
+  final CustomInfoWindowController _customInfoWindowController = CustomInfoWindowController();
 
   final List<String> _markerNames = [
     'MULUND BUS DEPOT',
@@ -49,34 +49,34 @@ class _MapsOverviewState extends State<MapsOverview> {
   ];
 
   final List<LatLng> _markerLocations = [
-    LatLng(19.175763, 72.946449),
-    LatLng(19.175843, 72.948737),
-    LatLng(19.175624, 72.952598),
+    const LatLng(19.175763, 72.946449),
+    const LatLng(19.175843, 72.948737),
+    const LatLng(19.175624, 72.952598),
 // --------------------
-    LatLng(19.173471, 72.956388),
-    LatLng(19.176150, 72.953423),
-    LatLng(19.178235, 72.953791),
-    LatLng(19.181129, 72.953865),
-    LatLng(19.182949, 72.953571),
-    LatLng(19.184296, 72.953939),
-    LatLng(19.185961, 72.958195),
-    LatLng(19.189187, 72.963316),
-    LatLng(19.196098, 72.962375),
-    LatLng(19.198950, 72.962990),
-    LatLng(19.204042, 72.968038),
-    LatLng(19.214517, 72.977544),
-    LatLng(19.221128, 72.977720),
-    LatLng(19.223580, 72.977402),
-    LatLng(19.235108, 72.975991),
-    LatLng(19.241428, 72.975667),
-    LatLng(19.245829, 72.975690),
-    LatLng(19.253043, 72.972173),
-    LatLng(19.263881, 72.967873),
-    LatLng(19.264575, 72.967602),
+    const LatLng(19.173471, 72.956388),
+    const LatLng(19.176150, 72.953423),
+    const LatLng(19.178235, 72.953791),
+    const LatLng(19.181129, 72.953865),
+    const LatLng(19.182949, 72.953571),
+    const LatLng(19.184296, 72.953939),
+    const LatLng(19.185961, 72.958195),
+    const LatLng(19.189187, 72.963316),
+    const LatLng(19.196098, 72.962375),
+    const LatLng(19.198950, 72.962990),
+    const LatLng(19.204042, 72.968038),
+    const LatLng(19.214517, 72.977544),
+    const LatLng(19.221128, 72.977720),
+    const LatLng(19.223580, 72.977402),
+    const LatLng(19.235108, 72.975991),
+    const LatLng(19.241428, 72.975667),
+    const LatLng(19.245829, 72.975690),
+    const LatLng(19.253043, 72.972173),
+    const LatLng(19.263881, 72.967873),
+    const LatLng(19.264575, 72.967602),
     // ------------------
-    LatLng(19.269489, 72.965364),
+    const LatLng(19.269489, 72.965364),
   ];
-  List<LatLng> _polylineCoordinates = [];
+  final List<LatLng> _polylineCoordinates = [];
 
   @override
   void initState() {

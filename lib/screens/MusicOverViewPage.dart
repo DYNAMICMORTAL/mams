@@ -1,5 +1,4 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:mams/audios/audio_file.dart';
@@ -39,11 +38,11 @@ class MusicOverView extends StatelessWidget {
                 child: Container(
                   width: 49.5, // Adjust the size of the circle
                   height: 49.5, // Adjust the size of the circle
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.blue, // Change the color of the circle
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Icon(
                         Icons.star,
                         color: Colors.white, // Change the color of the icon
@@ -72,16 +71,16 @@ class MusicOverView extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => KayanMusic(),
+                                  builder: (context) => const KayanMusic(),
                                 ),
                               );
                             },
                             child: Container(
-                              margin: EdgeInsets.all(8),
+                              margin: const EdgeInsets.all(8),
                               width: 175, // Adjust the width as needed
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(25),
-                                image: DecorationImage(
+                                image: const DecorationImage(
                                   image: AssetImage('lib/assets/kayan.jpg'), // Replace with your image path
                                   fit: BoxFit.cover,
                                 ),
@@ -90,13 +89,13 @@ class MusicOverView extends StatelessWidget {
                                     color: Colors.grey.withOpacity(0.5),
                                     spreadRadius: 5,
                                     blurRadius: 7,
-                                    offset: Offset(0, 3), // changes position of shadow
+                                    offset: const Offset(0, 3), // changes position of shadow
                                   ),
                                 ],
                               ),
                               child: Container(
                                 padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
-                                child: Column(
+                                child: const Column(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -110,11 +109,11 @@ class MusicOverView extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.all(8),
+                            margin: const EdgeInsets.all(8),
                             width: 175, // Adjust the width as needed
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                 image: AssetImage('lib/assets/arijit.jpg'), // Replace with your image path
                                 fit: BoxFit.cover,
                               ),
@@ -123,13 +122,13 @@ class MusicOverView extends StatelessWidget {
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 5,
                                   blurRadius: 7,
-                                  offset: Offset(0, 3), // changes position of shadow
+                                  offset: const Offset(0, 3), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Container(
                               padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
-                              child: Column(
+                              child: const Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -142,11 +141,11 @@ class MusicOverView extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.all(8),
+                            margin: const EdgeInsets.all(8),
                             width: 175, // Adjust the width as needed
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                 image: AssetImage('lib/assets/citimall.jpg'), // Replace with your image path
                                 fit: BoxFit.cover,
                               ),
@@ -155,13 +154,13 @@ class MusicOverView extends StatelessWidget {
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 5,
                                   blurRadius: 7,
-                                  offset: Offset(0, 3), // changes position of shadow
+                                  offset: const Offset(0, 3), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Container(
                               padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
-                              child: Column(
+                              child: const Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -174,11 +173,11 @@ class MusicOverView extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.all(8),
+                            margin: const EdgeInsets.all(8),
                             width: 175, // Adjust the width as needed
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                 image: AssetImage('lib/assets/arrehman.jpg'), // Replace with your image path
                                 fit: BoxFit.cover,
                               ),
@@ -193,7 +192,7 @@ class MusicOverView extends StatelessWidget {
                             ),
                             child: Container(
                               padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
-                              child: Column(
+                              child: const Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -223,11 +222,11 @@ class MusicOverView extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            margin: EdgeInsets.all(8),
+                            margin: const EdgeInsets.all(8),
                             width: 250, // Adjust the width as needed
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                 image: AssetImage('lib/assets/anuv.jpg'), // Replace with your image path
                                 fit: BoxFit.cover,
                               ),
@@ -236,13 +235,13 @@ class MusicOverView extends StatelessWidget {
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 5,
                                   blurRadius: 7,
-                                  offset: Offset(0, 3), // changes position of shadow
+                                  offset: const Offset(0, 3), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Container(
                               padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
-                              child: Column(
+                              child: const Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -255,11 +254,11 @@ class MusicOverView extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.all(8),
+                            margin: const EdgeInsets.all(8),
                             width: 250, // Adjust the width as needed
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                 image: AssetImage('lib/assets/srushit.jpg'), // Replace with your image path
                                 fit: BoxFit.cover,
                               ),
@@ -268,13 +267,13 @@ class MusicOverView extends StatelessWidget {
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 5,
                                   blurRadius: 7,
-                                  offset: Offset(0, 3), // changes position of shadow
+                                  offset: const Offset(0, 3), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Container(
                               padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
-                              child: Column(
+                              child: const Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -287,11 +286,11 @@ class MusicOverView extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.all(8),
+                            margin: const EdgeInsets.all(8),
                             width: 250, // Adjust the width as needed
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                 image: AssetImage('lib/assets/mitraz.jpg'), // Replace with your image path
                                 fit: BoxFit.cover,
                               ),
@@ -300,13 +299,13 @@ class MusicOverView extends StatelessWidget {
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 5,
                                   blurRadius: 7,
-                                  offset: Offset(0, 3), // changes position of shadow
+                                  offset: const Offset(0, 3), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Container(
                               padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
-                              child: Column(
+                              child: const Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -319,11 +318,11 @@ class MusicOverView extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.all(8),
+                            margin: const EdgeInsets.all(8),
                             width: 250, // Adjust the width as needed
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                 image: AssetImage('lib/assets/laufey.jpg'), // Replace with your image path
                                 fit: BoxFit.cover,
                               ),
@@ -332,13 +331,13 @@ class MusicOverView extends StatelessWidget {
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 5,
                                   blurRadius: 7,
-                                  offset: Offset(0, 3), // changes position of shadow
+                                  offset: const Offset(0, 3), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Container(
                               padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
-                              child: Column(
+                              child: const Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -370,7 +369,7 @@ class MusicOverView extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => MusicPlayerViewPage(),
+                          builder: (context) => const MusicPlayerViewPage(),
                         ),
                       );
                     },
@@ -387,11 +386,11 @@ class MusicOverView extends StatelessWidget {
                                 Container(
                                   width: 32, // Adjust the size of the circle
                                   height:32, // Adjust the size of the circle
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.rectangle,
                                     color: Colors.blue, // Change the color of the circle
                                   ),
-                                  child: Center(
+                                  child: const Center(
                                     child: Icon(
                                       Icons.star,
                                       color: Colors.white, // Change the color of the icon
@@ -409,7 +408,7 @@ class MusicOverView extends StatelessWidget {
                                   ],
                                 ),
                                 const Spacer(),
-                                Icon(FluentSystemIcons.ic_fluent_arrow_right_filled, size: 30,),
+                                const Icon(FluentSystemIcons.ic_fluent_arrow_right_filled, size: 30,),
                               ],
                             ),
                           ],

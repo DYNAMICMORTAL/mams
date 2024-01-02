@@ -421,7 +421,6 @@
 
 
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
@@ -552,7 +551,7 @@ class UserDetailsPage extends StatelessWidget {
                     side: CardSide.FRONT,
                     front: Container(
                       height: 200,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage("lib/assets/frontCard.png"),
                         ),
@@ -561,7 +560,7 @@ class UserDetailsPage extends StatelessWidget {
                     ),
                     back: Container(
                       height: 200,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage("lib/assets/rearCard.png"),
                         ),
@@ -583,7 +582,7 @@ class UserDetailsPage extends StatelessWidget {
             const Gap(30),
             Container(
               padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xFFFEAEAEA),
                 borderRadius: BorderRadius.all(Radius.circular(5)),
               ),

@@ -100,10 +100,10 @@ class MMRDA2A extends StatelessWidget {
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Row(
+                    child: const Row(
                       children: [
                         Icon(FluentSystemIcons.ic_fluent_phone_mobile_regular),
-                        const Gap(5),
+                        Gap(5),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -112,7 +112,7 @@ class MMRDA2A extends StatelessWidget {
                             Text("Dahanukarawadi to Lower Malad"),
                           ],
                         ),
-                        const Spacer(),
+                        Spacer(),
                         Icon(FluentSystemIcons.ic_fluent_chevron_right_regular),
                       ],
                     ),

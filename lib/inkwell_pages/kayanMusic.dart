@@ -169,7 +169,7 @@ class KayanMusic extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => coolKidsViewPage(),
+                            builder: (context) => const coolKidsViewPage(),
                           ),
                         );
                       },

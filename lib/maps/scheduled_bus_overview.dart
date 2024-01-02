@@ -73,10 +73,10 @@ class ScheduledBuses extends StatelessWidget {
               ),
               Container(
                 padding: const EdgeInsets.only(left: 15, right: 15, top: 20),
-                child: Row(
+                child: const Row(
                   children: [
                     Text("12:00PM - 06:00PM"),
-                    const Spacer(),
+                    Spacer(),
                     Text("Every 15 min"),
                   ],
                 ),
