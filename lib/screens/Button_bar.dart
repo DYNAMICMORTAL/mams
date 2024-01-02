@@ -62,7 +62,8 @@ class _BottomBarState extends State<BottomBar> {
     HomeScreen(),
     GridOverView(),
     MusicOverView(),
-    LeaderOverView(),
+    // LeaderOverView(),
+    BusStopPage(),
     ProfileView(),
   ];
 
