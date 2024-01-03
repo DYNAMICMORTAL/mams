@@ -378,27 +378,47 @@ class _BusStopPageState extends State<BusStopPage> {
       print('Error getting user location: $e');
     }
   }
-
   Future<void> _getNearestBusStop(double userLongitude, double userLatitude) async {
     try {
       final response = await http.post(
-        Uri.parse('http://localhost:3000/getNearestBusStop'),
-        body: {'userLongitude': userLongitude.toString(), 'userLatitude': userLatitude.toString()},
+        Uri.parse('http://10.0.2.2:3000/updateUserLocation'), // Replace with your actual server address
+        body: {
+          'userLongitude': userLongitude.toString(),
+          'userLatitude': userLatitude.toString(),
+        },
       );
 
       if (response.statusCode == 200) {
-        final decodedResponse = json.decode(response.body);
-        final nearestBusStop = Map<String, dynamic>.from(decodedResponse);
-        setState(() {
-          _nearestBusStop = nearestBusStop;
-        });
+        print('User location sent to the server successfully');
       } else {
-        print('Failed to get nearest bus stop');
+        print('Failed to send user location to the server');
       }
     } catch (e) {
-      print('Error getting nearest bus stop: $e');
+      print('Error sending user location to the server: $e');
     }
   }
+
+
+  // Future<void> _getNearestBusStop(double userLongitude, double userLatitude) async {
+  //   try {
+  //     final response = await http.post(
+  //       Uri.parse('http://localhost:3000/getNearestBusStop'),
+  //       body: {'userLongitude': userLongitude.toString(), 'userLatitude': userLatitude.toString()},
+  //     );
+  //
+  //     if (response.statusCode == 200) {
+  //       final decodedResponse = json.decode(response.body);
+  //       final nearestBusStop = Map<String, dynamic>.from(decodedResponse);
+  //       setState(() {
+  //         _nearestBusStop = nearestBusStop;
+  //       });
+  //     } else {
+  //       print('Failed to get nearest bus stop');
+  //     }
+  //   } catch (e) {
+  //     print('Error getting nearest bus stop: $e');
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
